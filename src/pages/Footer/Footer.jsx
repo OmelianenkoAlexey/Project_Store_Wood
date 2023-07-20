@@ -16,33 +16,19 @@ export default function Footer() {
       <div className='footer-primary container'>
 
         <div className='footer-catalog'>
-          <div className='footer-info__title'>Основне</div>
-          <a className='footer-catalog__item' href="/full-vials">Повні флакони</a>
-          <a className='footer-catalog__item' href="/rospiv">Розпив</a>
-          <a className='footer-catalog__item' href="/miniatures">Мініатюри</a>
-          <a className='footer-catalog__item' href="/makeup">Косметика</a>
-          <a className='footer-catalog__item' href="/news2023">Новинки 2023</a>
+          <div className='footer-info__title'>КАТАЛОГ</div>
+          <a className='footer-catalog__item' href="/full-vials">Двоспальні ліжка</a>
+          <a className='footer-catalog__item' href="/rospiv">Односпальні ліжка</a>
+          <a className='footer-catalog__item' href="/miniatures">Двоярусні ліжка</a>
+          <a className='footer-catalog__item' href="/makeup">Ліжка будиночком</a>
         </div>
 
         <div className='footer-info'>
-          <div className='footer-info__title'>Інфо</div>
+          <div className='footer-info__title'>ІНФОРМАЦІЯ</div>
           <a className='footer-info__item' href="/">Головна</a>
           <a className='footer-info__item' href="/about-us">Про нас</a>
-
-          {/* <a className='footer-info__item' href="/products">Оплата і доставка</a> */}
-          {/* 
-          {location.pathname === '/' || location.pathname === '/full-vials' || location.pathname === '/rospiv' || location.pathname === '/miniatures'
-          || location.pathname === '/makeup' || location.pathname === '/news2023' || location.pathname === '/perfumery'
-          || location.pathname === '/rospiv-makeup' || location.pathname === '/shower-gels' || location.pathname === '/oils' ? (
-          <Link to="paymentAndDelivery" className='footer-info__item' smooth={true} duration={100} offset={100}>Оплата і доставка</Link>
-        ) : (
-          <a className={`footer-info__item ${location.pathname === '/payment-and-delivery' ? 'action' : ''}`} href="/payment-and-delivery">Оплата і доставка</a>
-        )} */}
-          <a className={`footer-info__item ${location.pathname === '/payment-and-delivery' ? 'action' : ''}`} href="/payment-and-delivery">Оплата і доставка</a>
-        </div>
-
-        <div className='footer-oferta'>
-          <a className='footer-oferta__link' href="./files/public-offer-agreement.pdf" target="_blank" rel="noreferrer">Оферта</a>
+          <a className='footer-info__item' href="/about-us">Портфоліо</a>
+          <a className='footer-info__item' href="/about-us">Відгуки</a>
         </div>
 
         <div className='footer-right'>
@@ -91,6 +77,10 @@ export default function Footer() {
 
       </div>
 
+      <div className='footer-text'>
+        <h2 className='footer-text__title'>STORE WOOD</h2>
+      </div>
+
       <div className='footer-secondary'>
 
         <div className='footer-secondary__telephone'>
@@ -103,7 +93,7 @@ export default function Footer() {
           /> */}
         </div>
 
-        <div className='footer-secondary__info'>© 2023 Legenda Parfume</div>
+        <div className='footer-secondary__info'>© 2023 Store Wood</div>
       </div>
     </footer>
   );

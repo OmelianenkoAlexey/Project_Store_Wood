@@ -1,10 +1,12 @@
 .footer {
     padding-top: 50px;
+    background-color: #71845B;
+    height: auto;
 }
 
 .footer-primary {
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-columns: 300px 300px 300px;
     justify-content: center;
     justify-items: center;
     gap: 40px;
@@ -30,21 +32,28 @@
 
 .footer-catalog__title,
 .footer-info__title {
-    font-size: 20px;
-    font-weight: 500;
+    color: #FFF;
+    font-family: Didact Gothic;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
 }
 
 .footer-catalog__item,
 .footer-info__item {
+    color: rgba(255, 255, 255, 0.60);
+    font-family: Didact Gothic;
     font-size: 15px;
+    font-style: normal;
     font-weight: 400;
-    border-bottom: 1px solid #111212;
+    line-height: 19px;
 }
 
 .footer-catalog__item:hover,
 .footer-info__item:hover {
     /* color: #F07C00 !important; */
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
 }
 
 .footer-right {
@@ -71,14 +80,14 @@
     font-size: 15px;
     font-weight: 400;
     color: white !important;
-    border-bottom: 1px solid #111212;
+    /* border-bottom: 1px solid #111212; */
 }
 
 .footer-right__item-telephone {
     font-size: 15px;
     font-weight: 400;
     color: white !important;
-    border-bottom: 1px solid #111212;
+    /* border-bottom: 1px solid #111212; */
     padding-left: 1.5px;
 }
 
@@ -113,19 +122,26 @@
     scale: 1.7;
 }
 
-.footer-oferta {}
 
-.footer-oferta__link {
-    font-size: 20px;
-    font-weight: 500;
-    color: white;
-    transition: 0.5s;
-    border-bottom: 1px solid #111212;
+.footer-text {
+    border-top: 1px solid rgba(232, 232, 225, 0.20);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer-oferta__link:hover {
-    border-bottom: 1px solid white;
+.footer-text__title {
+    color: #FFF;
+    text-align: center;
+    font-family: Poiret One;
+    font-size: 203px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.2px;
+    letter-spacing: 0.7px;
 }
+
 
 .footer-secondary {
     width: 100%;

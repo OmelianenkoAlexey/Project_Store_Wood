@@ -17,7 +17,7 @@ export default function Header() {
         </a>
 
         <nav className='header-category'>
-          <a className={`header-category__item ${location.pathname === '/full-vials' ? 'action' : ''}`} href="/">Головна</a>
+          <a className={`header-category__item ${location.pathname === '/' ? 'action' : ''}`} href="/">Головна</a>
 
           <a className={`header-category__item ${location.pathname === '/rospiv' ? 'action' : ''}`} href="/">Каталог</a>
 
@@ -32,9 +32,11 @@ export default function Header() {
 
         </nav>
 
-        <div>
-          
-        </div>
+        <div className='header-language'>
+            <div className='header-language__active' href="">UA</div>
+            <a className='header-language__en' href="">EN</a>
+            <a className='header-language__en' href="">DE</a>
+          </div>
 
         {/* <Basket /> */}
         <Burger />
