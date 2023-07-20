@@ -11,7 +11,7 @@ body {
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #111212 !important;
+  background-color: white !important;
   overflow-x: hidden;
 }
 
@@ -31,7 +31,7 @@ select:focus {
 a {
   text-decoration: none !important;
   transition: 0.5s !important;
-  color: white !important;
+  color: black !important;
 }
 
 ul {
