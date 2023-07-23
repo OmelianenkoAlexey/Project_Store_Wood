@@ -31,6 +31,48 @@ export default function Catalog() {
           </div> */}
         </div>
 
+        <div className='catalog-box__item'>
+          <div className='catalog-box__item-text'>
+            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
+            <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
+              Детальніше</a>
+          </div>
+          <div className='catalog-box__item-picture'>
+            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
+          </div>
+          {/* <div className='catalog-box__item-bg'>
+            <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
+          </div> */}
+        </div>
+
+        <div className='catalog-box__item'>
+          <div className='catalog-box__item-text'>
+            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
+            <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
+              Детальніше</a>
+          </div>
+          <div className='catalog-box__item-picture'>
+            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
+          </div>
+          {/* <div className='catalog-box__item-bg'>
+            <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
+          </div> */}
+        </div>
+
+        <div className='catalog-box__item'>
+          <div className='catalog-box__item-text'>
+            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
+            <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
+              Детальніше</a>
+          </div>
+          <div className='catalog-box__item-picture'>
+            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
+          </div>
+          {/* <div className='catalog-box__item-bg'>
+            <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
+          </div> */}
+        </div>
+
       </div>
 
     </div>

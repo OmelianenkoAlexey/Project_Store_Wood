@@ -6,7 +6,7 @@
 
 .catalog-box__item-bg {
     position: absolute;
-    top: 0;
+    top: -250px;
     left: 0;
     z-index: -1;
 }
