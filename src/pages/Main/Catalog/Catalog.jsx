@@ -43,7 +43,7 @@ export default function Catalog() {
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
               Детальніше</a>
           </div>
-          <div className='catalog-box__item-picture'>
+          <div className='catalog-box__item-picture catalog-box__item-picture-md'>
             <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
@@ -71,7 +71,7 @@ export default function Catalog() {
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
               Детальніше</a>
           </div>
-          <div className='catalog-box__item-picture'>
+          <div className='catalog-box__item-picture catalog-box__item-picture-md'>
             <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
@@ -80,6 +80,8 @@ export default function Catalog() {
         </div>
 
       </div>
+      
+      <div className='firstPage-background'></div>
 
     </div>
   );
