@@ -25,8 +25,11 @@ export default function FirstPage() {
           </a>
         </div>
       </div>
-      <div>
-        <img src="" alt="" />
+      <div className='firstPage__pictureFirst'>
+        <img className='firstPage__image' src="./img/firstPageImage1.png" alt="" />
+      </div>
+      <div className='firstPage__pictureSecond'>
+        <img className='firstPage__image' src="./img/firstPageImage2.png" alt="" />
       </div>
       <div className='firstPage-background'></div>
     </div>
