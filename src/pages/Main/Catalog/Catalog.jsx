@@ -44,7 +44,7 @@ export default function Catalog() {
               Детальніше</a>
           </div>
           <div className='catalog-box__item-picture catalog-box__item-picture-md'>
-            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
+            <img className='catalog-box__item-image' src="./img/catalog2.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
@@ -58,7 +58,7 @@ export default function Catalog() {
               Детальніше</a>
           </div>
           <div className='catalog-box__item-picture'>
-            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
+            <img className='catalog-box__item-image' src="./img/catalog3.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
@@ -72,7 +72,7 @@ export default function Catalog() {
               Детальніше</a>
           </div>
           <div className='catalog-box__item-picture catalog-box__item-picture-md'>
-            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
+            <img className='catalog-box__item-image' src="./img/catalog4.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
