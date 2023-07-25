@@ -32,7 +32,11 @@ export default function Instagram() {
         </div>
       </div>
 
-      <div className='firstPage-background'></div>
+      {/* <div className='firstPage-background'>
+        <div className='firstPage-background__picture'>
+          <img className='firstPage-background__image' src="./img/leaves.png" alt="Store Wood" />
+        </div>
+      </div> */}
     </div>
   );
 }

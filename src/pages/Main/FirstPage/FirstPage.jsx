@@ -1,7 +1,7 @@
 import React from 'react';
 import './FirstPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
 
 export default function FirstPage() {
 
@@ -31,7 +31,11 @@ export default function FirstPage() {
       <div className='firstPage__pictureSecond'>
         <img className='firstPage__image' src="./img/firstPageImage2.png" alt="Store Wood" />
       </div>
-      <div className='firstPage-background'></div>
+      <div className='firstPage-background'>
+        <div className='firstPage-background__picture'>
+          <img className='firstPage-background__image' src="./img/leaves.png" alt="Store Wood" />
+        </div>
+      </div>
     </div>
   );
 }
