@@ -11,7 +11,7 @@ export default function AboutUs() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollThresholdOne = 3900;
-      const scrollThresholdTwo = 4000;
+      const scrollThresholdTwo = 4100;
       const scrollThresholdThree = 4300;
       const scrollThresholdFour = 4350;
 
