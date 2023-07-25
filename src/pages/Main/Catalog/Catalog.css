@@ -101,13 +101,6 @@
 .catalog-box__item-picture {
     width: 50%;
     position: relative;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    /* border: 1px solid red; */
-}
-
-.catalog-box__item-picture-none {
-    opacity: 0;
 }
 
 .catalog-box__item-picture-md {
@@ -121,10 +114,12 @@
     position: absolute;
     left: 0px;
     transition: 0.5s ease-in-out;
+    opacity: 1;
 }
 
 .catalog-box__item-image-left {
-    left: 100px;
+    left: 130px;
+    opacity: 0;
 }
 
 

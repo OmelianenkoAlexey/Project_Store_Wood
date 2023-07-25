@@ -3,21 +3,43 @@ import './Catalog.css';
 
 export default function Catalog() {
 
-  const [item, setItem] = useState(true);
+  const [positionOne, setPositionOne] = useState(true);
+  const [positionTwo, setPositionTwo] = useState(true);
+  const [positionThree, setPositionThree] = useState(true);
+  const [positionFour, setPositionFour] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Задайте значение, когда нужно переключить состояние
-      const scrollThreshold = 600; // Например, переключим состояние при прокрутке на 300 пикселей
+      const scrollThresholdOne = 550;
+      const scrollThresholdTwo = 1200;
+      const scrollThresholdThree = 1800;
+      const scrollThresholdFour = 2400;
 
       // Получаем текущую позицию прокрутки страницы
       const currentPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
-      // Проверяем, достигли ли пороговой точки для переключения состояния
-      if (currentPosition >= scrollThreshold) {
-        setItem(false);
+      if (currentPosition >= scrollThresholdOne) {
+        setPositionOne(false);
       } else {
-        setItem(true);
+        setPositionOne(true);
+      }
+
+      if (currentPosition >= scrollThresholdTwo) {
+        setPositionTwo(false);
+      } else {
+        setPositionTwo(true);
+      }
+
+      if (currentPosition >= scrollThresholdThree) {
+        setPositionThree(false);
+      } else {
+        setPositionThree(true);
+      }
+
+      if (currentPosition >= scrollThresholdFour) {
+        setPositionFour(false);
+      } else {
+        setPositionFour(true);
       }
     };
 
@@ -58,8 +80,8 @@ export default function Catalog() {
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
               Детальніше</a>
           </div>
-          <div className={`catalog-box__item-picture ${item ? 'catalog-box__item-picture-none' : ''}`}>
-            <img className={`catalog-box__item-image ${item ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog1.png" alt="Store Wood" />
+          <div className='catalog-box__item-picture'>
+            <img className={`catalog-box__item-image ${positionOne ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog1.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
@@ -73,7 +95,7 @@ export default function Catalog() {
               Детальніше</a>
           </div>
           <div className='catalog-box__item-picture catalog-box__item-picture-md'>
-            <img className='catalog-box__item-image' src="./img/catalog2.png" alt="Store Wood" />
+            <img className={`catalog-box__item-image ${positionTwo ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog2.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
@@ -87,7 +109,7 @@ export default function Catalog() {
               Детальніше</a>
           </div>
           <div className='catalog-box__item-picture'>
-            <img className='catalog-box__item-image' src="./img/catalog3.png" alt="Store Wood" />
+            <img className={`catalog-box__item-image ${positionThree ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog3.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
@@ -101,7 +123,7 @@ export default function Catalog() {
               Детальніше</a>
           </div>
           <div className='catalog-box__item-picture catalog-box__item-picture-md'>
-            <img className='catalog-box__item-image' src="./img/catalog4.png" alt="Store Wood" />
+            <img className={`catalog-box__item-image ${positionFour ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog4.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
