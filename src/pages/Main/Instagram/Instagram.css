@@ -1,21 +1,37 @@
 .instagram {
     padding-top: 50px;
     padding-bottom: 50px;
-        position: relative;
+    position: relative;
 }
 
 .instagram-bg {
-        position: absolute;
+    position: absolute;
     top: 0;
     right: 0;
     z-index: -1;
 }
+
 .instagram-image {
-   width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.catalog {}
+
+.instagram-containe {}
+
+.instagram__title {}
+
+.instagram__link {}
+
+.instagram-box {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.instagram-box__item {}
+
+.instagram-box__item-image {}
 .catalog {}
 .catalog {}
 .catalog {}
