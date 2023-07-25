@@ -100,7 +100,14 @@
 
 .catalog-box__item-picture {
     width: 50%;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
     /* border: 1px solid red; */
+}
+
+.catalog-box__item-picture-none {
+    opacity: 0;
 }
 
 .catalog-box__item-picture-md {
@@ -111,8 +118,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    left: 0px;
+    transition: 0.5s ease-in-out;
 }
 
+.catalog-box__item-image-left {
+    left: 100px;
+}
 
 
 /* .catalog-box__item-bg {

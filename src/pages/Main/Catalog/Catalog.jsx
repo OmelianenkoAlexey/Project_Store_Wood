@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Catalog.css';
 
 export default function Catalog() {
+
+  const [item, setItem] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Задайте значение, когда нужно переключить состояние
+      const scrollThreshold = 600; // Например, переключим состояние при прокрутке на 300 пикселей
+
+      // Получаем текущую позицию прокрутки страницы
+      const currentPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+      // Проверяем, достигли ли пороговой точки для переключения состояния
+      if (currentPosition >= scrollThreshold) {
+        setItem(false);
+      } else {
+        setItem(true);
+      }
+    };
+
+    // Добавляем обработчик события прокрутки
+    window.addEventListener('scroll', handleScroll);
+
+    // Удаляем обработчик при размонтировании компонента
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
 
   return (
     <div className='catalog'>
@@ -29,8 +58,8 @@ export default function Catalog() {
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
               Детальніше</a>
           </div>
-          <div className='catalog-box__item-picture'>
-            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
+          <div className={`catalog-box__item-picture ${item ? 'catalog-box__item-picture-none' : ''}`}>
+            <img className={`catalog-box__item-image ${item ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog1.png" alt="Store Wood" />
           </div>
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
