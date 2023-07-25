@@ -52,7 +52,14 @@
 
 .instagram-box__item {}
 
-.instagram-box__item-image {}
+.instagram-box__item-image {
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.instagram-box__item-image-opacity {
+    opacity: 1;
+}
 
 .catalog {}
 

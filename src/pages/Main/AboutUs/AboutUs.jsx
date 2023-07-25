@@ -10,10 +10,10 @@ export default function AboutUs() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThresholdOne = 3900;
-      const scrollThresholdTwo = 4100;
-      const scrollThresholdThree = 4300;
-      const scrollThresholdFour = 4350;
+      const scrollThresholdOne = 3700;
+      const scrollThresholdTwo = 3800;
+      const scrollThresholdThree = 4000;
+      const scrollThresholdFour = 4100;
 
       // Получаем текущую позицию прокрутки страницы
       const currentPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
