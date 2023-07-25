@@ -12,7 +12,7 @@ export default function Instagram() {
       items.forEach((item, index) => {
         setTimeout(() => {
           item.classList.add('instagram-box__item-image-opacity');
-        }, (index + 1) * 500);
+        }, (index + 1) * 300);
       });
     }
   }, [positionOne]);
