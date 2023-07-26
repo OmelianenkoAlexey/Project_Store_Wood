@@ -1,29 +1,73 @@
 import React, { useState } from 'react';
-import './FirstPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
+import './FirstPage.css';
 
 export default function FirstPage() {
 
   const [click, setClick] = useState(false);
 
   const touchButton = () => {
-
     setClick(true);
-
-
     document.body.classList.add('body-fixed');
   };
 
   const touchButtonClose = () => {
-
     setClick(false);
-
-
     document.body.classList.remove('body-fixed');
   };
 
+  const [formData, setFormData] = useState({
+    name: '',
+    number: '',
+    email: '',
+    comment: ''
+  });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+
+    const { name, number, email, comment } = formData;
+
+    fetch('https://jsonreader.onrender.com/json/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "Ім`я" : name,
+        "Номер" : number,
+        "E-mail" : email,
+        "Коментар" : comment,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          setClick(false);
+          document.body.classList.remove('body-fixed');
+          // Очистка полей формы после отправки.
+          setFormData({
+            name: '',
+            number: '',
+            email: '',
+            comment: ''
+          });
+        }
+      })
+      .catch((error) => {
+        console.log('Ошибка отправки данных:', error);
+      });
+
+  };
 
   return (
     <div className='firstPage'>
@@ -33,16 +77,45 @@ export default function FirstPage() {
       <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity' : ''}`}>
         <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
 
-        <input className='firstPage-input' placeholder='Ім`я' type="text" />
+        <form className='firstPage-form' onSubmit={handleSubmit}>
+          <input
+            className='firstPage-input'
+            placeholder='Ім`я'
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
 
-        <input className='firstPage-input' placeholder='Номер' type="text" />
+          <input
+            className='firstPage-input'
+            placeholder='Номер'
+            type="text"
+            name="number"
+            value={formData.number}
+            onChange={handleChange}
+          />
 
-        <input className='firstPage-input' placeholder='E-mail' type="text" />
+          <input
+            className='firstPage-input'
+            placeholder='E-mail'
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
 
-        <input className='firstPage-input-comment' placeholder='Коментар' />
+          <input
+            className='firstPage-input-comment'
+            placeholder='Коментар'
+            type="text"
+            name="comment"
+            value={formData.comment}
+            onChange={handleChange}
+          />
 
-        <button className='firstPage-button'>Надіслати</button>
-
+          <button className='firstPage-button' type="submit">Надіслати</button>
+        </form>
       </div>
 
       <div className='firstPage-box container'>
