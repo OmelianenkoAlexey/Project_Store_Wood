@@ -20,6 +20,16 @@ select:focus {
   outline: none;
 }
 
+input:active,
+input:focus {
+  outline: none;
+}
+
+textarea:active,
+textarea:focus {
+  outline: none;
+}
+
 .container {
   max-width: 1370px !important;
   margin-left: auto;

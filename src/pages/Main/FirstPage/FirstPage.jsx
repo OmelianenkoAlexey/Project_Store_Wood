@@ -30,8 +30,19 @@ export default function FirstPage() {
 
       <div onClick={touchButtonClose} className={`firstPage-window ${click ? 'opacity' : ''}`}></div>
 
-      <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity'  : ''}`}>
+      <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity' : ''}`}>
         <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
+
+        <input className='firstPage-input' placeholder='Ім`я' type="text" />
+
+        <input className='firstPage-input' placeholder='Номер' type="text" />
+
+        <input className='firstPage-input' placeholder='E-mail' type="text" />
+
+        <input className='firstPage-input-comment' placeholder='Коментар' />
+
+        <button className='firstPage-button'>Надіслати</button>
+
       </div>
 
       <div className='firstPage-box container'>
