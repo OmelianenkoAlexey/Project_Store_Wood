@@ -1,17 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FirstPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
 
 export default function FirstPage() {
 
+  const [click, setClick] = useState(false);
+
+  const touchButton = () => {
+
+    setClick(true);
+
+
+    document.body.classList.add('body-fixed');
+  };
+
+  const touchButtonClose = () => {
+
+    setClick(false);
+
+
+    document.body.classList.remove('body-fixed');
+  };
+
+
+
   return (
     <div className='firstPage'>
+
+      <div onClick={touchButtonClose} className={`firstPage-window ${click ? 'opacity' : ''}`}></div>
+
+      <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity'  : ''}`}>
+        <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
+      </div>
 
       <div className='firstPage-box container'>
         <h2 className='firstPage-box__title'>StoreWood</h2>
         <div className='firstPage-box__description'>якісні дитячі ліжка та меблі</div>
-        <div className='firstPage-box__btn'>Замовити дизайн</div>
+        <div onClick={touchButton} className='firstPage-box__btn'>Замовити дизайн</div>
         <div className='firstPage-box__social'>
           <a className='firstPage-box__social-item' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faInstagram} className='firstPage-box__social-icon' />
