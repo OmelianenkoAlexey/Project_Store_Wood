@@ -36,6 +36,10 @@ export default function FirstPage() {
     e.preventDefault();
     console.log(formData);
 
+    setClick(false);
+    document.body.classList.remove('body-fixed');
+
+
     const { name, number, email, comment } = formData;
 
     fetch('https://jsonreader.onrender.com/json/', {
@@ -52,8 +56,6 @@ export default function FirstPage() {
     })
       .then((response) => {
         if (response.ok) {
-          setClick(false);
-          document.body.classList.remove('body-fixed');
           // Очистка полей формы после отправки.
           setFormData({
             name: '',
@@ -66,7 +68,6 @@ export default function FirstPage() {
       .catch((error) => {
         console.log('Ошибка отправки данных:', error);
       });
-
   };
 
   return (
@@ -113,7 +114,6 @@ export default function FirstPage() {
             value={formData.comment}
             onChange={handleChange}
           />
-
           <button className='firstPage-button' type="submit">Надіслати</button>
         </form>
       </div>
