@@ -121,9 +121,9 @@
     font-size: 110px;
     font-style: normal;
     font-weight: 400;
-    line-height: 27px;
+    /* line-height: 27px;
     letter-spacing: 0.799px;
-    height: 65px;
+    height: 65px; */
 }
 
 .firstPage-box__description {

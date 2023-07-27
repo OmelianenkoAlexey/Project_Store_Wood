@@ -125,7 +125,6 @@
 
 .footer-text {
     border-top: 1px solid rgba(232, 232, 225, 0.20);
-    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,7 +137,6 @@
     font-size: 203px;
     font-style: normal;
     font-weight: 400;
-    line-height: 25.2px;
     letter-spacing: 0.7px;
 }
 
