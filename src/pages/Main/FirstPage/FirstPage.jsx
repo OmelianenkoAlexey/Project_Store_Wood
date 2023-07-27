@@ -159,13 +159,12 @@ export default function FirstPage() {
       </div>
 
       <Snackbar
-        sx={{ BackgroundColor: 'black' }}
         open={successOpen}
         autoHideDuration={4000}
         onClose={handleSuccessClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
-        <MuiAlert sx={{ сolor: 'black' }} elevation={6} variant="filled" onClose={handleSuccessClose} severity="success">
+        <MuiAlert elevation={6} variant="filled" onClose={handleSuccessClose} severity="success">
           Ми отримали повідомлення, скоро Вам зателефонуємо.
         </MuiAlert>
       </Snackbar>
