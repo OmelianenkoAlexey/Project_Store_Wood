@@ -75,7 +75,7 @@ export default function AboutUs() {
             </div>
             <div className={`aboutUs-box__item-text ${positionOne ? 'aboutUs-box__item-text-position' : ''}`}>
               <h3 className='aboutUs-box__item-text-title'>Натуральная обработка</h3>
-              <div className='aboutUs-box__item-text-description'>Из любви к дереву мы придаем большое значение изготовлению всей нашей мебели из высококачественного массива дерева.</div>
+              <div className='aboutUs-box__item-text-description'>Из любви к дереву мы придаем очень большое значение изготовлению всей нашей мебели из высококачественного массива натурального дерева.</div>
             </div>
           </div>
 
