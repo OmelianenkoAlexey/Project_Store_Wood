@@ -33,10 +33,9 @@ export default function Header() {
         </nav>
 
         <div className='header-language'>
-            <div className='header-language__active' href="">UA</div>
-            <a className='header-language__en' href="">EN</a>
-            {/* <a className='header-language__en' href="">DE</a> */}
-          </div>
+          <a className='header-language__active' href="/">UA</a>
+          <a className='header-language__en' href="/">EN</a>
+        </div>
 
         {/* <Basket /> */}
         <Burger />

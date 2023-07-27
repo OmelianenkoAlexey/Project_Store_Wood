@@ -90,7 +90,7 @@ export default function Catalog() {
 
         <div className='catalog-box__item'>
           <div className='catalog-box__item-text'>
-            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
+            <h3 className='catalog-box__item-text-title'>Односпальні ліжка</h3>
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
               Детальніше</a>
           </div>
@@ -104,7 +104,7 @@ export default function Catalog() {
 
         <div className='catalog-box__item'>
           <div className='catalog-box__item-text'>
-            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
+            <h3 className='catalog-box__item-text-title'>Двоярусні ліжка</h3>
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
               Детальніше</a>
           </div>
@@ -118,7 +118,7 @@ export default function Catalog() {
 
         <div className='catalog-box__item'>
           <div className='catalog-box__item-text'>
-            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
+            <h3 className='catalog-box__item-text-title'>Ліжка будиночком</h3>
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
               Детальніше</a>
           </div>
