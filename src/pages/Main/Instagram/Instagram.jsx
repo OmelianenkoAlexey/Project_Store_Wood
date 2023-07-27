@@ -7,6 +7,8 @@ import './Instagram.css';
 export default function Instagram() {
 
   const [positionOne, setPositionOne] = useState(false);
+  const [click, setClick] = useState(false);
+  const [image, setImage] = useState(false);
 
   useEffect(() => {
     if (positionOne) {
@@ -57,8 +59,8 @@ export default function Instagram() {
 
 
   const handleClickLeft = () => {
-    const newIndex = index === 0 ? mainData2.length - 1 : index - 1;
-    setIndex(newIndex);
+      const newIndex = index === 0 ? mainData2.length - 1 : index - 1;
+      setIndex(newIndex);
   };
 
   const handleClickRight = () => {
@@ -68,13 +70,30 @@ export default function Instagram() {
 
   const newNews = [...mainData2.slice(index, mainData2.length), ...mainData2.slice(0, index)];
 
+  const handleClickOpen = (item) => {
+    setClick(true);
+    setImage(item);
+    document.body.classList.add('body-fixed');
+  };
 
+  const touchButtonClose = () => {
+    setClick(false);
+    document.body.classList.remove('body-fixed');
+  };
 
 
   const Screen768 = useMediaQuery('(min-width:768px)');
 
   return (
     <div className='instagram'>
+
+      <div onClick={touchButtonClose} className={`firstPage-window ${click ? 'opacity' : ''}`}></div>
+
+      <div className={`instagram-window__open ${click ? 'instagram-window__open-true opacity' : ''}`}>
+        <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
+        <img onClick={touchButtonClose} className='instagram-window__open-image' src={image} alt="" />
+      </div>
+
       <div className='instagram-bg'>
         <img className='instagram-image' src="./img/catalogImage3.png" alt="Store Wood" />
       </div>
@@ -89,20 +108,25 @@ export default function Instagram() {
             sx={{
               cursor: 'pointer',
               color: '#19772E',
-              fontSize: '30px'
+              fontSize: '30px',
+              transition: 'transform 0.5s', // Добавляем плавный переход при изменении стилей
+              '&:hover': {
+                transform: 'scale(1.2)', // Увеличиваем размер на 20% при наведении
+              },
             }}
-            onClick={handleClickLeft} />
+            onClick={handleClickLeft}
+          />
 
           <div className='instagram-box'>
 
             {Screen768
               ? newNews.slice(0, 4).map((item, index) => (
-                <div key={index} className='instagram-box__item'>
+                <div onClick={() => handleClickOpen(item)} key={index} className='instagram-box__item'>
                   <img className='instagram-box__item-image' src={item} alt="" />
                 </div>
               ))
               : newNews.slice(0, 2).map((item, index) => (
-                <div key={index} className='instagram-box__item'>
+                <div onClick={() => handleClickOpen(item)} key={index} className='instagram-box__item'>
                   <img className='instagram-box__item-image' src={item} alt="" />
                 </div>
               ))}
@@ -113,7 +137,11 @@ export default function Instagram() {
             sx={{
               cursor: 'pointer',
               color: '#19772E',
-              fontSize: '30px'
+              fontSize: '30px',
+              transition: 'transform 0.5s', // Добавляем плавный переход при изменении стилей
+              '&:hover': {
+                transform: 'scale(1.2)', // Увеличиваем размер на 20% при наведении
+              },
             }}
             onClick={handleClickRight}
           />
