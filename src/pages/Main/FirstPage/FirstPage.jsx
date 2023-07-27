@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import MuiAlert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
+import { Snackbar } from '@mui/material';
 import './FirstPage.css';
 
 export default function FirstPage() {
 
   const [click, setClick] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
 
   const touchButton = () => {
     setClick(true);
@@ -33,6 +36,7 @@ export default function FirstPage() {
   };
 
   const handleSubmit = (e) => {
+    setSuccessOpen(true);
     e.preventDefault();
     console.log(formData);
 
@@ -68,6 +72,10 @@ export default function FirstPage() {
       .catch((error) => {
         console.log('Ошибка отправки данных:', error);
       });
+  };
+
+  const handleSuccessClose = () => {
+    setSuccessOpen(false);
   };
 
   return (
@@ -149,6 +157,19 @@ export default function FirstPage() {
           <img className='firstPage-background__image' src="./img/leaves.png" alt="Store Wood" />
         </div>
       </div>
+
+      <Snackbar
+        sx={{ BackgroundColor: 'black' }}
+        open={successOpen}
+        autoHideDuration={4000}
+        onClose={handleSuccessClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <MuiAlert sx={{ сolor: 'black' }} elevation={6} variant="filled" onClose={handleSuccessClose} severity="success">
+          Ми отримали повідомлення, скоро Вам зателефонуємо.
+        </MuiAlert>
+      </Snackbar>
+
     </div>
   );
 }
