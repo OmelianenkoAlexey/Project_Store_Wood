@@ -77,6 +77,9 @@ export default function FirstPage() {
 
       <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity' : ''}`}>
         <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
+        <img className='firstPage-window__open-logo' src="./img/logo-header.svg" alt="" />
+
+        <h2 className='firstPage-window__open-title'>Обговоримо проєкт? Ми зателефонуємо</h2>
 
         <form className='firstPage-form' onSubmit={handleSubmit}>
           <input
