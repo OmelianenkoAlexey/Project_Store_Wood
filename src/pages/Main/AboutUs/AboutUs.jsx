@@ -73,28 +73,40 @@ export default function AboutUs() {
             <div className='aboutUs-box__item-picture'>
               <img className='aboutUs-box__item-image' src="./img/aboutUs1.png" alt="Store Wood" />
             </div>
-            <div className={`aboutUs-box__item-text ${positionOne ? 'aboutUs-box__item-text-position' : ''}`}>Vivamus sed diam tortor. Aenean viverra bibendum purus a ultricies. </div>
+            <div className={`aboutUs-box__item-text ${positionOne ? 'aboutUs-box__item-text-position' : ''}`}>
+              <h3 className='aboutUs-box__item-text-title'>Натуральная обработка</h3>
+              <div className='aboutUs-box__item-text-description'>Из любви к дереву мы придаем большое значение изготовлению всей нашей мебели из высококачественного массива дерева.</div>
+            </div>
           </div>
 
           <div className='aboutUs-box__item'>
             <div className='aboutUs-box__item-picture'>
               <img className='aboutUs-box__item-image' src="./img/aboutUs2.png" alt="Store Wood" />
             </div>
-            <div className={`aboutUs-box__item-text ${positionTwo ? 'aboutUs-box__item-text-position' : ''}`}>Vivamus sed diam tortor. Aenean viverra bibendum purus a ultricies. </div>
+            <div className={`aboutUs-box__item-text ${positionTwo ? 'aboutUs-box__item-text-position' : ''}`}>
+            <h3 className='aboutUs-box__item-text-title'>Индивидуальный продукт</h3>
+              <div className='aboutUs-box__item-text-description'>Мы ценим индивидуальный подход и даем возможность подогнать кровати под индивидуальные потребности, для нас улыбка ребенка – это самое большое удовлетворение.</div>
+            </div>
           </div>
 
           <div className='aboutUs-box__item'>
             <div className='aboutUs-box__item-picture'>
               <img className='aboutUs-box__item-image' src="./img/aboutUs3.png" alt="Store Wood" />
             </div>
-            <div className={`aboutUs-box__item-text ${positionThree ? 'aboutUs-box__item-text-position' : ''}`}>Vivamus sed diam tortor. Aenean viverra bibendum purus a ultricies. </div>
+            <div className={`aboutUs-box__item-text ${positionThree ? 'aboutUs-box__item-text-position' : ''}`}>
+            <h3 className='aboutUs-box__item-text-title'>Качество</h3>
+              <div className='aboutUs-box__item-text-description'>Мы предлагаем кровати для детей и подростков, которые в основном производятся в соответствии с самыми высокими стандартами безопасности.</div>
+            </div>
           </div>
 
           <div className='aboutUs-box__item'>
             <div className='aboutUs-box__item-picture'>
               <img className='aboutUs-box__item-image' src="./img/aboutUs4.png" alt="Store Wood" />
             </div>
-            <div className={`aboutUs-box__item-text ${positionFour ? 'aboutUs-box__item-text-position' : ''}`}>Vivamus sed diam tortor. Aenean viverra bibendum purus a ultricies. </div>
+            <div className={`aboutUs-box__item-text ${positionFour ? 'aboutUs-box__item-text-position' : ''}`}>
+            <h3 className='aboutUs-box__item-text-title'>Сделано в ЕС</h3>
+              <div className='aboutUs-box__item-text-description'>Наша команда всегда заботится о каждой детали нашей продукции, соблюдая экологические стандарты, поэтому все наши кровати производятся в ЕС.</div>
+            </div>
           </div>
         </div>
       </div>
