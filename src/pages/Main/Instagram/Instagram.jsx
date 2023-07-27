@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from '@mui/material';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './Instagram.css';
 
 export default function Instagram() {
@@ -31,7 +34,7 @@ export default function Instagram() {
         setPositionOne(false);
         const items = document.querySelectorAll('.instagram-box__item-image');
         items.forEach((item, index) => {
-            item.classList.remove('instagram-box__item-image-opacity');
+          item.classList.remove('instagram-box__item-image-opacity');
         });
       }
     };
@@ -46,10 +49,29 @@ export default function Instagram() {
   }, []);
 
 
+  // новый код
 
-  
+  const mainData2 = ['./img/1.png', './img/2.png', './img/3.png', './img/4.png', './img/5.png', './img/6.png', './img/7.png'];
+
+  const [index, setIndex] = useState(0);
 
 
+  const handleClickLeft = () => {
+    const newIndex = index === 0 ? mainData2.length - 1 : index - 1;
+    setIndex(newIndex);
+  };
+
+  const handleClickRight = () => {
+    const newIndex = index === mainData2.length - 1 ? 0 : index + 1;
+    setIndex(newIndex);
+  };
+
+  const newNews = [...mainData2.slice(index, mainData2.length), ...mainData2.slice(0, index)];
+
+
+
+
+  const Screen768 = useMediaQuery('(min-width:768px)');
 
   return (
     <div className='instagram'>
@@ -58,33 +80,47 @@ export default function Instagram() {
       </div>
       <div className='instagram-container container'>
 
-        <h2 className='instagram__title'>Наш інстаграм</h2>
-        <a className='instagram__link' href='https://www.instagram.com/legenda_parfum/' target="_blank" rel="noreferrer">@storewood</a>
+        <h2 className='instagram__title'>Наші роботи</h2>
+        {/* <a className='instagram__link' href='https://www.instagram.com/legenda_parfum/' target="_blank" rel="noreferrer">@storewood</a> */}
 
-        <div className='instagram-box'>
-          <div className='instagram-box__item'>
-            <img className='instagram-box__item-image' src="./img/instagram1.png" alt="Store Wood" />
+        <div className='instagram-box-arrow'>
+
+          <ArrowBackIosIcon
+            sx={{
+              cursor: 'pointer',
+              color: '#19772E',
+              fontSize: '30px'
+            }}
+            onClick={handleClickLeft} />
+
+          <div className='instagram-box'>
+
+            {Screen768
+              ? newNews.slice(0, 4).map((item, index) => (
+                <div key={index} className='instagram-box__item'>
+                  <img className='instagram-box__item-image' src={item} alt="" />
+                </div>
+              ))
+              : newNews.slice(0, 2).map((item, index) => (
+                <div key={index} className='instagram-box__item'>
+                  <img className='instagram-box__item-image' src={item} alt="" />
+                </div>
+              ))}
+
           </div>
 
-          <div className='instagram-box__item'>
-            <img className='instagram-box__item-image' src="./img/instagram2.png" alt="Store Wood" />
-          </div>
+          <ArrowForwardIosIcon
+            sx={{
+              cursor: 'pointer',
+              color: '#19772E',
+              fontSize: '30px'
+            }}
+            onClick={handleClickRight}
+          />
 
-          <div className='instagram-box__item'>
-            <img className='instagram-box__item-image' src="./img/instagram3.png" alt="Store Wood" />
-          </div>
-
-          <div className='instagram-box__item'>
-            <img className='instagram-box__item-image' src="./img/instagram1.png" alt="Store Wood" />
-          </div>
         </div>
+
       </div>
-
-      {/* <div className='firstPage-background'>
-        <div className='firstPage-background__picture'>
-          <img className='firstPage-background__image' src="./img/leaves.png" alt="Store Wood" />
-        </div>
-      </div> */}
     </div>
   );
 }
