@@ -90,7 +90,7 @@ export default function Instagram() {
       <div onClick={touchButtonClose} className={`firstPage-window ${click ? 'opacity' : ''}`}></div>
 
       <div className={`instagram-window__open ${click ? 'instagram-window__open-true opacity' : ''}`}>
-        <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
+        {/* <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" /> */}
         <img onClick={touchButtonClose} className='instagram-window__open-image' src={image} alt="" />
       </div>
 
