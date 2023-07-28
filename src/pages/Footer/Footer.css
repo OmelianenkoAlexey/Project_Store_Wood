@@ -82,7 +82,7 @@
     font-weight: 400;
     color: white !important; */
     /* border-bottom: 1px solid #111212; */
-     color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.60);
     font-family: Didact Gothic;
     font-size: 15px;
     font-style: normal;
@@ -96,7 +96,7 @@
     color: white !important; */
     /* border-bottom: 1px solid #111212; */
     padding-left: 1.5px;
-     color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.60);
     font-family: Didact Gothic;
     font-size: 15px;
     font-style: normal;
@@ -127,7 +127,7 @@
 }
 
 .footer-right__item-icon {
-      color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.60);
     transition: 0.5s;
     scale: 1.5;
 }
@@ -136,7 +136,6 @@
     scale: 1.7;
     color: white;
 }
-
 
 .footer-text {
     border-top: 1px solid rgba(232, 232, 225, 0.20);
@@ -154,7 +153,6 @@
     font-weight: 400;
     letter-spacing: 0.7px;
 }
-
 
 .footer-secondary {
     width: 100%;
