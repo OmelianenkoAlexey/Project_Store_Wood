@@ -7,8 +7,7 @@
 .footer-primary {
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    justify-content: center;
-    justify-items: center;
+    justify-content: space-evenly;
     gap: 40px;
     width: 100%;
     padding-bottom: 50px;
@@ -31,7 +30,8 @@
 }
 
 .footer-catalog__title,
-.footer-info__title {
+.footer-info__title,
+.footer-right__title {
     color: #FFF;
     font-family: Didact Gothic;
     font-size: 15px;
@@ -54,6 +54,7 @@
 .footer-info__item:hover {
     /* color: #F07C00 !important; */
     /* border-bottom: 1px solid white; */
+    color: white;
 }
 
 .footer-right {
@@ -64,9 +65,9 @@
 }
 
 .footer-right__title {
-    font-size: 20px;
+    /* font-size: 20px;
     font-weight: 500;
-    color: white;
+    color: white; */
 }
 
 .footer-right__item {
@@ -77,24 +78,37 @@
 }
 
 .footer-right__item-address {
-    font-size: 15px;
+    /* font-size: 15px;
     font-weight: 400;
-    color: white !important;
+    color: white !important; */
     /* border-bottom: 1px solid #111212; */
+     color: rgba(255, 255, 255, 0.60);
+    font-family: Didact Gothic;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
 }
 
 .footer-right__item-telephone {
-    font-size: 15px;
+    /* font-size: 15px;
     font-weight: 400;
-    color: white !important;
+    color: white !important; */
     /* border-bottom: 1px solid #111212; */
     padding-left: 1.5px;
+     color: rgba(255, 255, 255, 0.60);
+    font-family: Didact Gothic;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
 }
 
 
 .footer-right__item-address:hover,
 .footer-right__item-telephone:hover {
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
+    color: white;
 }
 
 .footer-right__social {
@@ -113,13 +127,14 @@
 }
 
 .footer-right__item-icon {
-    color: white;
+      color: rgba(255, 255, 255, 0.60);
     transition: 0.5s;
     scale: 1.5;
 }
 
 .footer-right__item-icon:hover {
     scale: 1.7;
+    color: white;
 }
 
 

@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
         <div className='footer-right'>
-          <a className='footer-right__title' href="/contacts">Контакти</a>
+          <a className='footer-right__title' href="/contacts">КОНТАКТИ</a>
           <div className='footer-right__item'>
             <a className='footer-right__item-address' href="https://goo.gl/maps/RLhTv4Rwb4UdhpxBA" target="_blank" rel="noreferrer">м. Запоріжжя, бульвар Шевченка, 16</a>
             <a className='footer-right__item-telephone' href="tel:+380676120366">
