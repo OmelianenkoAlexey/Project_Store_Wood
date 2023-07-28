@@ -189,8 +189,6 @@
     color: #19772E;
 }
 
-
-
 .firstPage__pictureFirst {
     position: absolute;
     width: 1100px;
@@ -202,7 +200,6 @@
 .firstPage__pictureSecond {
     position: absolute;
     width: 800px;
-    /* top: 50px; */
     bottom: 100px;
     right: 0;
     z-index: -2;
@@ -225,9 +222,10 @@
 
 .firstPage-background__picture {
     position: absolute;
-    top: -215px;
+    top: -300px;
     left: 0;
     width: 300px;
+    /* z-index: 1; */
 }
 
 .firstPage-background__image {

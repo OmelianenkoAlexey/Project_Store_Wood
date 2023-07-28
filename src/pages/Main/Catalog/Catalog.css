@@ -6,9 +6,10 @@
 
 .catalog-box__item-bg1 {
     position: absolute;
-    top: -400px;
+    top: -50px;
     left: 0;
     z-index: -1;
+    width: 500px;
 }
 
 .catalog-box__item-bg2 {
@@ -16,13 +17,16 @@
     top: 1000px;
     right: 0;
     z-index: -1;
+    width: 600px;
 }
 
 .catalog-box__item-bg3 {
     position: absolute;
-    bottom: -600px;
+    bottom: 200px;
+    /* bottom: 0; */
     left: 0;
     z-index: -1;
+    width: 900px;
 }
 
 .catalog-box__item-bg-image {
