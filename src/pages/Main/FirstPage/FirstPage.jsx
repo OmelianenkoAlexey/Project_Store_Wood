@@ -153,8 +153,11 @@ export default function FirstPage() {
         <img className='firstPage__image' src="./img/firstPageImage2.png" alt="Store Wood" />
       </div>
       <div className='firstPage-background'>
-        <div className='firstPage-background__picture'>
-          <img className='firstPage-background__image' src="./img/leaves.png" alt="Store Wood" />
+        <div className='firstPage-background__picture1'>
+          <img className='firstPage-background__image' src="./img/leaves1.png" alt="Store Wood" />
+        </div>
+        <div className='firstPage-background__picture2'>
+          <img className='firstPage-background__image' src="./img/leaves2.png" alt="Store Wood" />
         </div>
       </div>
 
