@@ -46,7 +46,7 @@ export default function FirstPage() {
 
     const { name, number, email, comment } = formData;
 
-    fetch('https://jsonreader.onrender.com/json/', {
+    fetch('https://jsonreader.onrender.com/service/json/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
