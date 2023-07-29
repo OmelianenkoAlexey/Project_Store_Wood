@@ -20,12 +20,12 @@ export function InputCheckbox({
                 <FormControlLabel
                     control={
                         <Checkbox
-                            // sx={{
-                            //     color: '#19772E',
-                            //     '&.Mui-checked': {
-                            //         color: '#19772E',
-                            //     },
-                            // }}
+                            sx={{
+                                color: '#19772E',
+                                '&.Mui-checked': {
+                                    color: '#19772E',
+                                },
+                            }}
                             checked={value}
                             onChange={(e) => onChange(e.target.checked)}
                             {...props}

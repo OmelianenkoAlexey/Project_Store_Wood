@@ -20,14 +20,20 @@ export function InputText({
       rules={rules}
       render={(({ field: { onChange, value, ref }, fieldState: { error } }) => (
         <TextField
+          color="success"
           InputLabelProps={{
             style: {
-              color: '#F07C00', // цвет текста метки
+              color: '#5E6366',
+              fontSize: '14px',
+              fontFamily: 'Didact Gothic',
             },
           }}
           InputProps={{
             style: {
-              color: color, // Color of the input text
+              color: color, 
+              fontSize: '14px',
+              fontWeight: '400',
+              fontFamily: 'Didact Gothic',
             },
           }}
           type='text'

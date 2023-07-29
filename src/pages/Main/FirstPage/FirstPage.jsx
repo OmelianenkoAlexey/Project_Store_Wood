@@ -72,7 +72,7 @@ export default function FirstPage() {
             label='Ваше ім’я'
             type='text'
             rules={adminRules.login}
-            color='grey'
+            color='#5E6366'
           />
 
           <InputText
@@ -81,7 +81,7 @@ export default function FirstPage() {
             label='Email'
             type='text'
             rules={adminRules.login}
-            color='grey'
+            color='#5E6366'
             rows='1'
           />
 
@@ -91,7 +91,7 @@ export default function FirstPage() {
             label='Номер'
             type='number'
             rules={adminRules.login}
-            color='grey'
+            color='#5E6366'
             rows='1'
           />
 
@@ -101,8 +101,8 @@ export default function FirstPage() {
             label='Коментарі'
             type='number'
             rules={adminRules.login}
-            color='grey'
-            rows='4'
+            color='#5E6366'
+            rows='2'
           />
 
           {/* <FormControlLabel
@@ -137,14 +137,25 @@ export default function FirstPage() {
             rules={{ required: true }}
           />
 
-          <Button
-            sx={{ color: '#F07C00' }}
+          {/* <button className='firstPage-button' type="submit">Надіслати</button> */}
+        </form>
+        <Button
+          sx={{
+            color: 'white',
+            backgroundColor: '#19772E',
+            width: '100%',
+            fontSize: '14px',
+            fontFamily: 'Didact Gothic',
+            fontWeight: '400',
+            '&:hover': {
+              backgroundColor: '#19772E', // Замените на зеленый цвет, который вам нравится
+            },
+          }}
+          variant="contained"
             size='large'
             onClick={handleSubmit(onSubmit)}
           >Надіслати
           </Button>
-          {/* <button className='firstPage-button' type="submit">Надіслати</button> */}
-        </form>
       </div>
 
       <div className='firstPage-box container'>

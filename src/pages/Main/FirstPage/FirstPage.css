@@ -11,9 +11,10 @@
 .firstPage-form {
     display: flex;
     flex-direction: column;
+        height: 480px;
 }
 
-.firstPage-input {
+/* .firstPage-input {
     border-radius: 8px;
     border: 1px solid #CFD3D4;
     font-size: 18px;
@@ -26,9 +27,9 @@
 
 .md {
     height: 100px;
-}
+} */
 
-.firstPage-button {
+/* .firstPage-button {
     border: none;
     padding: 15px;
     cursor: pointer;
@@ -51,7 +52,7 @@
     font-family: Didact Gothic;
     font-size: 16px;
     font-weight: 400;
-}
+} */
 
 .firstPage-window {
     position: fixed;
@@ -81,8 +82,8 @@
     gap: 40px; */
     padding-left: 43px;
     padding-right: 43px;
-    padding-top: 37px;
-    padding-bottom: 37px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     opacity: 0;
     transition: .5s;
     pointer-events: none;
@@ -91,7 +92,7 @@
 
 .firstPage-window__open-true {
     width: 500px;
-    height: 650px;
+    height: 660px;
 }
 
 .firstPage-window__open-close {
@@ -112,7 +113,7 @@
     font-family: Poiret One;
     font-size: 32px;
     font-weight: 400;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .firstPage-window__open-description {
@@ -120,7 +121,7 @@
     font-family: Poiret One;
     font-size: 24px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .firstPage-box {
