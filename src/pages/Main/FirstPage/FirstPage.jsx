@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import MuiAlert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
-import { Checkbox, FormControlLabel, Snackbar, Typography } from '@mui/material';
+import { Button, Snackbar, Typography } from '@mui/material';
+import { InputText } from '../../../components/Forms/InputText';
+import { adminRules } from '../../../constans/rules';
 import './FirstPage.css';
+import { useForm } from 'react-hook-form';
+import { InputCheckbox } from '../../../components/Forms/InputCheckbox';
 
 export default function FirstPage() {
+  const { control, handleSubmit, getValues } = useForm();
 
   const [click, setClick] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
@@ -20,31 +25,12 @@ export default function FirstPage() {
     document.body.classList.remove('body-fixed');
   };
 
-  const [formData, setFormData] = useState({
-    name: '',
-    number: '',
-    email: '',
-    comment: ''
-  });
+  const onSubmit = () => {
+    const { name, number, email, comment } = getValues();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
     setSuccessOpen(true);
-    e.preventDefault();
-    console.log(formData);
-
     setClick(false);
     document.body.classList.remove('body-fixed');
-
-
-    const { name, number, email, comment } = formData;
 
     fetch('https://jsonreader.onrender.com/service/json/', {
       method: 'POST',
@@ -52,23 +38,12 @@ export default function FirstPage() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        "Ім`я" : name,
-        "Номер" : number,
-        "E-mail" : email,
-        "Коментар" : comment,
+        "Ім`я": name,
+        "Номер": number,
+        "E-mail": email,
+        "Коментар": comment,
       }),
     })
-      .then((response) => {
-        if (response.ok) {
-          // Очистка полей формы после отправки.
-          setFormData({
-            name: '',
-            number: '',
-            email: '',
-            comment: ''
-          });
-        }
-      })
       .catch((error) => {
         console.log('Ошибка отправки данных:', error);
       });
@@ -90,43 +65,47 @@ export default function FirstPage() {
         <h2 className='firstPage-window__open-description'>Ми вам зателефонуємо</h2>
 
         <form className='firstPage-form' onSubmit={handleSubmit}>
-          <input
-            className='firstPage-input'
-            placeholder='Ваше ім’я'
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+
+          <InputText
+            control={control}
+            name='name'
+            label='Ваше ім’я'
+            type='text'
+            rules={adminRules.login}
+            color='grey'
           />
 
-          <input
-            className='firstPage-input'
-            placeholder='Email'
-            type="text"
-            name="number"
-            value={formData.number}
-            onChange={handleChange}
+          <InputText
+            control={control}
+            name='email'
+            label='Email'
+            type='text'
+            rules={adminRules.login}
+            color='grey'
+            rows='1'
           />
 
-          <input
-            className='firstPage-input'
-            placeholder='Номер'
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+          <InputText
+            control={control}
+            name='number'
+            label='Номер'
+            type='number'
+            rules={adminRules.login}
+            color='grey'
+            rows='1'
           />
 
-          <textarea
-            className='firstPage-input md'
-            placeholder='Коментарі'
-            type="text"
-            name="comment"
-            value={formData.comment}
-            onChange={handleChange}
+          <InputText
+            control={control}
+            name='comment'
+            label='Коментарі'
+            type='number'
+            rules={adminRules.login}
+            color='grey'
+            rows='4'
           />
 
-          <FormControlLabel
+          {/* <FormControlLabel
             value="end"
             control={
               <Checkbox
@@ -144,9 +123,27 @@ export default function FirstPage() {
               </Typography>
             }
             labelPlacement="end"
+          /> */}
+          
+          <InputCheckbox
+            control={control}
+            name='agreement' // Укажите уникальное имя для чекбокса
+            label={
+              <Typography sx={{ color: '#2B2F32', fontFamily: 'Didact Gothic', fontSize: '14px', fontWeight: '400' }}>
+                Я погоджуюсь на обробку моїх персональних даних
+              </Typography>
+            }
+            defaultValue={false}
+            rules={{ required: true }}
           />
 
-          <button className='firstPage-button' type="submit">Надіслати</button>
+          <Button
+            sx={{ color: '#F07C00' }}
+            size='large'
+            onClick={handleSubmit(onSubmit)}
+          >Надіслати
+          </Button>
+          {/* <button className='firstPage-button' type="submit">Надіслати</button> */}
         </form>
       </div>
 

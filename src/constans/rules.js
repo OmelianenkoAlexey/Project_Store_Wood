@@ -12,6 +12,9 @@ export const adminRules = {
   password: {
     required: { value: true, message: rulesText.required('пароль') },
   },
+  agreement: {
+    required: { value: true, message: rulesText.required('погодження на обробку персональних даних') },
+  },
 };
 
 export const addFormRules = {

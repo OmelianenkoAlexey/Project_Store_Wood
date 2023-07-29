@@ -9,6 +9,7 @@ export function InputText({
   label,
   rules,
   color,
+  rows,
   ...props
 }) {
   return (
@@ -32,6 +33,8 @@ export function InputText({
           type='text'
           label={label}
           value={value}
+          multiline
+          rows={rows}
           inputRef={ref}
           onChange={onChange}
           margin='normal'
