@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MuiAlert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
-import { Snackbar } from '@mui/material';
+import { Checkbox, FormControlLabel, Snackbar, Typography } from '@mui/material';
 import './FirstPage.css';
 
 export default function FirstPage() {
@@ -85,14 +85,14 @@ export default function FirstPage() {
 
       <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity' : ''}`}>
         <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
-        <img className='firstPage-window__open-logo' src="./img/logo-header.svg" alt="" />
 
-        <h2 className='firstPage-window__open-title'>Обговоримо проєкт? Ми зателефонуємо</h2>
+        <h2 className='firstPage-window__open-title'>Обміркуємо проєкт?</h2>
+        <h2 className='firstPage-window__open-description'>Ми вам зателефонуємо</h2>
 
         <form className='firstPage-form' onSubmit={handleSubmit}>
           <input
             className='firstPage-input'
-            placeholder='Ім`я'
+            placeholder='Ваше ім’я'
             type="text"
             name="name"
             value={formData.name}
@@ -101,7 +101,7 @@ export default function FirstPage() {
 
           <input
             className='firstPage-input'
-            placeholder='Номер'
+            placeholder='Email'
             type="text"
             name="number"
             value={formData.number}
@@ -110,21 +110,42 @@ export default function FirstPage() {
 
           <input
             className='firstPage-input'
-            placeholder='E-mail'
+            placeholder='Номер'
             type="text"
             name="email"
             value={formData.email}
             onChange={handleChange}
           />
 
-          <input
-            className='firstPage-input-comment'
-            placeholder='Коментар'
+          <textarea
+            className='firstPage-input md'
+            placeholder='Коментарі'
             type="text"
             name="comment"
             value={formData.comment}
             onChange={handleChange}
           />
+
+          <FormControlLabel
+            value="end"
+            control={
+              <Checkbox
+                sx={{
+                  color: '#19772E',
+                  '&.Mui-checked': {
+                    color: '#19772E',
+                  },
+                }}
+              />
+            }
+            label={
+              <Typography sx={{ color: '#2B2F32', fontFamily: 'Didact Gothic', fontSize: '14px', fontWeight: '400' }}>
+                Я погоджуюсь на обробку моїх персональних даних
+              </Typography>
+            }
+            labelPlacement="end"
+          />
+
           <button className='firstPage-button' type="submit">Надіслати</button>
         </form>
       </div>
