@@ -113,7 +113,7 @@ export default function FirstPage() {
                 Я погоджуюсь на обробку моїх персональних даних
               </Typography>
             }
-            defaultValue={false}
+            defaultValue={true}
             rules={{ required: true }}
           />
 
