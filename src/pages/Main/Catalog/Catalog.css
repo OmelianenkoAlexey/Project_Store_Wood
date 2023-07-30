@@ -111,6 +111,8 @@
 .catalog-box__item-picture {
     width: 50%;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .catalog-box__item-picture-md {
@@ -119,8 +121,8 @@
 
 .catalog-box__item-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* height: 100%; */
+    /* object-fit: cover; */
     position: absolute;
     left: 0px;
     transition: 0.5s ease-in-out;
