@@ -55,7 +55,7 @@ export default function Catalog() {
 
 
   return (
-    <div className='catalog'>
+    <div id='catalog' className='catalog'>
       <div className='catalog-box__item-bg1'>
         <img className='catalog-box__item-bg-image' src="./img/catalogImage2.png" alt="Store Wood" />
       </div>

@@ -21,7 +21,8 @@
 
 .header-category {
     display: flex;
-    gap: 0px 45px;
+    /* gap: 0px 45px; */
+    gap: 0px 75px;
     justify-content: center;
     align-items: center;
     width: 100%;

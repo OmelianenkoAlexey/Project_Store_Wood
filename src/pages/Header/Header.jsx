@@ -2,8 +2,9 @@ import React from 'react';
 import './Header.css';
 // import Basket from '../../components/Basket/Basket';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 import Burger from './Burger/Burger';
+import { Link } from 'react-scroll';
 
 export default function Header() {
   const location = useLocation();
@@ -19,16 +20,16 @@ export default function Header() {
         <nav className='header-category'>
           <a className={`header-category__item ${location.pathname === '/' ? 'action' : ''}`} href="/">Головна</a>
 
-          <a className={`header-category__item ${location.pathname === '/rospiv' ? 'action' : ''}`} href="/">Каталог</a>
+          <Link to="catalog" className='header-category__item' smooth={true} duration={500} offset={50}>Каталог</Link>
 
-          <a className={`header-category__item ${location.pathname === '/miniatures' ? 'action' : ''}`} href="/">Про нас</a>
+          <Link to="aboutUs" className='header-category__item' smooth={true} duration={1000} offset={50}>Про нас</Link>
 
-          <a className={`header-category__item ${location.pathname === '/makeup' ? 'action' : ''}`} href="/">Портфоліо</a>
+          <Link to="instagram" className='header-category__item' smooth={true} duration={1000} offset={50}>Портфоліо</Link>
 
-          <a className={`header-category__item ${location.pathname === '/news2023' ? 'action' : ''}`} href="/">Відгуки</a>
+          {/* <a className={`header-category__item ${location.pathname === '/news2023' ? 'action' : ''}`} href="/">Відгуки</a> */}
 
-          <a className={`header-category__item ${location.pathname === '/about-us' ? 'action' : ''}`} href="/">Контакти</a>
-
+          {/* <a className={`header-category__item ${location.pathname === '/about-us' ? 'action' : ''}`} href="/">Контакти</a> */}
+          <Link to="contacts" className='header-category__item' smooth={true} duration={1000} offset={50}>Контакти</Link>
 
         </nav>
 

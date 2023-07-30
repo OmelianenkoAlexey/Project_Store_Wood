@@ -28,10 +28,10 @@ export default function Footer() {
           <a className='footer-info__item' href="/">Головна</a>
           <a className='footer-info__item' href="/about-us">Про нас</a>
           <a className='footer-info__item' href="/about-us">Портфоліо</a>
-          <a className='footer-info__item' href="/about-us">Відгуки</a>
+          {/* <a className='footer-info__item' href="/about-us">Відгуки</a> */}
         </div>
 
-        <div className='footer-right'>
+        <div id='contacts' className='footer-right'>
           <a className='footer-right__title' href="/contacts">КОНТАКТИ</a>
           <div className='footer-right__item'>
             <a className='footer-right__item-address' href="https://goo.gl/maps/RLhTv4Rwb4UdhpxBA" target="_blank" rel="noreferrer">м. Запоріжжя, бульвар Шевченка, 16</a>
@@ -39,34 +39,12 @@ export default function Footer() {
               <FontAwesomeIcon icon={faPhone} className='footer-right__item-image' />
               067 612 03 66</a>
 
-            {/* <a className='footer-right__item-telephone' href="tel:+380676120366">
-              <FontAwesomeIcon icon={faPhone} shake className='footer-right__item-image' />
-              067 612 03 66</a> */}
-
-            {/* <a className='footer-right__item-telephone' href="tel:+380676120366">
-              <FontAwesomeIcon icon={faSquareInstagram} className='footer-right__item-image' />
-              <FontAwesomeIcon icon={faFacebookF} className='footer-right__item-image' />
-              <FontAwesomeIcon icon={faFacebook} className='footer-right__item-image' />
-              <FontAwesomeIcon icon={faYoutube} className='footer-right__item-image' />
-              <FontAwesomeIcon icon={faCode} className='footer-right__item-image' />
-              <FontAwesomeIcon icon={faHighlighter} className='footer-right__item-image' />
-              <FontAwesomeIcon icon={faMobilePhone} className='footer-right__item-image' />
-              <FontAwesomeIcon icon={faKorvue} className='footer-right__item-image' />
-            </a> */}
           </div>
 
           <div className='footer-right__social'>
             <a className='footer-right__social-link' href='https://www.instagram.com/legenda_parfum/' target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faInstagram} className='footer-right__item-icon' />
             </a>
-
-            {/* <a className='footer-right__social-link' href='https://www.instagram.com/work.vik' target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faSquareFacebook} className='footer-right__item-icon' />
-            </a> */}
-
-            {/* <a className='footer-right__social-link' href='https://www.instagram.com/work.vik' target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faViber} className='footer-right__item-icon' />
-            </a> */}
 
             <a className='footer-right__social-link' href='https://t.me/legenda_parfum' target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faTelegram} className='footer-right__item-icon' />

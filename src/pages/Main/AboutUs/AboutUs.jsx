@@ -56,7 +56,7 @@ export default function AboutUs() {
 
 
   return (
-    <div className='aboutUs'>
+    <div id='aboutUs' className='aboutUs'>
 
       <div className='aboutUs-title container'>
         <h2 className='aboutUs__titleSecondary'>Про нас</h2>

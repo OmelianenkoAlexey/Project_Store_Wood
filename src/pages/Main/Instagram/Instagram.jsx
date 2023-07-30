@@ -85,7 +85,7 @@ export default function Instagram() {
   const Screen768 = useMediaQuery('(min-width:768px)');
 
   return (
-    <div className='instagram'>
+    <div id='instagram' className='instagram'>
 
       <div onClick={touchButtonClose} className={`firstPage-window ${click ? 'opacity' : ''}`}></div>
 
