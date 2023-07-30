@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form';
 import { InputCheckbox } from '../../../components/Forms/InputCheckbox';
 
 export default function FirstPage() {
-  const { control, handleSubmit, getValues } = useForm();
+  const { control, handleSubmit, getValues, reset } = useForm();
 
   const [click, setClick] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function FirstPage() {
 
   const onSubmit = () => {
     const { name, number, email, comment } = getValues();
-
+ 
     setSuccessOpen(true);
     setClick(false);
     document.body.classList.remove('body-fixed');
@@ -44,6 +44,9 @@ export default function FirstPage() {
         "Коментар": comment,
       }),
     })
+      .then(() => {
+        reset(); // Reset the form after successful submission
+      })
       .catch((error) => {
         console.log('Ошибка отправки данных:', error);
       });
