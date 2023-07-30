@@ -7,7 +7,7 @@ import { faInstagram, faTelegram, faViber, faSquareFacebook } from '@fortawesome
 // import { faCode, faHighlighter, faMobilePhone } from '@fortawesome/free-solid-svg-icons';
 // import { faKorvue, faYoutube, faFacebook, faFacebookF, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 import { useLocation } from 'react-router-dom';
-// import { Link } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 export default function Footer() {
   const location = useLocation();
@@ -26,13 +26,16 @@ export default function Footer() {
         <div className='footer-info'>
           <div className='footer-info__title'>ІНФОРМАЦІЯ</div>
           <a className='footer-info__item' href="/">Головна</a>
-          <a className='footer-info__item' href="/about-us">Про нас</a>
-          <a className='footer-info__item' href="/about-us">Портфоліо</a>
+          {/* <a className='footer-info__item' href="/about-us">Про нас</a> */}
+          <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000} offset={50}>Про нас</Link>
+          {/* <a className='footer-info__item' href="/about-us">Портфоліо</a> */}
+          <Link to="instagram" className='footer-info__item' smooth={true} duration={1000} offset={50}>Портфоліо</Link>
           {/* <a className='footer-info__item' href="/about-us">Відгуки</a> */}
         </div>
 
         <div id='contacts' className='footer-right'>
-          <a className='footer-right__title' href="/contacts">КОНТАКТИ</a>
+          {/* <a className='footer-right__title' href="/contacts">КОНТАКТИ</a> */}
+          <div className='footer-right__title'>КОНТАКТИ</div>
           <div className='footer-right__item'>
             <a className='footer-right__item-address' href="https://goo.gl/maps/RLhTv4Rwb4UdhpxBA" target="_blank" rel="noreferrer">м. Запоріжжя, бульвар Шевченка, 16</a>
             <a className='footer-right__item-telephone' href="tel:+380676120366">
