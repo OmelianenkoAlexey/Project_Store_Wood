@@ -167,17 +167,22 @@ height: 430px;
     font-size: 24px;
     font-weight: 400;
     cursor: pointer;
+    transition: 1s;
 }
+.firstPage-box__btn:hover {
+    color: white;
+    background-color: #19772E;
+}
+
+
 
 .firstPage-box__social {
     display: flex;
-    /* flex-direction: column; */
     gap: 20px;
     margin-left: 20px;
 }
 
 .firstPage-box__social-item {
-    /* border: 2px solid #19772E; */
     border-radius: 50px;
     width: 45px;
     height: 45px;
@@ -185,11 +190,17 @@ height: 430px;
 }
 
 .firstPage-box__social-icon {
-
     width: 100%;
     height: 100%;
     color: #19772E;
+    transition: 0.5s;
 }
+
+.firstPage-box__social-icon:hover {
+    scale: 1.2;
+}
+
+
 
 .firstPage__pictureFirst {
     position: absolute;
@@ -255,6 +266,10 @@ height: 430px;
     height: 100%;
     object-fit: cover;
 }
+
+/* .firstPage-background__image {
+
+} */
 
 
 
