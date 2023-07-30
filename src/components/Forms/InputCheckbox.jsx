@@ -5,7 +5,7 @@ import { Controller } from 'react-hook-form';
 export function InputCheckbox({
     control,
     name,
-    defaultValue = false,
+    defaultValue = true,
     label,
     rules,
     ...props
@@ -18,6 +18,9 @@ export function InputCheckbox({
             rules={rules}
             render={({ field: { onChange, value } }) => (
                 <FormControlLabel
+                    sx={{
+                      marginBottom: '10px'
+                    }}
                     control={
                         <Checkbox
                             sx={{

@@ -19,7 +19,7 @@ export const adminRules = {
 
 export const addFormRules = {
   name: {
-    required: { value: true, message: rulesText.required('ПІБ') },
+    required: { value: true, message: rulesText.required('Ім’я') },
   },
   mail: {
     required: { value: true, message: rulesText.required('E-mail') },
@@ -27,8 +27,8 @@ export const addFormRules = {
   number: {
     required: { value: true, message: addFormRulesImage.required('Номер телефону') },
   },
-  city: {
-    required: { value: true, message: addFormRulesImage.required('Місто') },
+  coment: {
+    required: { value: true, message: addFormRulesImage.required('Ваш коментар') },
   },
   department: {
     required: { value: true, message: addFormRulesImage.required('Відділення') },

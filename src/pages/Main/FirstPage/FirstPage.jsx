@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
 import { Button, Snackbar, Typography } from '@mui/material';
 import { InputText } from '../../../components/Forms/InputText';
-import { adminRules } from '../../../constans/rules';
+import { addFormRules } from '../../../constans/rules';
 import './FirstPage.css';
 import { useForm } from 'react-hook-form';
 import { InputCheckbox } from '../../../components/Forms/InputCheckbox';
@@ -71,7 +71,7 @@ export default function FirstPage() {
             name='name'
             label='Ваше ім’я'
             type='text'
-            rules={adminRules.login}
+            rules={addFormRules.name}
             color='#5E6366'
           />
 
@@ -80,7 +80,7 @@ export default function FirstPage() {
             name='email'
             label='Email'
             type='text'
-            rules={adminRules.login}
+            rules={addFormRules.mail}
             color='#5E6366'
             rows='1'
           />
@@ -90,7 +90,7 @@ export default function FirstPage() {
             name='number'
             label='Номер'
             type='number'
-            rules={adminRules.login}
+            rules={addFormRules.number}
             color='#5E6366'
             rows='1'
           />
@@ -100,31 +100,11 @@ export default function FirstPage() {
             name='comment'
             label='Коментарі'
             type='number'
-            rules={adminRules.login}
+            rules={addFormRules.coment}
             color='#5E6366'
             rows='2'
           />
-
-          {/* <FormControlLabel
-            value="end"
-            control={
-              <Checkbox
-                sx={{
-                  color: '#19772E',
-                  '&.Mui-checked': {
-                    color: '#19772E',
-                  },
-                }}
-              />
-            }
-            label={
-              <Typography sx={{ color: '#2B2F32', fontFamily: 'Didact Gothic', fontSize: '14px', fontWeight: '400' }}>
-                Я погоджуюсь на обробку моїх персональних даних
-              </Typography>
-            }
-            labelPlacement="end"
-          /> */}
-          
+            </form>
           <InputCheckbox
             control={control}
             name='agreement' // Укажите уникальное имя для чекбокса
@@ -137,8 +117,7 @@ export default function FirstPage() {
             rules={{ required: true }}
           />
 
-          {/* <button className='firstPage-button' type="submit">Надіслати</button> */}
-        </form>
+      
         <Button
           sx={{
             color: 'white',
