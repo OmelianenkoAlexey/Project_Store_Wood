@@ -10,16 +10,32 @@ export default function Instagram() {
   const [positionOne, setPositionOne] = useState(false);
   const [click, setClick] = useState(false);
   const [image, setImage] = useState(false);
-  const [data, setData] = useState([]);
-  const [img, setImg] = useState([]);
+  const [load, setLoad] = useState([]);
 
 
   const loadImage = (src) => new Promise((resolve, reject) => {
     const image = new Image();
-    image.onload = () => resolve(image); // Вместо src возвращаем сам объект изображения
+    image.onload = () => resolve(image);
     image.onerror = (error) => reject(error);
     image.src = src;
   });
+
+  const loadImages = async (array) => {
+    try {
+      const loadedImages = await Promise.all(array.map((item) => loadImage(item)));
+      setLoad(loadedImages);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (mainData) {
+      loadImages(mainData[0].carousel);
+    }
+  }, [mainData]);
+
+  
 
   useEffect(() => {
     if (positionOne) {
@@ -32,33 +48,6 @@ export default function Instagram() {
       });
     }
   }, [positionOne]);
-
-  useEffect(() => {
-
-    if (mainData) {
-      setData(mainData[0].carousel);
-    }
-  }, [mainData]);
-
-
-  useEffect(() => {
-    const loadImages = async () => {
-      try {
-        const loadedImages = await Promise.all(data.map((item) => loadImage(item)));
-        // Здесь loadedImages будет массивом объектов изображений, которые успешно загрузились.
-        // Вы можете выполнить дополнительные действия с загруженными изображениями здесь.
-        console.log(loadedImages);
-        setImg(loadedImages);
-      } catch (error) {
-        // Обработка ошибок при загрузке изображений
-        console.error(error);
-      }
-    };
-
-    loadImages();
-  }, [data]);
-
-
 
 
   useEffect(() => {
@@ -92,16 +81,16 @@ export default function Instagram() {
   const [index, setIndex] = useState(0);
 
   const handleClickLeft = () => {
-    const newIndex = index === 0 ? img.length - 1 : index - 1;
+    const newIndex = index === 0 ? load.length - 1 : index - 1;
     setIndex(newIndex);
   };
 
   const handleClickRight = () => {
-    const newIndex = index === img.length - 1 ? 0 : index + 1;
+    const newIndex = index === load.length - 1 ? 0 : index + 1;
     setIndex(newIndex);
   };
 
-  const newNews = [...img.slice(index, img.length), ...img.slice(0, index)];
+  const newNews = [...load.slice(index, load.length), ...load.slice(0, index)];
   console.log(newNews);
 
   const handleClickOpen = (item) => {
