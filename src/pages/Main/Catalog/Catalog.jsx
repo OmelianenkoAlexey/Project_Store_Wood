@@ -74,7 +74,7 @@ export default function Catalog() {
       </div>
 
       <div className='catalog-box container'>
-        <div className='catalog-box__item'>
+        <a className='catalog-box__item' href="/single-beds">
           <div className='catalog-box__item-text'>
             <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
@@ -86,9 +86,9 @@ export default function Catalog() {
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
           </div> */}
-        </div>
+        </a>
 
-        <div className='catalog-box__item'>
+        <a className='catalog-box__item' href="/single-beds">
           <div className='catalog-box__item-text'>
             <h3 className='catalog-box__item-text-title'>Односпальні ліжка</h3>
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
@@ -100,9 +100,9 @@ export default function Catalog() {
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
           </div> */}
-        </div>
+        </a>
 
-        <div className='catalog-box__item'>
+        <a className='catalog-box__item' href="/single-beds">
           <div className='catalog-box__item-text'>
             <h3 className='catalog-box__item-text-title'>Двоярусні ліжка</h3>
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
@@ -114,9 +114,9 @@ export default function Catalog() {
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
           </div> */}
-        </div>
+        </a>
 
-        <div className='catalog-box__item'>
+        <a className='catalog-box__item' href="/single-beds">
           <div className='catalog-box__item-text'>
             <h3 className='catalog-box__item-text-title'>Ліжка будиночком</h3>
             <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
@@ -128,8 +128,7 @@ export default function Catalog() {
           {/* <div className='catalog-box__item-bg'>
             <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
           </div> */}
-        </div>
-
+        </a>
       </div>
 
       <div className='firstPage-background'>

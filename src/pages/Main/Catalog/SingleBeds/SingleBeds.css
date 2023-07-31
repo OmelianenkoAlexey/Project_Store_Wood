@@ -1,0 +1,36 @@
+.singleBeds {}
+
+.singleBeds-container {}
+
+.singleBeds-box {
+    display: flex;
+    gap: 50px; 
+}
+
+.singleBeds-box__picture {}
+
+.singleBeds-box__image {}
+
+.singleBeds-box__text {}
+
+.singleBeds-box__text-title {}
+
+.singleBeds-box__text-description {}
+
+.SingleBeds {}
+
+.SingleBeds {}
+
+.SingleBeds {}
+
+
+
+
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}
