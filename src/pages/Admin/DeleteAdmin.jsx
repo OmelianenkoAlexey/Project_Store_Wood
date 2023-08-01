@@ -19,9 +19,9 @@ const DeleteAdmin = () => {
             bottom: '80px',
             backgroundColor: 'black',
             fontSize: '20px',
-            color: '#F07C00',
+            color: 'white',
             '&:hover': {
-              backgroundColor: '#2c2a28', // Изменение цвета при наведении на кнопку
+              backgroundColor: 'black', // Изменение цвета при наведении на кнопку
             },
           }}
         >До кабінету
@@ -35,9 +35,9 @@ const DeleteAdmin = () => {
           bottom: '20px',
           backgroundColor: 'black',
           fontSize: '20px',
-          color: '#F07C00',
+          color: 'white',
           '&:hover': {
-            backgroundColor: '#2c2a28', // Изменение цвета при наведении на кнопку
+            backgroundColor: 'black', // Изменение цвета при наведении на кнопку
           },
         }}
         onClick={handleDelete}

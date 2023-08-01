@@ -64,9 +64,9 @@ export default function Setting() {
 
   useEffect(() => {
     if (mainData) {
-      setArrayCarousel(mainData[0].carousel);
-      setArrayNews(mainData[0].news);
-      setArrayProduct(mainData[0].product);
+      setArrayCarousel(mainData[0].gallery);
+      // setArrayNews(mainData[0].news);
+      // setArrayProduct(mainData[0].product);
     }
   }, [mainData]);
 
@@ -125,7 +125,7 @@ export default function Setting() {
 
           return firestore
             .collection('data')
-            .doc('RvwOmHHKyWpAChE4gdTQ')
+            .doc('j7lXb7WxzNPiINXzrg1H')
             .update(update)
             .then(() => {
               setProgress('Файлы добавлены');
@@ -144,7 +144,7 @@ export default function Setting() {
   };
 
   const handleUploadClick = () => {
-    handleUpload('carousel', arrayCarousel);
+    handleUpload('gallery', arrayCarousel);
     setProgressCarousel(true);
   };
 
@@ -193,7 +193,7 @@ export default function Setting() {
     // Удаляем товар из базы данных
     firestore
       .collection('data')
-      .doc('RvwOmHHKyWpAChE4gdTQ')
+      .doc('j7lXb7WxzNPiINXzrg1H')
       .update({
         [folderPath]: updatedArray,
       })
@@ -217,24 +217,24 @@ export default function Setting() {
     setShowPopular(event.target.checked);
   };
 
-  const filteredProducts = arrayProduct.filter((item) => {
-    if (selectedCategory === 'Всі товари' || item.category === selectedCategory) {
-      return true;
-    }
-    return false;
-  }).filter((item) => {
-    const lowerCaseSearchQuery = searchQuery.toLowerCase();
-    const lowerCaseTitle = item.title.toLowerCase();
-    const lowerCaseArticle = item.article.toLowerCase();
+  // const filteredProducts = arrayProduct.filter((item) => {
+  //   if (selectedCategory === 'Всі товари' || item.category === selectedCategory) {
+  //     return true;
+  //   }
+  //   return false;
+  // }).filter((item) => {
+  //   const lowerCaseSearchQuery = searchQuery.toLowerCase();
+  //   const lowerCaseTitle = item.title.toLowerCase();
+  //   const lowerCaseArticle = item.article.toLowerCase();
 
-    return (
-      lowerCaseTitle.includes(lowerCaseSearchQuery) || lowerCaseArticle.includes(lowerCaseSearchQuery)
-    );
-  });
+  //   return (
+  //     lowerCaseTitle.includes(lowerCaseSearchQuery) || lowerCaseArticle.includes(lowerCaseSearchQuery)
+  //   );
+  // });
 
-  const displayedProducts = showPopular
-    ? filteredProducts.filter((item) => item.popular === true && item.category === selectedCategory)
-    : filteredProducts;
+  // const displayedProducts = showPopular
+  //   ? filteredProducts.filter((item) => item.popular === true && item.category === selectedCategory)
+  //   : filteredProducts;
 
   const handleEditInputChange = (e, editProduct) => {
     const {
@@ -271,7 +271,7 @@ export default function Setting() {
 
     firestore
       .collection('data')
-      .doc('RvwOmHHKyWpAChE4gdTQ')
+      .doc('j7lXb7WxzNPiINXzrg1H')
       .update({ 'product': updatedArray })
       .then(() => {
         setProgress('Товар оновлено');
@@ -290,19 +290,6 @@ export default function Setting() {
     setSearchQuery(event.target.value);
   };
 
-  const handleUploadProductsCrmClick = () => {
-  
-
-
-
-
-
-
-
-
-
-  };
-
   return (
     <RequireAdminAuth>
       <div className="setting">
@@ -312,7 +299,7 @@ export default function Setting() {
             {arrayCarousel.map((item, index) => (
               <div key={index} className="setting-carusel__item">
                 <img src={item} className="setting-carusel__item-image" alt="..." />
-                <button className="setting-carusel__item-delete" onClick={() => handleDelete(item, 'carousel', arrayCarousel, setProgressCarousel(true))}>Видалити</button>
+                <button className="setting-carusel__item-delete" onClick={() => handleDelete(item, 'gallery', arrayCarousel, setProgressCarousel(true))}>Видалити</button>
               </div>
             ))}
           </div>
@@ -324,7 +311,7 @@ export default function Setting() {
           {progressCarousel ? <div className="setting-carusel__progress">{progress}</div> : null}
         </div>
 
-        <div className="setting-news">
+        {/* <div className="setting-news">
           <div className="setting-news-container container">
             <p className="setting-carusel__title">Новини на головній сторінці.  Рекомендований розмір забражень для Новин та Акцій 250px * 300px</p>
 
@@ -348,9 +335,9 @@ export default function Setting() {
             {progressNews ? <div className="setting-carusel__progress">{progress}</div> : null}
 
           </div>
-        </div>
+        </div> */}
 
-        <div className="setting-product container">
+        {/* <div className="setting-product container">
           <p className="setting-product__title">Управління товарами.  Рекомендований розмір забражень для товару 440px * 500px</p>
           {editProduct && <p className="setting-carusel__title">Редагування товару</p>}
 
@@ -540,7 +527,7 @@ export default function Setting() {
                 onClick={handleUploadProductsClick}
                 className="setting-product__button">Додати товар</button>
             )}
-            {/* ijtgnitgi */}
+      
             <button
               onClick={handleUploadProductsCrmClick}
               className="setting-product__button-crm">Додати в CRM</button>
@@ -578,8 +565,8 @@ export default function Setting() {
             </div>
 
           </div>
-        </div>
-        <div className={`${display ? 'setting-product__box container' : 'setting-product__box__display container'}`}>
+        </div> */}
+        {/* <div className={`${display ? 'setting-product__box container' : 'setting-product__box__display container'}`}>
 
           {displayedProducts.map((item, index) => (
             <div key={index} className={`${display ? 'setting-product__box-items' : 'setting-product__box-items__display'}`}>
@@ -604,7 +591,7 @@ export default function Setting() {
             </div>
           ))}
 
-        </div>
+        </div> */}
       </div>
     </RequireAdminAuth>
   );

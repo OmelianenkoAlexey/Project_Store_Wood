@@ -31,7 +31,7 @@ export default function Instagram() {
 
   useEffect(() => {
     if (mainData) {
-      loadImages(mainData[0].carousel);
+      loadImages(mainData[0].gallery);
     }
   }, [mainData]);
 
@@ -91,7 +91,6 @@ export default function Instagram() {
   };
 
   const newNews = [...load.slice(index, load.length), ...load.slice(0, index)];
-  console.log(newNews);
 
   const handleClickOpen = (item) => {
     setClick(true);
@@ -114,7 +113,7 @@ export default function Instagram() {
 
       <div className={`instagram-window__open ${click ? 'instagram-window__open-true opacity' : ''}`}>
         {/* <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" /> */}
-        <img onClick={touchButtonClose} className='instagram-window__open-image' src={image} alt="" />
+        <img onClick={touchButtonClose} className='instagram-window__open-image' src={image.currentSrc} alt="" />
       </div>
 
       <div className='instagram-bg'>
@@ -150,7 +149,7 @@ export default function Instagram() {
               ))
               : newNews.slice(0, 2).map((item, index) => (
                 <div onClick={() => handleClickOpen(item)} key={index} className='instagram-box__item'>
-                  <img className='instagram-box__item-image' src={item} alt="" />
+                  <img className='instagram-box__item-image' src={item.currentSrc} alt="" />
                 </div>
               ))}
 
