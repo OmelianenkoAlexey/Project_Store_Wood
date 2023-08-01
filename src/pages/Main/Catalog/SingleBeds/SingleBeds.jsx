@@ -17,6 +17,15 @@ export default function SingleBeds() {
           </div>
         </div>
         <div className='singleBeds-boxSecond'>
+          <div className='singleBeds-boxSecond__item'>
+
+          </div>
+          <div className='singleBeds-boxSecond__item'></div>
+          <div className='singleBeds-boxSecond__item'></div>
+          <div className='singleBeds-boxSecond__item'></div>
+          <div className='singleBeds-boxSecond__item'></div>
+          <div className='singleBeds-boxSecond__item'></div>
+          <div className='singleBeds-boxSecond__item'></div>
           <div className='singleBeds-boxSecond__item'></div>
         </div>
 

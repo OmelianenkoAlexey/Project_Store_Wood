@@ -1,25 +1,45 @@
-.singleBeds {}
+.singleBeds {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
 .singleBeds-container {}
 
 .singleBeds-box {
     display: flex;
     gap: 50px; 
+    padding-bottom: 50px;
 }
 
-.singleBeds-box__picture {}
+.singleBeds-box__picture {
+    width: 50%;
+}
 
 .singleBeds-box__image {}
 
-.singleBeds-box__text {}
+.singleBeds-box__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    width: 50%;
+}
 
 .singleBeds-box__text-title {}
 
 .singleBeds-box__text-description {}
 
-.SingleBeds {}
+.singleBeds-boxSecond {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;  
+}
 
-.SingleBeds {}
+.singleBeds-boxSecond__item {
+    /* width: 500px; */
+    height: 300px;
+    background-color:red;      
+}
 
 .SingleBeds {}
 
