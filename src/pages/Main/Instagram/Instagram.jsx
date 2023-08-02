@@ -12,6 +12,8 @@ export default function Instagram() {
   const [image, setImage] = useState(false);
   const [load, setLoad] = useState([]);
 
+  const currentPath = window.location.pathname;
+
 
   const loadImage = (src) => new Promise((resolve, reject) => {
     const image = new Image();
@@ -35,7 +37,15 @@ export default function Instagram() {
     }
   }, [mainData]);
 
-  
+
+  useEffect(() => {
+    if (currentPath !== '/') {
+      const items = document.querySelectorAll('.instagram-box__item-image');
+      items.forEach((item, index) => {
+        item.classList.add('instagram-box__item-image-opacity');
+      });
+    }
+  }, [load]);
 
   useEffect(() => {
     if (positionOne) {
@@ -51,30 +61,35 @@ export default function Instagram() {
 
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = 4800;
+    if (currentPath === '/') {
+      const handleScroll = () => {
+        const scrollThreshold = 4800;
 
-      // Получаем текущую позицию прокрутки страницы
-      const currentPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        // Получаем текущую позицию прокрутки страницы
+        const currentPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
-      if (currentPosition >= scrollThreshold) {
-        setPositionOne(true);
-      } else {
-        setPositionOne(false);
-        const items = document.querySelectorAll('.instagram-box__item-image');
-        items.forEach((item, index) => {
-          item.classList.remove('instagram-box__item-image-opacity');
-        });
-      }
-    };
+        if (currentPosition >= scrollThreshold) {
+          setPositionOne(true);
+        } else {
+          setPositionOne(false);
+          const items = document.querySelectorAll('.instagram-box__item-image');
+          items.forEach((item, index) => {
+            item.classList.remove('instagram-box__item-image-opacity');
+          });
+        }
+      };
 
-    // Добавляем обработчик события прокрутки
-    window.addEventListener('scroll', handleScroll);
+      // Добавляем обработчик события прокрутки
+      window.addEventListener('scroll', handleScroll);
 
-    // Удаляем обработчик при размонтировании компонента
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+      // Удаляем обработчик при размонтировании компонента
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+
+    }
+
+
   }, []);
 
 

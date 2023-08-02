@@ -12,7 +12,6 @@ export default function Beds() {
 
   useEffect(() => {
     const currentPath = window.location.pathname;
-    console.log(currentPath);
 
     if (currentPath === '/single-beds') {
       setMainImg('./img/catalog1.png')
