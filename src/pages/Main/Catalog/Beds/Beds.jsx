@@ -70,7 +70,7 @@ export default function Beds() {
             <div className='singleBeds-boxSecond__container container'>
 
               {product.map((item, index) => (
-                <a key={index} className='singleBeds-boxSecond__item' href="/">
+                <a key={index} className='singleBeds-boxSecond__item' href="/product-item">
                   <div className='singleBeds-boxSecond__item-picture'>
                     <img className='singleBeds-boxSecond__item-image' src={item.img[0]} alt="storeWood" />
                   </div>
