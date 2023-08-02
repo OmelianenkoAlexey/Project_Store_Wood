@@ -1,13 +1,14 @@
 .singleBeds {
     padding-top: 50px;
     padding-bottom: 50px;
+
 }
 
 .singleBeds-container {}
 
 .singleBeds-box {
     display: flex;
-    gap: 50px; 
+    gap: 50px;
     padding-bottom: 50px;
 }
 
@@ -30,16 +31,50 @@
 .singleBeds-box__text-description {}
 
 .singleBeds-boxSecond {
-    display: grid;
+    background-color: #F1F9F0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.singleBeds-boxSecond__container {
+     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 50px;  
+    gap: 100px 30px;
 }
 
 .singleBeds-boxSecond__item {
     /* width: 500px; */
     height: 300px;
-    background-color:red;      
+    background-color: red;
+    position: relative;
 }
+
+
+
+.singleBeds-boxSecond__item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.singleBeds-boxSecond__item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color:green;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 100px;
+}
+
+.singleBeds-boxSecond__item-text-description {}
+
+.singleBeds-boxSecond__item-text-price {}
+
+.SingleBeds {}
 
 .SingleBeds {}
 

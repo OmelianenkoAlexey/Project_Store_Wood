@@ -4,9 +4,9 @@ import './SingleBeds.css';
 export default function SingleBeds() {
   return (
     <div className='singleBeds'>
-      <div className='singleBeds-container container'>
+      <div className='singleBeds-container'>
 
-        <div className='singleBeds-box'>
+        <div className='singleBeds-box container'>
           <div className='singleBeds-box__picture'>
             <img className='singleBeds-box__image' src="./img/singleBeds.JPG" alt="storeWood" />
           </div>
@@ -17,16 +17,71 @@ export default function SingleBeds() {
           </div>
         </div>
         <div className='singleBeds-boxSecond'>
-          <div className='singleBeds-boxSecond__item'>
+          <div className='singleBeds-boxSecond__container container'>
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
 
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
           </div>
-          <div className='singleBeds-boxSecond__item'></div>
-          <div className='singleBeds-boxSecond__item'></div>
-          <div className='singleBeds-boxSecond__item'></div>
-          <div className='singleBeds-boxSecond__item'></div>
-          <div className='singleBeds-boxSecond__item'></div>
-          <div className='singleBeds-boxSecond__item'></div>
-          <div className='singleBeds-boxSecond__item'></div>
         </div>
 
 
