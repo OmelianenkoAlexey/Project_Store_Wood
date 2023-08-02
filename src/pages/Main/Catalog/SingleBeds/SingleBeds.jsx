@@ -81,6 +81,38 @@ export default function SingleBeds() {
                 <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
               </div>
             </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
+
+            <div className='singleBeds-boxSecond__item'>
+              <img className='singleBeds-boxSecond__item-image' src="./img/1.png" alt="storeWood" />
+              <div className='singleBeds-boxSecond__item-text'>
+                <div className='singleBeds-boxSecond__item-text-description'>Кровать односпальная GUCIO</div>
+                <div className='singleBeds-boxSecond__item-text-price'>499.00 Euro</div>
+              </div>
+            </div>
           </div>
         </div>
 
