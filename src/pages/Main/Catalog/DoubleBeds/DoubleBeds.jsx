@@ -12,7 +12,7 @@ export default function SingleBeds() {
             <img className='singleBeds-box__image' src="./img/catalog2.png" alt="storeWood" />
           </div>
           <div className='singleBeds-box__text'>
-            <h2 className='singleBeds-box__text-title'>Односпальні ліжка</h2>
+            <h2 className='singleBeds-box__text-title'>Двоспальні ліжка</h2>
             <div className='singleBeds-box__text-description'>Здесь вы найдете односпальные кровати с одной спальной зоной, где ящик можно использовать как отделение для постельного белья или игрушек.
               Наши кровати адаптированы к различным потребностям. Практичный конфигуратор изделий поможет собрать кровать вашей мечты.</div>
           </div>
