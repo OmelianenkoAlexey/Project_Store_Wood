@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../../../Contex';
 import './Beds.css';
+import Instagram from '../../Instagram/Instagram';
 
 export default function Beds() {
   const { mainData } = useContext(Context);
@@ -84,8 +85,7 @@ export default function Beds() {
 
           </div>
         </div>
-
-
+        <Instagram />
       </div>
     </div>
   );

@@ -76,7 +76,7 @@ export default function Catalog() {
       <div className='catalog-box container'>
         <a className='catalog-box__item' href="/single-beds">
           <div className='catalog-box__item-text'>
-         
+
             <h3 className='catalog-box__item-text-title'>Односпальні ліжка</h3>
             <div className='catalog-box__item-text-link'>
               Детальніше</div>

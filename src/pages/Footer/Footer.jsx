@@ -17,10 +17,10 @@ export default function Footer() {
 
         <div className='footer-catalog'>
           <div className='footer-info__title'>КАТАЛОГ</div>
-          <a className='footer-catalog__item' href="/full-vials">Двоспальні ліжка</a>
-          <a className='footer-catalog__item' href="/rospiv">Односпальні ліжка</a>
-          <a className='footer-catalog__item' href="/miniatures">Двоярусні ліжка</a>
-          <a className='footer-catalog__item' href="/makeup">Ліжка будиночком</a>
+          <a className='footer-catalog__item' href="/double-beds">Двоспальні ліжка</a>
+          <a className='footer-catalog__item' href="/single-beds">Односпальні ліжка</a>
+          <a className='footer-catalog__item' href="/bunk-beds">Двоповерхові ліжка</a>
+          <a className='footer-catalog__item' href="/house-beds">Ліжка будиночком</a>
         </div>
 
         <div className='footer-info'>
