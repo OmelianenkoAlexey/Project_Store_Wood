@@ -23,13 +23,10 @@ export default function Setting() {
   const [display, setDisplay] = useState(false);
 
   const categoryArray = [
-    'повні флакони',
-    'парфумерія',
-    'гелі для душа',
-    'масла',
-    'мініатюри',
-    'косметика',
-    'новинки 2023',
+    'Односпальні ліжка',
+    "Двоспалні ліжка",
+    "Двоповерхові ліжка",
+    "Ліжка будиночком",
   ];
 
   const brands = [
@@ -66,7 +63,7 @@ export default function Setting() {
     if (mainData) {
       setArrayCarousel(mainData[0].gallery);
       // setArrayNews(mainData[0].news);
-      // setArrayProduct(mainData[0].product);
+      setArrayProduct(mainData[0].product);
     }
   }, [mainData]);
 
@@ -217,24 +214,28 @@ export default function Setting() {
     setShowPopular(event.target.checked);
   };
 
-  // const filteredProducts = arrayProduct.filter((item) => {
-  //   if (selectedCategory === 'Всі товари' || item.category === selectedCategory) {
-  //     return true;
-  //   }
-  //   return false;
-  // }).filter((item) => {
-  //   const lowerCaseSearchQuery = searchQuery.toLowerCase();
-  //   const lowerCaseTitle = item.title.toLowerCase();
-  //   const lowerCaseArticle = item.article.toLowerCase();
+  let displayedProducts = [];
+  if (arrayProduct) {
+    const filteredProducts = arrayProduct.filter((item) => {
+      if (selectedCategory === 'Всі товари' || item.category === selectedCategory) {
+        return true;
+      }
+      return false;
+    }).filter((item) => {
+      const lowerCaseSearchQuery = searchQuery.toLowerCase();
+      const lowerCaseTitle = item.title.toLowerCase();
+      const lowerCaseArticle = item.article.toLowerCase();
 
-  //   return (
-  //     lowerCaseTitle.includes(lowerCaseSearchQuery) || lowerCaseArticle.includes(lowerCaseSearchQuery)
-  //   );
-  // });
+      return (
+        lowerCaseTitle.includes(lowerCaseSearchQuery) || lowerCaseArticle.includes(lowerCaseSearchQuery)
+      );
+    });
 
-  // const displayedProducts = showPopular
-  //   ? filteredProducts.filter((item) => item.popular === true && item.category === selectedCategory)
-  //   : filteredProducts;
+    displayedProducts = showPopular
+      ? filteredProducts.filter((item) => item.popular === true && item.category === selectedCategory)
+      : filteredProducts;
+  }
+
 
   const handleEditInputChange = (e, editProduct) => {
     const {
@@ -294,7 +295,7 @@ export default function Setting() {
     <RequireAdminAuth>
       <div className="setting">
         <div className="setting-carusel container">
-          <p className="setting-carusel__title">Зображення на головній сторінці</p>
+          <p className="setting-carusel__title">Зображення у галереї</p>
           <div className="setting-carusel__box">
             {arrayCarousel.map((item, index) => (
               <div key={index} className="setting-carusel__item">
@@ -337,8 +338,8 @@ export default function Setting() {
           </div>
         </div> */}
 
-        {/* <div className="setting-product container">
-          <p className="setting-product__title">Управління товарами.  Рекомендований розмір забражень для товару 440px * 500px</p>
+        <div className="setting-product container">
+          <p className="setting-product__title">Управління товарами.</p>
           {editProduct && <p className="setting-carusel__title">Редагування товару</p>}
 
           <div className="setting-product__inputs">
@@ -527,10 +528,6 @@ export default function Setting() {
                 onClick={handleUploadProductsClick}
                 className="setting-product__button">Додати товар</button>
             )}
-      
-            <button
-              onClick={handleUploadProductsCrmClick}
-              className="setting-product__button-crm">Додати в CRM</button>
 
           </div>
           <div className="setting-carusel__box2">
@@ -565,8 +562,8 @@ export default function Setting() {
             </div>
 
           </div>
-        </div> */}
-        {/* <div className={`${display ? 'setting-product__box container' : 'setting-product__box__display container'}`}>
+        </div>
+        <div className={`${display ? 'setting-product__box container' : 'setting-product__box__display container'}`}>
 
           {displayedProducts.map((item, index) => (
             <div key={index} className={`${display ? 'setting-product__box-items' : 'setting-product__box-items__display'}`}>
@@ -591,7 +588,7 @@ export default function Setting() {
             </div>
           ))}
 
-        </div> */}
+        </div>
       </div>
     </RequireAdminAuth>
   );

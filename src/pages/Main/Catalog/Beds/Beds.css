@@ -83,7 +83,6 @@
 .singleBeds-boxSecond__item {
     /* width: 500px; */
     height: 300px;
-    background-color: red;
     position: relative;
 
 }
@@ -129,7 +128,7 @@
     padding: 20px;
 }
 
-.singleBeds-boxSecond__item-text-description {
+.singleBeds-boxSecond__item-text-title {
     font-family: Didact Gothic;
     font-size: 15px;
     font-style: normal;

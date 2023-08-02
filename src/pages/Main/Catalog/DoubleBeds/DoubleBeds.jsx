@@ -1,7 +1,7 @@
 import React from 'react';
-import './SingleBeds.css';
+import './DoubleBeds.css';
 
-export default function SingleBeds() {
+export default function DoubleBeds() {
   return (
     <div className='singleBeds'>
       <div className='singleBeds-container'>

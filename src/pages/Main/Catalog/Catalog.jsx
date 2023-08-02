@@ -76,58 +76,47 @@ export default function Catalog() {
       <div className='catalog-box container'>
         <a className='catalog-box__item' href="/single-beds">
           <div className='catalog-box__item-text'>
-            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
-            <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
-              Детальніше</a>
+         
+            <h3 className='catalog-box__item-text-title'>Односпальні ліжка</h3>
+            <div className='catalog-box__item-text-link'>
+              Детальніше</div>
           </div>
           <div className='catalog-box__item-picture'>
             <img className={`catalog-box__item-image ${positionOne ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog1.png" alt="Store Wood" />
           </div>
-          {/* <div className='catalog-box__item-bg'>
-            <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
-          </div> */}
         </a>
 
-        <a className='catalog-box__item' href="/single-beds">
+        <a className='catalog-box__item' href="/double-beds">
           <div className='catalog-box__item-text'>
-            <h3 className='catalog-box__item-text-title'>Односпальні ліжка</h3>
-            <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
-              Детальніше</a>
+            <h3 className='catalog-box__item-text-title'>Двоспальні ліжка</h3>
+            <div className='catalog-box__item-text-link'>
+              Детальніше</div>
           </div>
           <div className='catalog-box__item-picture catalog-box__item-picture-md'>
             <img className={`catalog-box__item-image ${positionTwo ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog2.png" alt="Store Wood" />
           </div>
-          {/* <div className='catalog-box__item-bg'>
-            <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
-          </div> */}
         </a>
 
-        <a className='catalog-box__item' href="/single-beds">
+        <a className='catalog-box__item' href="/bunk-beds">
           <div className='catalog-box__item-text'>
-            <h3 className='catalog-box__item-text-title'>Двоярусні ліжка</h3>
-            <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
-              Детальніше</a>
+            <h3 className='catalog-box__item-text-title'>Двоповерхові ліжка</h3>
+            <div className='catalog-box__item-text-link'>
+              Детальніше</div>
           </div>
           <div className='catalog-box__item-picture'>
             <img className={`catalog-box__item-image ${positionThree ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog3.png" alt="Store Wood" />
           </div>
-          {/* <div className='catalog-box__item-bg'>
-            <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
-          </div> */}
         </a>
 
-        <a className='catalog-box__item' href="/single-beds">
+        <a className='catalog-box__item' href="/house-beds">
           <div className='catalog-box__item-text'>
             <h3 className='catalog-box__item-text-title'>Ліжка будиночком</h3>
-            <a className='catalog-box__item-text-link' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
-              Детальніше</a>
+            <div className='catalog-box__item-text-link'>
+              Детальніше</div>
           </div>
           <div className='catalog-box__item-picture catalog-box__item-picture-md'>
             <img className={`catalog-box__item-image ${positionFour ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog4.png" alt="Store Wood" />
           </div>
-          {/* <div className='catalog-box__item-bg'>
-            <img className='catalog-box__item-bg-image' src="./img/firstPageImage2.png" alt="Store Wood" />
-          </div> */}
         </a>
       </div>
 
