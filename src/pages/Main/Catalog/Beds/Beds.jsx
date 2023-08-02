@@ -79,7 +79,6 @@ export default function Beds() {
                     <div className='singleBeds-boxSecond__item-text-title'>{item.title}</div>
                     <div className='singleBeds-boxSecond__item-text-price'>{item.price}</div>
                   </div>
-
                 </a>
               ))}
 
