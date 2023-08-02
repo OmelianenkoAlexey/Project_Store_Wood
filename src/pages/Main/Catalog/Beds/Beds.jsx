@@ -45,48 +45,50 @@ export default function Beds() {
 
 
   return (
-    <div className='singleBeds'>
-      <div className='singleBeds-container'>
+    <>
+      <div className='singleBeds'>
+        <div className='singleBeds-container'>
 
-        <div className='singleBeds-box container'>
-          <div className='singleBeds-box__picture'>
-            <img className='singleBeds-box__image' src={mainImg} alt="storeWood" />
+          <div className='singleBeds-box container'>
+            <div className='singleBeds-box__picture'>
+              <img className='singleBeds-box__image' src={mainImg} alt="storeWood" />
+            </div>
+            <div className='singleBeds-box__text'>
+              <h2 className='singleBeds-box__text-title'>{textTitle}</h2>
+              <div className='singleBeds-box__text-description'>{textDescription}</div>
+            </div>
           </div>
-          <div className='singleBeds-box__text'>
-            <h2 className='singleBeds-box__text-title'>{textTitle}</h2>
-            <div className='singleBeds-box__text-description'>{textDescription}</div>
+          <div className='singleBeds-boxSecond'>
+
+            <div className='singleBeds-boxSecond__picture1'>
+              <img className='singleBeds-boxSecond__image' src="./img/leaves1.png" alt="Store Wood" />
+            </div>
+
+            <div className='singleBeds-boxSecond__picture2'>
+              <img className='singleBeds-boxSecond__image' src="./img/leaves2.png" alt="Store Wood" />
+            </div>
+
+            <div className='singleBeds-boxSecond__container container'>
+
+              {product.map((item, index) => (
+                <a key={index} className='singleBeds-boxSecond__item' href="/">
+                  <div className='singleBeds-boxSecond__item-picture'>
+                    <img className='singleBeds-boxSecond__item-image' src={item.img[0]} alt="storeWood" />
+                  </div>
+
+                  <div className='singleBeds-boxSecond__item-text'>
+                    <div className='singleBeds-boxSecond__item-text-title'>{item.title}</div>
+                    <div className='singleBeds-boxSecond__item-text-price'>{item.price}</div>
+                  </div>
+
+                </a>
+              ))}
+
+            </div>
           </div>
         </div>
-        <div className='singleBeds-boxSecond'>
-
-          <div className='singleBeds-boxSecond__picture1'>
-            <img className='singleBeds-boxSecond__image' src="./img/leaves1.png" alt="Store Wood" />
-          </div>
-
-          <div className='singleBeds-boxSecond__picture2'>
-            <img className='singleBeds-boxSecond__image' src="./img/leaves2.png" alt="Store Wood" />
-          </div>
-
-          <div className='singleBeds-boxSecond__container container'>
-
-            {product.map((item, index) => (
-              <a key={index} className='singleBeds-boxSecond__item' href="/">
-                <div className='singleBeds-boxSecond__item-picture'>
-                  <img className='singleBeds-boxSecond__item-image' src={item.img[0]} alt="storeWood" />
-                </div>
-
-                <div className='singleBeds-boxSecond__item-text'>
-                  <div className='singleBeds-boxSecond__item-text-title'>{item.title}</div>
-                  <div className='singleBeds-boxSecond__item-text-price'>{item.price}</div>
-                </div>
-
-              </a>
-            ))}
-
-          </div>
-        </div>
-        <Instagram />
       </div>
-    </div>
+      <Instagram />
+    </>
   );
 }
