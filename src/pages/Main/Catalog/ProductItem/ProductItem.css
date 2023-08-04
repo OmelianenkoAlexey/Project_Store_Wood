@@ -9,8 +9,7 @@
     width: 1160px;
 
     padding: 20px;
-    background-color: #ffffff;
-    background-color: red;
+    background-color: #F1F9F0;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -24,22 +23,119 @@
 
 
 .product-window__gallary {}
+
 .product-window__gallary-picture {
     width: 430px;
     height: 430px;
 }
+
 .product-window__gallary-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .product-window__info {
-    height: 500px;
+    /* height: 500px; */
     width: 100%;
-    background-color: green;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-.SingleBeds {}
-.SingleBeds {}
+
+
+
+.product-window__info-title {
+    color: black;
+    height: 72px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow: clip;
+
+}
+
+.product-window__info-price {
+    font-size: 25px;
+}
+
+.product-window__info-color {
+    font-size: 20px;
+}
+
+.product-window__info-color-box {
+    display: flex;
+    gap: 50px;
+}
+
+.color-box__item {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.item1 {
+    background-color: blue;
+}
+.item2 {
+    background-color: red;
+}
+.item3 {
+    background-color: orange;
+}
+.item4 {
+    background-color: violet;
+}
+
+
+
+
+
+
+.accordion {
+    height: 355px;
+}
+
+.accordion-body {
+    padding: 0;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-button {
+    color: white;
+    background-color: #232323;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #F07C00;
+    background-color: #232323;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+}
+
+.accordion-button:focus {
+    border-color: none;
+    box-shadow: none !important;
+}
+
+.accordion-item__button {
+    right: 0 !important;
+    margin-bottom: 10px !important;
+}
+
+.product-window__info-description {
+    height: 200px;
+    overflow-y: auto;
+}
+
+
+
+
+
 
 .SingleBeds {}
 
