@@ -1,17 +1,44 @@
 .productItem {
     padding-top: 50px;
     padding-bottom: 50px;
-
+    position: relative;
 }
 
-.productItem-container {
-    background-color:red;
+.product-window {
+    height: 630px;
+    width: 1160px;
+
+    padding: 20px;
+    background-color: #ffffff;
+    background-color: red;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.product-window__gallary {}
+.product-window__gallary-picture {
+    width: 430px;
+    height: 430px;
+}
+.product-window__gallary-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-window__info {
     height: 500px;
-    
+    width: 100%;
+    background-color: green;
 }
-
-
-
+.SingleBeds {}
 .SingleBeds {}
 
 .SingleBeds {}
