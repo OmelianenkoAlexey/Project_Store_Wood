@@ -24,6 +24,7 @@ export default function ProductItem() {
               <div className='color-box__item item2'></div>
               <div className='color-box__item item3'></div>
               <div className='color-box__item item4'></div>
+              <div className='color-box__item item5'></div>
             </div>
 
             <div className="accordion" id="accordionExample">
