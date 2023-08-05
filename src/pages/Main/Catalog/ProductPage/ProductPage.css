@@ -1,0 +1,177 @@
+.productItem {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.product-window {
+    height: 630px;
+    width: 1160px;
+
+    padding: 20px;
+    background-color: #F1F9F0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.product-window__gallary {}
+
+.product-window__gallary-picture {
+    width: 430px;
+    height: 430px;
+}
+
+.product-window__gallary-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-window__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+
+
+.product-window__info-title {
+    color: black;
+    height: 72px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow: clip;
+
+}
+
+.product-window__info-price {
+    font-size: 25px;
+}
+
+.product-window__info-color {
+    font-size: 20px;
+}
+
+.product-window__info-color-box {
+    display: flex;
+    gap: 30px;
+}
+
+.color-box__item {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 25px;
+}
+
+
+.item1 {
+    background-color: blue;
+}
+.item1:hover {
+box-shadow: 0 0 5px blue;
+}
+
+.item2 {
+    background-color: red;
+}
+
+.item2:hover {
+    box-shadow: 0 0 5px red;
+    }
+.item3 {
+    background-color: orange;
+}
+
+.item3:hover {
+    box-shadow: 0 0 5px orange;
+    }
+.item4 {
+    background-color: violet;
+}
+
+.item4:hover {
+    box-shadow: 0 0 5px violet;
+    }
+.item5 {
+    background-color: green;
+}
+
+.item5:hover {
+    box-shadow: 0 0 5px green;
+    }
+
+
+
+
+
+
+.accordion {
+    height: 355px;
+}
+
+.accordion-body {
+    padding: 0;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-button {
+    color: white;
+    background-color: #232323;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #F07C00;
+    background-color: #232323;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+}
+
+.accordion-button:focus {
+    border-color: none;
+    box-shadow: none !important;
+}
+
+.accordion-item__button {
+    right: 0 !important;
+    margin-bottom: 10px !important;
+}
+
+.product-window__info-description {
+    height: 197px;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+.SingleBeds {}
+
+
+
+
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}

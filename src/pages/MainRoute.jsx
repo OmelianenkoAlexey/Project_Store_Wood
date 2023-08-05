@@ -7,6 +7,7 @@ import Setting from './Admin/Setting/Setting';
 import NotFound from './NotFound/NotFound';
 import Beds from './Main/Catalog/Beds/Beds';
 import ProductItem from './Main/Catalog/ProductItem/ProductItem';
+import ProductPage from './Main/Catalog/ProductPage/ProductPage';
 
 export default function MainRoute() {
   return (
@@ -20,6 +21,7 @@ export default function MainRoute() {
         <Route path='/bunk-beds' element={<Beds />} />
         <Route path='/house-beds' element={<Beds />} />
         <Route path='/product-item' element={<ProductItem />} />
+        <Route path='/product-page' element={<ProductPage />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
     </Grid>
