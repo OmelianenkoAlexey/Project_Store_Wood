@@ -40,18 +40,19 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .product-window__gallary-box__images {
-display: flex;
-width: 100%;
-gap: 20px;
-justify-content: center;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
 .product-window__gallary-picture {
-    width: 130px;
-    height: 100px;
+    width: 124px;
+    height: 90px;
 }
 
 .product-window__gallary-image {
