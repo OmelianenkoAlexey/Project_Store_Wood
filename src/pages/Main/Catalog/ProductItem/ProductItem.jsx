@@ -47,7 +47,6 @@ export default function ProductItem() {
                 <div className='product-window__info-starBox-text'>5.00</div>
               </div>
               <h2 className='product-window__info-title'>Кровать с пружинным матрасом SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY</h2>
-              <div className='product-window__info-price'>€ 999,00</div>
               <div className='product-window__info-color'>Цвет кровати</div>
               <div className='product-window__info-color-box color-box'>
                 <div className='color-box__item item1'></div>
@@ -56,6 +55,7 @@ export default function ProductItem() {
                 <div className='color-box__item item4'></div>
                 <div className='color-box__item item5'></div>
               </div>
+              <div className='product-window__info-price'>€ 999,00</div>
 
               {/* <div className="accordion" id="accordionExample">
               <div className="accordion-item">

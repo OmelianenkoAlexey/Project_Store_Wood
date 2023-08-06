@@ -36,7 +36,6 @@
 
 
 .product-window__gallary-box {
-/* display: flex; */
 display: grid;
 grid-template-columns: repeat(5, 1fr);
 gap: 20px;
@@ -60,13 +59,15 @@ height: 100px;
     flex-direction: column;
     align-items: center;
     gap: 11px;
+    gap: 20px;
     padding: 20px;
+    padding-top: 70px;
 }
 
 .product-window__info-starBox {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .product-window__info-starBox-item {
@@ -84,14 +85,12 @@ height: 100px;
     color: black;
     height: 72px;
     font-size: 30px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     overflow: clip;
 
 }
 
-.product-window__info-price {
-    font-size: 25px;
-}
+
 
 .product-window__info-color {
     font-size: 20px;
@@ -149,6 +148,10 @@ height: 100px;
 
 .item5:hover {
     box-shadow: 0 0 5px green;
+}
+
+.product-window__info-price {
+    font-size: 30px;
 }
 
 .productItem__title {
