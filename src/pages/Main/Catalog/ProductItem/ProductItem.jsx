@@ -14,8 +14,26 @@ export default function ProductItem() {
         <div className='productItem-container container'>
           <div className='productItem-box'>
             <div className='product-window__gallary'>
-              <div className='product-window__gallary-picture'>
-                <img className='product-window__gallary-image' src="./img/productItem1.JPG " alt="storeWood" />
+              <div className='product-window__gallary-pictureMain'>
+                <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+              </div>
+              <div className='product-window__gallary-box'>
+                <div className='product-window__gallary-picture'>
+                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+                </div>
+                <div className='product-window__gallary-picture'>
+                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+                </div>
+                <div className='product-window__gallary-picture'>
+                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+                </div>
+                <div className='product-window__gallary-picture'>
+                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+                </div>
+                <div className='product-window__gallary-picture'>
+                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+                </div>
+         
               </div>
             </div>
 

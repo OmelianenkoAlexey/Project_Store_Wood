@@ -22,9 +22,10 @@
 
 .product-window__gallary {}
 
-.product-window__gallary-picture {
+.product-window__gallary-pictureMain {
     width: 800px;
     height: 500px;
+    margin-bottom: 50px;
 }
 
 .product-window__gallary-image {
@@ -32,6 +33,26 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+.product-window__gallary-box {
+/* display: flex; */
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 20px;
+}
+.product-window__gallary-picture {
+width: 100%;
+height: 100px;
+}
+.product-window__gallary-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
 
 .product-window__info {
     width: 100%;
