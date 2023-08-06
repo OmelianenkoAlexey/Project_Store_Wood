@@ -1,13 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductItem.css';
 import Instagram from '../../Instagram/Instagram';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function ProductItem() {
+  const [product, setProduct] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const cartItems = localStorage.getItem('Items');
+    if (cartItems) {
+      const cartItemsPars = JSON.parse(cartItems);
+      console.log(cartItemsPars);
+      setProduct(cartItemsPars)
+    }
+  }, []);
+
+
+
+  const handleClickLeft = () => {
+    if (currentImageIndex === 0) {
+      setCurrentImageIndex(product.img.length - 1);
+    } else {
+      setCurrentImageIndex(currentImageIndex - 1);
+    }
+  };
+
+  const handleClickRight = () => {
+    if (currentImageIndex === product.img.length - 1) {
+      setCurrentImageIndex(0);
+    } else {
+      setCurrentImageIndex(currentImageIndex + 1);
+    }
+  };
+
 
   return (
     <>
@@ -19,7 +49,7 @@ export default function ProductItem() {
 
 
               <div className='product-window__gallary-pictureMain'>
-                <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+                {product.img && <img className='product-window__gallary-image' src={product.img[currentImageIndex]} alt="storeWood" />}
               </div>
               <div className='product-window__gallary-box'>
                 <ArrowBackIosIcon
@@ -32,22 +62,14 @@ export default function ProductItem() {
                       transform: 'scale(1.2)', // Увеличиваем размер на 20% при наведении
                     },
                   }}
-                // onClick={handleClickLeft}
+                  onClick={handleClickLeft}
                 />
-                <div className='product-window__gallary-picture'>
-                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
-                </div>
-                <div className='product-window__gallary-picture'>
-                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
-                </div>
-                <div className='product-window__gallary-picture'>
-                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
-                </div>
-                <div className='product-window__gallary-picture'>
-                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
-                </div>
-                <div className='product-window__gallary-picture'>
-                  <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
+                <div className='product-window__gallary-box__images'>
+                  {product.img && product.img.slice(0, 5).map((item, index) => (
+                    <div key={index} className='product-window__gallary-picture'>
+                      <img className='product-window__gallary-image' src={item} alt='storeWood' />
+                    </div>
+                  ))}
                 </div>
                 <ArrowForwardIosIcon
                   sx={{
@@ -59,7 +81,7 @@ export default function ProductItem() {
                       transform: 'scale(1.2)', // Увеличиваем размер на 20% при наведении
                     },
                   }}
-                // onClick={handleClickRight}
+                  onClick={handleClickRight}
                 />
               </div>
             </div>
@@ -73,7 +95,7 @@ export default function ProductItem() {
                 <FontAwesomeIcon className='product-window__info-starBox-item' icon={faStar} />
                 <div className='product-window__info-starBox-text'>5.00</div>
               </div>
-              <h2 className='product-window__info-title'>Кровать с пружинным матрасом SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY</h2>
+              <h2 className='product-window__info-title'>{product.description}</h2>
               <div className='product-window__info-color'>Цвет кровати</div>
               <div className='product-window__info-color-box color-box'>
                 <div className='color-box__item item1'></div>
@@ -82,7 +104,7 @@ export default function ProductItem() {
                 <div className='color-box__item item4'></div>
                 <div className='color-box__item item5'></div>
               </div>
-              <div className='product-window__info-price'>€ 999,00</div>
+              <div className='product-window__info-price'>{product.title}</div>
 
               {/* <div className="accordion" id="accordionExample">
               <div className="accordion-item">

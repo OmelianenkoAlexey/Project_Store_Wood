@@ -36,16 +36,21 @@
 
 
 .product-window__gallary-box {
-    display: grid;
-    /* grid-template-columns: repeat(5, 1fr); */
-    grid-template-columns: 20px 1fr 1fr 1fr 1fr 1fr 20px;
-    align-items: center;
-    gap: 20px;
+    display: flex;
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-window__gallary-box__images {
+display: flex;
+width: 100%;
+gap: 20px;
+justify-content: center;
 }
 
 .product-window__gallary-picture {
-    width: 100%;
+    width: 130px;
     height: 100px;
 }
 

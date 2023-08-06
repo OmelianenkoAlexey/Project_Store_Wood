@@ -3,6 +3,7 @@ import { Context } from '../../../../Contex';
 import './Beds.css';
 import Instagram from '../../Instagram/Instagram';
 
+
 export default function Beds() {
   const { mainData } = useContext(Context);
   const [product, setProduct] = useState([]);
@@ -40,7 +41,12 @@ export default function Beds() {
     }
   }, [mainData]);
 
+  const handleItem  = async (item) => {
 
+    await localStorage.setItem('Items', JSON.stringify(item));
+    
+    window.location.href = '/product-item';
+  };
 
 
   return (
@@ -70,7 +76,7 @@ export default function Beds() {
             <div className='singleBeds-boxSecond__container container'>
 
               {product.map((item, index) => (
-                <a key={index} className='singleBeds-boxSecond__item' href="/product-item">
+                <div onClick={() => handleItem(item)} key={index} className='singleBeds-boxSecond__item'>
                   <div className='singleBeds-boxSecond__item-picture'>
                     <img className='singleBeds-boxSecond__item-image' src={item.img[0]} alt="storeWood" />
                   </div>
@@ -79,7 +85,7 @@ export default function Beds() {
                     <div className='singleBeds-boxSecond__item-text-title'>{item.title}</div>
                     <div className='singleBeds-boxSecond__item-text-price'>{item.price}</div>
                   </div>
-                </a>
+                </div>
               ))}
 
             </div>

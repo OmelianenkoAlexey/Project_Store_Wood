@@ -86,10 +86,7 @@ export default function Instagram() {
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
-
     }
-
-
   }, []);
 
 
