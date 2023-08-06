@@ -1,9 +1,9 @@
 import React from 'react';
-import './ProductPage.css';
+import './ProductItemModule.css';
 import Instagram from '../../Instagram/Instagram';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function ProductPage() {
+export default function ProductItemModule() {
 
   return (
     <>

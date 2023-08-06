@@ -2,32 +2,44 @@ import React from 'react';
 import './ProductItem.css';
 import Instagram from '../../Instagram/Instagram';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default function ProductItem() {
 
   return (
     <>
       <div className='productItem'>
-        <div className='product-window'>
-          <div className='product-window__gallary'>
-            <div className='product-window__gallary-picture'>
-              <img className='product-window__gallary-image' src="./img/productItem1.JPG " alt="storeWood" />
-            </div>
-          </div>
 
-          <div className='product-window__info'>
-            <h2 className='product-window__info-title'>Кровать с пружинным матрасом SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY</h2>
-            <div className='product-window__info-price'>€ 999,00</div>
-            <div className='product-window__info-color'>Цвет</div>
-            <div className='product-window__info-color-box color-box'>
-              <div className='color-box__item item1'></div>
-              <div className='color-box__item item2'></div>
-              <div className='color-box__item item3'></div>
-              <div className='color-box__item item4'></div>
-              <div className='color-box__item item5'></div>
+        <div className='productItem-container container'>
+          <div className='productItem-box'>
+            <div className='product-window__gallary'>
+              <div className='product-window__gallary-picture'>
+                <img className='product-window__gallary-image' src="./img/productItem1.JPG " alt="storeWood" />
+              </div>
             </div>
 
-            <div className="accordion" id="accordionExample">
+            <div className='product-window__info'>
+              <div className='product-window__info-starBox'>
+                <FontAwesomeIcon className='product-window__info-starBox-item' icon={faStar} />
+                <FontAwesomeIcon className='product-window__info-starBox-item' icon={faStar} />
+                <FontAwesomeIcon className='product-window__info-starBox-item' icon={faStar} />
+                <FontAwesomeIcon className='product-window__info-starBox-item' icon={faStar} />
+                <FontAwesomeIcon className='product-window__info-starBox-item' icon={faStar} />
+                <div className='product-window__info-starBox-text'>5.00</div>
+              </div>
+              <h2 className='product-window__info-title'>Кровать с пружинным матрасом SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY SOFTY</h2>
+              <div className='product-window__info-price'>€ 999,00</div>
+              <div className='product-window__info-color'>Цвет</div>
+              <div className='product-window__info-color-box color-box'>
+                <div className='color-box__item item1'></div>
+                <div className='color-box__item item2'></div>
+                <div className='color-box__item item3'></div>
+                <div className='color-box__item item4'></div>
+                <div className='color-box__item item5'></div>
+              </div>
+
+              {/* <div className="accordion" id="accordionExample">
               <div className="accordion-item">
                 <h2 className="accordion-header">
                   <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -62,9 +74,18 @@ export default function ProductItem() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
+            </div>
           </div>
+
+          <h3 className='productItem__title'>Двухэтажная модель с горизонтальными бортиками - эргономичное и практичное решение для небольшой спальни</h3>
+          <div className='productItem__description1'>Выдвижная кровать AMELA с двумя кроватями — это предложение для тех, кто ценит функциональность, современный дизайн, точность и качество изготовления.</div>
+          <div className='productItem__description2'>Детская кровать AMELA изготовлена ​​из сосновой конструкции, прошедшей жесткие испытания на прочность и безопасность. Кровать прошла испытания на безопасность и соответствует стандартам безопасного использования.</div>
+          <div className='productItem__description3'>Кровать с трехслойной поверхностью, окрашенной экологическими красками в соответствии с требованиями стандарта EN 71-3:2013. Соответственно, все краски квалифицированы для окраски детской мебели и имеют соответствующие допуски.</div>
+
+
+
         </div>
       </div>
       <Instagram />
