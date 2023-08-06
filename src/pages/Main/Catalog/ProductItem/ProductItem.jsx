@@ -4,6 +4,8 @@ import Instagram from '../../Instagram/Instagram';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function ProductItem() {
 
@@ -14,10 +16,24 @@ export default function ProductItem() {
         <div className='productItem-container container'>
           <div className='productItem-box'>
             <div className='product-window__gallary'>
+
+
               <div className='product-window__gallary-pictureMain'>
                 <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
               </div>
               <div className='product-window__gallary-box'>
+                <ArrowBackIosIcon
+                  sx={{
+                    cursor: 'pointer',
+                    color: '#19772E',
+                    fontSize: '30px',
+                    transition: 'transform 0.5s', // Добавляем плавный переход при изменении стилей
+                    '&:hover': {
+                      transform: 'scale(1.2)', // Увеличиваем размер на 20% при наведении
+                    },
+                  }}
+                // onClick={handleClickLeft}
+                />
                 <div className='product-window__gallary-picture'>
                   <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
                 </div>
@@ -33,7 +49,18 @@ export default function ProductItem() {
                 <div className='product-window__gallary-picture'>
                   <img className='product-window__gallary-image' src="./img/productItem1.JPG" alt="storeWood" />
                 </div>
-         
+                <ArrowForwardIosIcon
+                  sx={{
+                    cursor: 'pointer',
+                    color: '#19772E',
+                    fontSize: '30px',
+                    transition: 'transform 0.5s', // Добавляем плавный переход при изменении стилей
+                    '&:hover': {
+                      transform: 'scale(1.2)', // Увеличиваем размер на 20% при наведении
+                    },
+                  }}
+                // onClick={handleClickRight}
+                />
               </div>
             </div>
 
