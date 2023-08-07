@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import MuiAlert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faViber } from '@fortawesome/free-brands-svg-icons';
@@ -8,9 +8,11 @@ import { addFormRules } from '../../../constans/rules';
 import './FirstPage.css';
 import { useForm } from 'react-hook-form';
 import { InputCheckbox } from '../../../components/Forms/InputCheckbox';
+import { Context } from '../../../Contex';
 
 export default function FirstPage() {
   const { control, handleSubmit, getValues, reset } = useForm();
+  const { language } = useContext(Context);
 
   const [click, setClick] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
@@ -142,8 +144,8 @@ export default function FirstPage() {
 
       <div className='firstPage-box container'>
         <h2 className='firstPage-box__title'>StoreWood</h2>
-        <div className='firstPage-box__description'>якісні дитячі ліжка та меблі</div>
-        <div onClick={touchButton} className='firstPage-box__btn'>Замовити дизайн</div>
+        <div className='firstPage-box__description'>{language === 'ua' ? 'якісні дитячі ліжка та меблі' : 'quality children`s beds and furniture'}</div>
+        <div onClick={touchButton} className='firstPage-box__btn'>{language === 'ua' ? 'Замовити дизайн' : 'Order a design'}</div>
         <div className='firstPage-box__social'>
           <a className='firstPage-box__social-item' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faInstagram} className='firstPage-box__social-icon' />

@@ -31,12 +31,9 @@ export default function Header() {
 
           <Link to="aboutUs" className='header-category__item' smooth={true} duration={1000} offset={50}>{language === 'ua' ? 'Про нас' : 'About us'}</Link>
 
-          <Link to="instagram" className='header-category__item' smooth={true} duration={1000} offset={50}>Портфоліо</Link>
+          <Link to="instagram" className='header-category__item' smooth={true} duration={1000} offset={50}>{language === 'ua' ? 'Портфоліо' : 'Portfolio'}</Link>
 
-          {/* <a className={`header-category__item ${location.pathname === '/news2023' ? 'action' : ''}`} href="/">Відгуки</a> */}
-
-          {/* <a className={`header-category__item ${location.pathname === '/about-us' ? 'action' : ''}`} href="/">Контакти</a> */}
-          <Link to="contacts" className='header-category__item' smooth={true} duration={1000} offset={50}>Контакти</Link>
+          <Link to="contacts" className='header-category__item' smooth={true} duration={1000} offset={50}>{language === 'ua' ? 'Контакти' : 'Contacts'}</Link>
 
         </nav>
 
