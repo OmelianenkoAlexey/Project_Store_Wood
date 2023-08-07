@@ -26,12 +26,12 @@ export default function Footer() {
         </div>
 
         <div className='footer-info'>
-          <div className='footer-info__title'>{language === 'ua' ? 'ІНФОРМАЦІЯ' : 'ІНФОРМАЦІЯ'}</div>
+          <div className='footer-info__title'>{language === 'ua' ? 'ІНФОРМАЦІЯ' : 'INFORMATION'}</div>
           <a className='footer-info__item' href="/">{language === 'ua' ? 'Головна' : 'Main'}</a>
           {/* <a className='footer-info__item' href="/about-us">Про нас</a> */}
-          <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000} offset={50}>Про нас</Link>
+          <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000} offset={50}>{language === 'ua' ? 'Про нас' : 'About us'}</Link>
           {/* <a className='footer-info__item' href="/about-us">Портфоліо</a> */}
-          <Link to="instagram" className='footer-info__item' smooth={true} duration={1000} offset={50}>Портфоліо</Link>
+          <Link to="instagram" className='footer-info__item' smooth={true} duration={1000} offset={50}>{language === 'ua' ? 'Портфоліо' : 'Portfolio'}</Link>
           {/* <a className='footer-info__item' href="/about-us">Відгуки</a> */}
         </div>
 
