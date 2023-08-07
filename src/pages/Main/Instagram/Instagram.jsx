@@ -6,7 +6,7 @@ import { Context } from '../../../Contex';
 import './Instagram.css';
 
 export default function Instagram() {
-  const { mainData } = useContext(Context);
+  const { mainData, language } = useContext(Context);
   const [positionOne, setPositionOne] = useState(false);
   const [click, setClick] = useState(false);
   const [image, setImage] = useState(false);
@@ -133,7 +133,7 @@ export default function Instagram() {
       </div>
       <div className='instagram-container container'>
 
-        <h2 className='instagram__title'>Наші роботи</h2>
+        <h2 className='instagram__title'>{language === 'ua' ? 'Наші роботи' : 'Our works'}</h2>
         {/* <a className='instagram__link' href='https://www.instagram.com/legenda_parfum/' target="_blank" rel="noreferrer">@storewood</a> */}
 
         <div className='instagram-box-arrow'>

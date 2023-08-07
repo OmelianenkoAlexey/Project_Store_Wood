@@ -1,31 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import CallBack from '../../components/CallBack/CallBack';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faTelegram, faViber, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
+import { Context } from '../../Contex';
 // import { faCode, faHighlighter, faMobilePhone } from '@fortawesome/free-solid-svg-icons';
 // import { faKorvue, faYoutube, faFacebook, faFacebookF, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
 export default function Footer() {
-  const location = useLocation();
+  const { language } = useContext(Context);
+  // const location = useLocation();
   return (
     <footer id="contacts" className='footer'>
       <div className='footer-primary container'>
 
         <div className='footer-catalog'>
-          <div className='footer-info__title'>КАТАЛОГ</div>
-          <a className='footer-catalog__item' href="/double-beds">Двоспальні ліжка</a>
-          <a className='footer-catalog__item' href="/single-beds">Односпальні ліжка</a>
-          <a className='footer-catalog__item' href="/bunk-beds">Двоповерхові ліжка</a>
-          <a className='footer-catalog__item' href="/house-beds">Ліжка будиночком</a>
+          <div className='footer-info__title'>{language === 'ua' ? 'КАТАЛОГ' : 'CATALOG'}</div>
+          <a className='footer-catalog__item' href="/double-beds">{language === 'ua' ? 'Двоспальні ліжка' : 'Double beds'}</a>
+          <a className='footer-catalog__item' href="/single-beds">{language === 'ua' ? 'Односпальні ліжка' : 'Double beds'}</a>
+          <a className='footer-catalog__item' href="/bunk-beds">{language === 'ua' ? 'Двоповерхові ліжка' : 'Bunk beds'}</a>
+          <a className='footer-catalog__item' href="/house-beds">{language === 'ua' ? 'Ліжка будиночком' : 'The bed is a house'}</a>
         </div>
 
         <div className='footer-info'>
-          <div className='footer-info__title'>ІНФОРМАЦІЯ</div>
-          <a className='footer-info__item' href="/">Головна</a>
+          <div className='footer-info__title'>{language === 'ua' ? 'ІНФОРМАЦІЯ' : 'ІНФОРМАЦІЯ'}</div>
+          <a className='footer-info__item' href="/">{language === 'ua' ? 'Головна' : 'Main'}</a>
           {/* <a className='footer-info__item' href="/about-us">Про нас</a> */}
           <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000} offset={50}>Про нас</Link>
           {/* <a className='footer-info__item' href="/about-us">Портфоліо</a> */}
@@ -35,7 +37,7 @@ export default function Footer() {
 
         <div id='contacts' className='footer-right'>
           {/* <a className='footer-right__title' href="/contacts">КОНТАКТИ</a> */}
-          <div className='footer-right__title'>КОНТАКТИ</div>
+          <div className='footer-right__title'>{language === 'ua' ? 'КОНТАКТИ' : 'CONTACTS'}</div>
           <div className='footer-right__item'>
             <a className='footer-right__item-address' href="https://goo.gl/maps/RLhTv4Rwb4UdhpxBA" target="_blank" rel="noreferrer">м. Запоріжжя, бульвар Шевченка, 16</a>
             <a className='footer-right__item-telephone' href="tel:+380676120366">
