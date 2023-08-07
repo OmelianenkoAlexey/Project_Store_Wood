@@ -12,8 +12,11 @@ export default function Header() {
 
   const { language, setLanguage } = useContext(Context);
 
+  console.log(language);
+
   const handleLanguageChange = (newLanguage) => {
     setLanguage(newLanguage);
+    localStorage.setItem('selectedLanguage', newLanguage); 
   };
 
   return (

@@ -11,7 +11,7 @@
 .firstPage-form {
     display: flex;
     flex-direction: column;
-height: 430px;
+    height: 430px;
 }
 
 /* .firstPage-input {
@@ -111,7 +111,7 @@ height: 430px;
 .firstPage-window__open-title {
     color: #2B2F32;
     font-family: Poiret One;
-    font-size: 32px;
+    font-size: 31px;
     font-weight: 400;
     /* margin-bottom: 10px; */
 }
@@ -169,6 +169,7 @@ height: 430px;
     cursor: pointer;
     transition: 1s;
 }
+
 .firstPage-box__btn:hover {
     color: white;
     background-color: #19772E;

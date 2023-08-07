@@ -29,7 +29,7 @@ export default function FirstPage() {
 
   const onSubmit = () => {
     const { name, number, email, comment } = getValues();
- 
+
     setSuccessOpen(true);
     setClick(false);
     document.body.classList.remove('body-fixed');
@@ -66,17 +66,17 @@ export default function FirstPage() {
       <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity' : ''}`}>
         <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
 
-        <h2 className='firstPage-window__open-title'>Обміркуємо проєкт?</h2>
-        <h2 className='firstPage-window__open-description'>Ми вам зателефонуємо</h2>
+        <h2 className='firstPage-window__open-title'>{language === 'ua' ? 'Обміркуємо проєкт?' : 'Are we considering a project?'}</h2>
+        <h2 className='firstPage-window__open-description'>{language === 'ua' ? 'Ми вам зателефонуємо' : 'We will call you'}</h2>
 
         <form className='firstPage-form' onSubmit={handleSubmit}>
 
           <InputText
             control={control}
             name='name'
-            label='Ваше ім’я'
+            label={language === 'ua' ? 'Ваше ім’я' : 'Your name'}
             type='text'
-            rules={addFormRules.name}
+            rules={language === 'ua' ? addFormRules.name : addFormRules.nameEn}
             color='#5E6366'
           />
 
@@ -85,7 +85,7 @@ export default function FirstPage() {
             name='email'
             label='Email'
             type='text'
-            rules={addFormRules.mail}
+            rules={language === 'ua' ? addFormRules.mail : addFormRules.mailEn}
             color='#5E6366'
             rows='1'
           />
@@ -93,9 +93,9 @@ export default function FirstPage() {
           <InputText
             control={control}
             name='number'
-            label='Номер'
+            label={language === 'ua' ? 'Номер' : 'Number'}
             type='number'
-            rules={addFormRules.number}
+            rules={language === 'ua' ? addFormRules.number : addFormRules.numberEn}
             color='#5E6366'
             rows='1'
           />
@@ -103,26 +103,26 @@ export default function FirstPage() {
           <InputText
             control={control}
             name='comment'
-            label='Коментарі'
+            label={language === 'ua' ? 'Коментарі' : 'Comments'}
             type='number'
-            rules={addFormRules.coment}
+            rules={language === 'ua' ? addFormRules.coment : addFormRules.comentEn}
             color='#5E6366'
             rows='2'
           />
-            </form>
-          <InputCheckbox
-            control={control}
-            name='agreement' // Укажите уникальное имя для чекбокса
-            label={
-              <Typography sx={{ color: '#2B2F32', fontFamily: 'Didact Gothic', fontSize: '14px', fontWeight: '400' }}>
-                Я погоджуюсь на обробку моїх персональних даних
-              </Typography>
-            }
-            defaultValue={true}
-            rules={{ required: true }}
-          />
+        </form>
+        <InputCheckbox
+          control={control}
+          name='agreement' // Укажите уникальное имя для чекбокса
+          label={
+            <Typography sx={{ color: '#2B2F32', fontFamily: 'Didact Gothic', fontSize: '14px', fontWeight: '400' }}>
+              {language === 'ua' ? 'Я погоджуюсь на обробку моїх персональних даних' : 'I agree to the processing of my personal data'}
+            </Typography>
+          }
+          defaultValue={true}
+          rules={{ required: true }}
+        />
 
-      
+
         <Button
           sx={{
             color: 'white',
@@ -136,10 +136,10 @@ export default function FirstPage() {
             },
           }}
           variant="contained"
-            size='large'
-            onClick={handleSubmit(onSubmit)}
-          >Надіслати
-          </Button>
+          size='large'
+          onClick={handleSubmit(onSubmit)}
+        >{language === 'ua' ? 'Надіслати' : 'Send'}
+        </Button>
       </div>
 
       <div className='firstPage-box container'>
@@ -181,7 +181,7 @@ export default function FirstPage() {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
         <MuiAlert elevation={6} variant="filled" onClose={handleSuccessClose} severity="success">
-          Ми отримали повідомлення, скоро Вам зателефонуємо.
+          {language === 'ua' ? 'Ми отримали повідомлення, скоро Вам зателефонуємо.' : 'We have received a message, we will call you soon.'}
         </MuiAlert>
       </Snackbar>
 

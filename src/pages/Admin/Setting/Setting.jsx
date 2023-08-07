@@ -49,14 +49,17 @@ export default function Setting() {
 
   const [product, setProduct] = useState({
     title: '',
+    titleEn: '',
     price: '',
     description: '',
+    descriptionEn: '',
+    characteristic: '',
+    characteristicsEn: '',
     category: '',
-    gender: '',
-    millimeters: '',
-    article: '',
-    brand: '',
-    popular: false,
+    // millimeters: '',
+    // article: '',
+    // brand: '',
+    // popular: false,
   });
 
   useEffect(() => {
@@ -364,6 +367,27 @@ export default function Setting() {
                 placeholder="Назва товару"
               />
             )}
+
+            {editProduct ? (
+              <input
+                className="setting-product__input"
+                name="titleEn"
+                onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.titleEn}
+                type="text"
+                placeholder="Product Name"
+              />
+            ) : (
+              <input
+                className="setting-product__input"
+                name="titleEn"
+                onChange={handleInputChange}
+                value={product.titleEn}
+                type="text"
+                placeholder="Product Name"
+              />
+            )}
+
             {editProduct ? (
               <input
                 className="setting-product__input"
@@ -393,21 +417,54 @@ export default function Setting() {
             )}
 
             {editProduct ? (
-              <input
-                className="setting-product__input"
-                name="article"
-                onChange={(e) => handleEditInputChange(e, editProduct)}
-                value={editProduct.article}
+              <textarea
+                className="setting-product__textarea"
+                name="descriptionEn" onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.descriptionEn}
                 type="text"
-                placeholder="Код товару" />
+                placeholder="Product description" />
             ) : (
-              <input
-                className="setting-product__input"
-                name="article"
-                onChange={handleInputChange}
-                value={product.article}
+              <textarea className="setting-product__textarea"
+                name="descriptionEn" onChange={handleInputChange}
+                value={product.descriptionEn}
                 type="text"
-                placeholder='Код товару' />
+                placeholder='Product description' />
+            )}
+
+            {editProduct ? (
+              <textarea
+                className="setting-product__input"
+                name="characteristic"
+                onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.characteristic}
+                type="text"
+                placeholder="характеристика товару" />
+            ) : (
+              <textarea
+                className="setting-product__input"
+                name="characteristic"
+                onChange={handleInputChange}
+                value={product.characteristic}
+                type="text"
+                placeholder='характеристика товару' />
+            )}
+
+            {editProduct ? (
+              <textarea
+                className="setting-product__input"
+                name="characteristicEn"
+                onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.characteristicEn}
+                type="text"
+                placeholder="product characteristics" />
+            ) : (
+              <textarea
+                className="setting-product__input"
+                name="characteristicEn"
+                onChange={handleInputChange}
+                value={product.characteristicEn}
+                type="text"
+                placeholder='product characteristics' />
             )}
 
             {editProduct ? (
@@ -432,7 +489,7 @@ export default function Setting() {
               </select>
             )}
 
-            {editProduct ? (
+            {/* {editProduct ? (
               <select
                 onChange={(e) => handleEditInputChange(e, editProduct)}
                 name="brand"
@@ -452,9 +509,9 @@ export default function Setting() {
                   <option key={index}>{item}</option>
                 ))}
               </select>
-            )}
+            )} */}
 
-            {editProduct ? (
+            {/* {editProduct ? (
               <select
                 onChange={(e) => handleEditInputChange(e, editProduct)}
                 name="millimeters"
@@ -474,9 +531,9 @@ export default function Setting() {
                   <option key={index}>{item}</option>
                 ))}
               </select>
-            )}
+            )} */}
 
-            {editProduct ? (
+            {/* {editProduct ? (
               <select
                 onChange={(e) => handleEditInputChange(e, editProduct)}
                 name="gender"
@@ -496,9 +553,9 @@ export default function Setting() {
                 <option>Жіночий</option>
                 <option>Унісекс</option>
               </select>
-            )}
+            )} */}
 
-            {editProduct ? (
+            {/* {editProduct ? (
               <label>
                 <input
                   name="popular"
@@ -517,7 +574,7 @@ export default function Setting() {
                   value={product.popular} />
                 Додати у популярні
               </label>
-            )}
+            )} */}
 
             {editProduct ? (
               <button
@@ -543,10 +600,10 @@ export default function Setting() {
               ))}
             </select>
 
-            <label className='setting-product__change'>
+            {/* <label className='setting-product__change'>
               <input name="popular" type="checkbox" onChange={handleChangeShowPopular} disabled={selectedCategory === 'Всі товари'} />
               Показати популярні
-            </label>
+            </label> */}
 
             <input className='setting-product__search' value={searchQuery} onChange={handleSearchInputChange} type="text" name="search" placeholder='Пошук товара/артікля' />
 
@@ -573,14 +630,17 @@ export default function Setting() {
                 </div>
                 <div className={`${display ? 'setting-product__box-item-info' : 'setting-product__box-item-info__display'}`}>
                   <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display'}`}>{item.title}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display'}`}>{item.titleEn}</div>
                   <div className={`${display ? 'setting-product__box-item-info__price' : 'setting-product__box-item-info__price__display'}`}>{item.price} UAH</div>
                   <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.description}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.descriptionEn}</div>
                   <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.category}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.brand}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.millimeters}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.characteristic}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.characteristicEn}</div>
+                  {/* <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.millimeters}</div>
                   <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.gender}</div>
                   <div className={`${display ? 'setting-product__box-item-info__article' : 'setting-product__box-item-info__article__display'}`}>{item.article}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__popular' : 'setting-product__box-item-info__popular__display'}`}>Популярні: {item.popular ? 'Так' : 'Ні'}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__popular' : 'setting-product__box-item-info__popular__display'}`}>Популярні: {item.popular ? 'Так' : 'Ні'}</div> */}
                 </div>
               </div>
               <button className="setting-carusel__item-edit" onClick={() => setEditProduct(item, setEditProductOrigin(item))}>Редагувати</button>

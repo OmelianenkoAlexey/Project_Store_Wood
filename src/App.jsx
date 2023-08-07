@@ -12,6 +12,11 @@ export default function App() {
   // язык
   const [language, setLanguage] = useState('ua');
 
+  useEffect(() => {
+    if (localStorage.getItem('selectedLanguage')) {
+      setLanguage(localStorage.getItem('selectedLanguage'))
+    }
+  }, []);
 
   const [data2, setData] = useState(null);
 
