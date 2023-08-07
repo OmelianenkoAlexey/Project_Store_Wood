@@ -52,19 +52,15 @@
 .header-language {
     display: flex;
     gap: 10px;
-    margin-right: 20px;
-    color: white;
+    color: #757575;
     font-size: 17px;
     font-weight: 600;
+    cursor: pointer;
 }
 
-.header-language__en {
-    border-left: 1px solid black;
-    padding-left: 10px;
-}
-
-.header-language__en:hover {
-    color: #19772E !important;
+.header-language__line {
+    border: 1px solid #757575;
+    border-radius: 20px;
 }
 
 .header-language__active {

@@ -9,6 +9,10 @@ import Pulse from './components/Pulse/Pulse';
 export default function App() {
   const [cartItems2, setCartItems2] = useState([]);
 
+  // язык
+  const [language, setLanguage] = useState('ua');
+
+
   const [data2, setData] = useState(null);
 
   useEffect(() => {
@@ -35,7 +39,7 @@ export default function App() {
   const hasAuth = localStorage.getItem('auth') !== null;
 
   return (
-    <Context.Provider value={{ mainData, cartItems2, setCartItems2 }}>
+    <Context.Provider value={{ mainData, cartItems2, setCartItems2, language, setLanguage }}>
       <BrowserRouter>
         <Routes>
           <Route path='/*' element={<MainRoute />} />
