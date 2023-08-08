@@ -10,6 +10,7 @@ export default function Main() {
   return (
     <main>
       {/* <ImageCarousel /> */}
+
       <FirstPage />
       <Catalog />
       <AboutUs />
