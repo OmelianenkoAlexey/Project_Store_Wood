@@ -12,11 +12,11 @@ export default function GridContainer({ children }) {
           <Header />
         {/* </Grid> */}
         {/* <Grid item xs={12} sm={12} md={12} lg={12}> */}
-          {/* {children} */}
+          {children}
 
         {/* </Grid> */}
         {/* // <Grid item xs={12} md={12} lg={12}> */}
-          {/* <Footer /> */}
+          <Footer />
           
         {/* </Grid> */}
       {/* </Grid> */}

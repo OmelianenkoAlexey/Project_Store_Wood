@@ -8,6 +8,7 @@
     /* grid-area: burger; */
     display: none;
     z-index: 3;
+    background-color:red;
 }
 
 .burger__btn span {
