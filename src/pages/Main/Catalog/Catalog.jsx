@@ -4,56 +4,6 @@ import './Catalog.css';
 
 export default function Catalog() {
   const { language } = useContext(Context);
-  const [positionOne, setPositionOne] = useState(true);
-  const [positionTwo, setPositionTwo] = useState(true);
-  const [positionThree, setPositionThree] = useState(true);
-  const [positionFour, setPositionFour] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollThresholdOne = 550;
-      const scrollThresholdTwo = 1200;
-      const scrollThresholdThree = 1800;
-      const scrollThresholdFour = 2400;
-
-      // Получаем текущую позицию прокрутки страницы
-      const currentPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentPosition >= scrollThresholdOne) {
-        setPositionOne(false);
-      } else {
-        setPositionOne(true);
-      }
-
-      if (currentPosition >= scrollThresholdTwo) {
-        setPositionTwo(false);
-      } else {
-        setPositionTwo(true);
-      }
-
-      if (currentPosition >= scrollThresholdThree) {
-        setPositionThree(false);
-      } else {
-        setPositionThree(true);
-      }
-
-      if (currentPosition >= scrollThresholdFour) {
-        setPositionFour(false);
-      } else {
-        setPositionFour(true);
-      }
-    };
-
-    // Добавляем обработчик события прокрутки
-    window.addEventListener('scroll', handleScroll);
-
-    // Удаляем обработчик при размонтировании компонента
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-
 
   return (
     <div id='catalog' className='catalog'>
@@ -83,18 +33,18 @@ export default function Catalog() {
               {language === 'ua' ? 'Детальніше' : 'More details'}</div>
           </div>
           <div className='catalog-box__item-picture'>
-            <img className={`catalog-box__item-image ${positionOne ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog1.png" alt="Store Wood" />
+            <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
           </div>
         </a>
 
         <a className='catalog-box__item' href="/double-beds">
-          <div className='catalog-box__item-text'>
+          <div className='catalog-box__item-text  catalog-box__item-text-left'>
             <h3 className='catalog-box__item-text-title'>{language === 'ua' ? 'Двоспальні ліжка' : 'Double beds'}</h3>
             <div className='catalog-box__item-text-link'>
               {language === 'ua' ? 'Детальніше' : 'More details'}</div>
           </div>
-          <div className='catalog-box__item-picture catalog-box__item-picture-md'>
-            <img className={`catalog-box__item-image ${positionTwo ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog2.png" alt="Store Wood" />
+          <div className='catalog-box__item-picture-left'>
+            <img className='catalog-box__item-image' src="./img/catalog2.png" alt="Store Wood" />
           </div>
         </a>
 
@@ -105,18 +55,18 @@ export default function Catalog() {
               {language === 'ua' ? 'Детальніше' : 'More details'}</div>
           </div>
           <div className='catalog-box__item-picture'>
-            <img className={`catalog-box__item-image ${positionThree ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog3.png" alt="Store Wood" />
+            <img className='catalog-box__item-image' src="./img/catalog3.png" alt="Store Wood" />
           </div>
         </a>
 
         <a className='catalog-box__item' href="/house-beds">
-          <div className='catalog-box__item-text'>
+          <div className='catalog-box__item-text  catalog-box__item-text-left'>
             <h3 className='catalog-box__item-text-title'>{language === 'ua' ? 'Ліжка будиночком' : 'The bed is a house'}</h3>
             <div className='catalog-box__item-text-link'>
               {language === 'ua' ? 'Детальніше' : 'More details'}</div>
           </div>
-          <div className='catalog-box__item-picture catalog-box__item-picture-md'>
-            <img className={`catalog-box__item-image ${positionFour ? 'catalog-box__item-image-left' : ''}`} src="./img/catalog4.png" alt="Store Wood" />
+          <div className='catalog-box__item-picture-left'>
+            <img className='catalog-box__item-image' src="./img/catalog4.png" alt="Store Wood" />
           </div>
         </a>
       </div>

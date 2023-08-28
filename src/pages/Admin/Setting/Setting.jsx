@@ -57,7 +57,7 @@ export default function Setting() {
     characteristicsEn: '',
     category: '',
     // millimeters: '',
-    // article: '',
+    article: '',
     // brand: '',
     // popular: false,
   });
@@ -225,12 +225,12 @@ export default function Setting() {
       }
       return false;
     }).filter((item) => {
+      console.log(item);
       const lowerCaseSearchQuery = searchQuery.toLowerCase();
       const lowerCaseTitle = item.title.toLowerCase();
-      const lowerCaseArticle = item.article.toLowerCase();
 
       return (
-        lowerCaseTitle.includes(lowerCaseSearchQuery) || lowerCaseArticle.includes(lowerCaseSearchQuery)
+        lowerCaseTitle.includes(lowerCaseSearchQuery)
       );
     });
 

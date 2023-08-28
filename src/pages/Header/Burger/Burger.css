@@ -8,7 +8,6 @@
     /* grid-area: burger; */
     display: none;
     z-index: 3;
-    background-color:red;
 }
 
 .burger__btn span {
@@ -55,45 +54,51 @@
 .burger-category {
     height: calc(100vh - 48px);
     width: 100vw;
-    background-color: #111212;
+    background-color: #ffffff;
     position: absolute;
     top: 70px;
     right: 0px;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
-    padding: 40px 20px;
+    padding: 40px 30px;
+    transition: 2s;
+    align-items: flex-start;
+    margin-top: 40px;
 }
 
 .burger-category__item {
-    font-weight: 600;
-    color: #FFF;
-    font-size: 15px;
-    font-family: Nunito;
-    line-height: 22.4px;
-    letter-spacing: 2.8px;
+    color: #19772E;
+    font-size: 25px;
+    font-weight: 400;
     cursor: pointer;
     transition: 1s ease-in-out;
     filter: blur(5px);
     opacity: 0;
 }
 
-.burger-category__active {
+.burger-category__item__active {
     opacity: 1;
     filter: none;
     animation-name: fade-in;
-    animation-duration: 0.5s;
+    animation-duration: 2s
 }
 
 @keyframes fade-in {
-    from {
-        transform: translateY(-40px);
+    0% {
+        /* transform: translateY(-40px); */
+        transform: translateX(-100%);
     }
 
-    to {
-        transform: translateY(0);
+    50% {
+        /* transform: translateY(0); */
+        transform: translateX(10%);
+    }
+
+    100% {
+        /* transform: translateY(0); */
+        transform: translateX(0%);
     }
 }
 

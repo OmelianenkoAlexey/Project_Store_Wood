@@ -13,15 +13,14 @@ export default function Burger() {
   const [isOpacityEight, setIsOpacityEight] = useState(false);
 
   const title = [
-    { title: 'ГОЛОВНА', href: '/', active: isOpacityOne },
-    { title: 'ПОВНІ ФЛАКОНИ', href: '/full-vials', active: isOpacityTwo },
-    { title: 'РОЗПИВ', href: '/rospiv', active: isOpacityTwo },
-    { title: 'МІНІАТЮРИ', href: '/miniatures', active: isOpacityThree },
-    { title: 'КОСМЕТИКА', href: '/makeup', active: isOpacityFour },
-    { title: 'НОВИНКИ 2023', href: '/news2023', active: isOpacityFive },
-    { title: 'ОПЛАТА І ДОСТАВКА', href: '/payment-and-delivery', active: isOpacitySix },
-    { title: 'ПРО НАС', href: '/about-us', active: isOpacitySeven },
-    { title: 'КОНТАКТИ', href: '/contacts', active: isOpacityEight }
+    { title: 'Головна', href: '/', active: isOpacityOne },
+    { title: 'Двоспальні ліжка', href: '/full-vials', active: isOpacityTwo },
+    { title: 'Односпальні ліжка', href: '/rospiv', active: isOpacityTwo },
+    { title: 'Двоярусні ліжка', href: '/miniatures', active: isOpacityThree },
+    { title: 'Ліжка будиночком', href: '/makeup', active: isOpacityFour },
+    { title: 'Про нас', href: '/news2023', active: isOpacityFive },
+    { title: 'Галерея', href: '/payment-and-delivery', active: isOpacitySix },
+    { title: 'Контакти', href: '/contacts', active: isOpacityEight }
   ];
 
   const handleClick = () => {
@@ -79,9 +78,9 @@ export default function Burger() {
       </div>
       {isOpen && (
 
-        <div className="burger-category">
+        <div className='burger-category'>
           {title.map((item, index) => (
-            <a key={index} className={`burger-category__item ${item.active ? 'burger-category__active' : ''}`} href={item.href}>{item.title}</a>
+            <a key={index} className={`burger-category__item ${item.active ? 'burger-category__item__active' : ''}`} href={item.href}>{item.title}</a>
           ))}
         </div>
       )}
