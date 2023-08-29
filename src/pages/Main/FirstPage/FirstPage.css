@@ -202,9 +202,9 @@
 
 .firstPage-background__picture2 {
     position: absolute;
-    top: 70px;
     right: 0;
     height: 35vh;
+    top: 35px;
 }
 
 .firstPage-background__image {

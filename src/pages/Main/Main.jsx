@@ -14,7 +14,7 @@ export default function Main() {
       <FirstPage />
       <Catalog />
       <AboutUs />
-      {/* <Instagram /> */}
+      <Instagram />
     </main>
   );
 }

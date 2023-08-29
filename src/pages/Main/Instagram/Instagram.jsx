@@ -7,13 +7,9 @@ import './Instagram.css';
 
 export default function Instagram() {
   const { mainData, language } = useContext(Context);
-  const [positionOne, setPositionOne] = useState(false);
   const [click, setClick] = useState(false);
   const [image, setImage] = useState(false);
   const [load, setLoad] = useState([]);
-
-  const currentPath = window.location.pathname;
-
 
   const loadImage = (src) => new Promise((resolve, reject) => {
     const image = new Image();
@@ -36,59 +32,6 @@ export default function Instagram() {
       loadImages(mainData[0].gallery);
     }
   }, [mainData]);
-
-
-  useEffect(() => {
-    if (currentPath !== '/') {
-      const items = document.querySelectorAll('.instagram-box__item-image');
-      items.forEach((item, index) => {
-        item.classList.add('instagram-box__item-image-opacity');
-      });
-    }
-  }, [load]);
-
-  useEffect(() => {
-    if (positionOne) {
-      const items = document.querySelectorAll('.instagram-box__item-image');
-
-      items.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('instagram-box__item-image-opacity');
-        }, (index + 1) * 300);
-      });
-    }
-  }, [positionOne]);
-
-
-  useEffect(() => {
-    if (currentPath === '/') {
-      const handleScroll = () => {
-        const scrollThreshold = 4800;
-
-        // Получаем текущую позицию прокрутки страницы
-        const currentPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-
-        if (currentPosition >= scrollThreshold) {
-          setPositionOne(true);
-        } else {
-          setPositionOne(false);
-          const items = document.querySelectorAll('.instagram-box__item-image');
-          items.forEach((item, index) => {
-            item.classList.remove('instagram-box__item-image-opacity');
-          });
-        }
-      };
-
-      // Добавляем обработчик события прокрутки
-      window.addEventListener('scroll', handleScroll);
-
-      // Удаляем обработчик при размонтировании компонента
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
-  }, []);
-
 
   const [index, setIndex] = useState(0);
 
@@ -115,8 +58,7 @@ export default function Instagram() {
     document.body.classList.remove('body-fixed');
   };
 
-
-  const Screen768 = useMediaQuery('(min-width:768px)');
+  const Screen992 = useMediaQuery('(min-width:992px)');
 
   return (
     <div id='instagram' className='instagram'>
@@ -124,7 +66,6 @@ export default function Instagram() {
       <div onClick={touchButtonClose} className={`firstPage-window ${click ? 'opacity' : ''}`}></div>
 
       <div className={`instagram-window__open ${click ? 'instagram-window__open-true opacity' : ''}`}>
-        {/* <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" /> */}
         <img onClick={touchButtonClose} className='instagram-window__open-image' src={image.currentSrc} alt="" />
       </div>
 
@@ -134,7 +75,6 @@ export default function Instagram() {
       <div className='instagram-container container'>
 
         <h2 className='instagram__title'>{language === 'ua' ? 'Наші роботи' : 'Our works'}</h2>
-        {/* <a className='instagram__link' href='https://www.instagram.com/legenda_parfum/' target="_blank" rel="noreferrer">@storewood</a> */}
 
         <div className='instagram-box-arrow'>
 
@@ -153,7 +93,7 @@ export default function Instagram() {
 
           <div className='instagram-box'>
 
-            {Screen768
+            {Screen992
               ? newNews.slice(0, 4).map((item, index) => (
                 <div onClick={() => handleClickOpen(item)} key={index} className='instagram-box__item'>
                   <img className='instagram-box__item-image' src={item.currentSrc} alt="" />
