@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <>
-      <div className='header container'>
+      <div id='main' className='header container'>
 
         <a className='header-logo__picture' href="/">
           <img className='header-logo__image' src="./img/logo-header.svg" alt="storeWood" />

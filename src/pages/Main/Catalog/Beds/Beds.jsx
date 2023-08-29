@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../../../Contex';
 import './Beds.css';
 import Instagram from '../../Instagram/Instagram';
+import AboutUs from '../../AboutUs/AboutUs';
 
 
 export default function Beds() {
@@ -41,57 +42,56 @@ export default function Beds() {
     }
   }, [mainData]);
 
-  const handleItem  = async (item) => {
+  const handleItem = async (item) => {
 
     await localStorage.setItem('Items', JSON.stringify(item));
-    
+
     window.location.href = '/product-item';
   };
 
 
   return (
     <>
-      <div className='singleBeds'>
-        <div className='singleBeds-container'>
+      <div className='beds'>
 
-          <div className='singleBeds-box container'>
-            <div className='singleBeds-box__picture'>
-              <img className='singleBeds-box__image' src={mainImg} alt="storeWood" />
-            </div>
-            <div className='singleBeds-box__text'>
-              <h2 className='singleBeds-box__text-title'>{textTitle}</h2>
-              <div className='singleBeds-box__text-description'>{textDescription}</div>
-            </div>
+        <div className='beds-box container'>
+          <div className='beds-box__picture'>
+            <img className='beds-box__image' src={mainImg} alt="storeWood" />
           </div>
-          <div className='singleBeds-boxSecond'>
+          <div className='beds-box__text'>
+            <h2 className='beds-box__text-title'>{textTitle}</h2>
+            <div className='beds-box__text-description'>{textDescription}</div>
+          </div>
+        </div>
+        <div className='beds-boxSecond'>
 
-            <div className='singleBeds-boxSecond__picture1'>
-              <img className='singleBeds-boxSecond__image' src="./img/leaves1.png" alt="Store Wood" />
-            </div>
+          <div className='beds-boxSecond__picture1'>
+            <img className='beds-boxSecond__image' src="./img/leaves1.png" alt="Store Wood" />
+          </div>
 
-            <div className='singleBeds-boxSecond__picture2'>
-              <img className='singleBeds-boxSecond__image' src="./img/leaves2.png" alt="Store Wood" />
-            </div>
+          <div className='beds-boxSecond__picture2'>
+            <img className='beds-boxSecond__image' src="./img/leaves2.png" alt="Store Wood" />
+          </div>
 
-            <div className='singleBeds-boxSecond__container container'>
+          <div className='beds-boxSecond__container container'>
 
-              {product.map((item, index) => (
-                <div onClick={() => handleItem(item)} key={index} className='singleBeds-boxSecond__item'>
-                  <div className='singleBeds-boxSecond__item-picture'>
-                    <img className='singleBeds-boxSecond__item-image' src={item.img[0]} alt="storeWood" />
-                  </div>
-
-                  <div className='singleBeds-boxSecond__item-text'>
-                    <div className='singleBeds-boxSecond__item-text-title'>{item.title}</div>
-                    <div className='singleBeds-boxSecond__item-text-price'>{item.price}</div>
-                  </div>
+            {product.map((item, index) => (
+              <div onClick={() => handleItem(item)} key={index} className='beds-boxSecond__item'>
+                <div className='beds-boxSecond__item-picture'>
+                  <img className='beds-boxSecond__item-image' src={item.img[0]} alt="storeWood" />
                 </div>
-              ))}
 
-            </div>
+                <div className='beds-boxSecond__item-text'>
+                  <div className='beds-boxSecond__item-text-title'>{item.title}</div>
+                  <div className='beds-boxSecond__item-text-price'>{item.price}</div>
+                </div>
+              </div>
+            ))}
+
           </div>
         </div>
       </div>
+      <AboutUs />
       <Instagram />
     </>
   );

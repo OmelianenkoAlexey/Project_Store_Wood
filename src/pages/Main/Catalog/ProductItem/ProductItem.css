@@ -7,25 +7,25 @@
 .productItem-container {}
 
 .productItem-box {
-    /* height: 630px; */
     width: 100%;
-
-    /* background-color: #F1F9F0; */
-    /* background-color: greenyellow; */
 
     display: flex;
     gap: 50px;
+    justify-content: center;
     margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
 
 
-.product-window__gallary {}
+.product-window__gallary {
+    width: 600px;
+}
 
 .product-window__gallary-pictureMain {
-    width: 800px;
-    height: 500px;
     margin-bottom: 50px;
+    height: 400px;
+    width: 100%;
 }
 
 .product-window__gallary-image {
@@ -51,8 +51,8 @@
 }
 
 .product-window__gallary-picture {
-    width: 124px;
-    height: 90px;
+    width: 80px;
+    height: 60px;
 }
 
 .product-window__gallary-image {
@@ -61,11 +61,8 @@
     object-fit: cover;
 }
 
-
-
-
 .product-window__info {
-    width: 100%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,8 +97,6 @@
     overflow: clip;
 
 }
-
-
 
 .product-window__info-color {
     font-size: 20px;
@@ -148,27 +143,61 @@
 .productItem__description {
     font-size: 18px;
     font-weight: 600;
-    width: 800px;
     margin-bottom: 30px;
 }
 
 .productItem__characteristic {
     font-size: 18px;
-    width: 800px;
 }
 
-.SingleBeds {}
 
-.SingleBeds {}
+@media (max-width: 1200px) {
+
+    .productItem-box {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
 
 
+}
 
+@media (max-width: 992px) {
 
+.product-window__info {
+        padding-top: 20px;
+    }
 
-@media (max-width: 1200px) {}
+}
 
-@media (max-width: 992px) {}
+@media (max-width: 768px) {
 
-@media (max-width: 768px) {}
+    .product-window__gallary {
+        width: 100%;
+    }
 
-@media (max-width: 576px) {}
+    .product-window__gallary-pictureMain {
+        height: 100%;
+    }
+
+    .product-window__gallary-box__images {
+        justify-content: center;
+    }
+
+    .product-window__info {
+        width: 100%;
+    }
+
+.product-window__gallary-box {
+    gap: 0px;
+}
+
+}
+
+@media (max-width: 576px) {
+
+.product-window__info {
+       padding-top: 0px;
+    }
+
+}

@@ -1,18 +1,13 @@
 import React, { useContext } from 'react';
-// import CallBack from '../../components/CallBack/CallBack';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faTelegram, faViber, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Context } from '../../Contex';
-// import { faCode, faHighlighter, faMobilePhone } from '@fortawesome/free-solid-svg-icons';
-// import { faKorvue, faYoutube, faFacebook, faFacebookF, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
-// import { useLocation } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
 export default function Footer() {
   const { language } = useContext(Context);
-  // const location = useLocation();
   return (
     <footer id="contacts" className='footer'>
       <div className='footer-primary container'>
@@ -27,12 +22,9 @@ export default function Footer() {
 
         <div className='footer-info'>
           <div className='footer-info__title'>{language === 'ua' ? 'ІНФОРМАЦІЯ' : 'INFORMATION'}</div>
-          <a className='footer-info__item' href="/">{language === 'ua' ? 'Головна' : 'Main'}</a>
-          {/* <a className='footer-info__item' href="/about-us">Про нас</a> */}
-          <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000} offset={50}>{language === 'ua' ? 'Про нас' : 'About us'}</Link>
-          {/* <a className='footer-info__item' href="/about-us">Портфоліо</a> */}
-          <Link to="instagram" className='footer-info__item' smooth={true} duration={1000} offset={50}>{language === 'ua' ? 'Портфоліо' : 'Portfolio'}</Link>
-          {/* <a className='footer-info__item' href="/about-us">Відгуки</a> */}
+          <Link to="main" className='footer-info__item' smooth={true} duration={1000}>{language === 'ua' ? 'Головна' : 'Main'}</Link>
+          <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000}>{language === 'ua' ? 'Про нас' : 'About us'}</Link>
+          <Link to="instagram" className='footer-info__item' smooth={true} duration={500}>{language === 'ua' ? 'Портфоліо' : 'Portfolio'}</Link>
         </div>
 
         <div id='contacts' className='footer-right'>
@@ -65,17 +57,6 @@ export default function Footer() {
       </div>
 
       <div className='footer-secondary'>
-
-        <div className='footer-secondary__telephone'>
-          {/* <CallBack
-            buttonText="Ми Вам зателефонуємо"
-            dialogTitle="Введіть Ваш номер телефону та коментар"
-            dialogText="Ми зателефонуємо якнайшвидше та відповемо на всі ваші питання"
-            confirmText="Надіслати" cancelText="Відміна" from="звідки - 'Головна сторінка'"
-            fontSize="12px"
-          /> */}
-        </div>
-
         <div className='footer-secondary__info'>© 2023 Store Wood</div>
       </div>
     </footer>

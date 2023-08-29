@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './ProductItem.css';
 import Instagram from '../../Instagram/Instagram';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { useMediaQuery } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Context } from '../../../../Contex';
+import AboutUs from '../../AboutUs/AboutUs';
 
 export default function ProductItem() {
   const [product, setProduct] = useState([]);
@@ -40,6 +41,8 @@ export default function ProductItem() {
     }
   };
 
+  const Screen768 = useMediaQuery('(min-width:768px)');
+
 
   return (
     <>
@@ -59,19 +62,29 @@ export default function ProductItem() {
                     cursor: 'pointer',
                     color: '#19772E',
                     fontSize: '30px',
-                    transition: 'transform 0.5s', // Добавляем плавный переход при изменении стилей
+                    transition: 'transform 0.5s',
                     '&:hover': {
-                      transform: 'scale(1.2)', // Увеличиваем размер на 20% при наведении
+                      transform: 'scale(1.2)',
                     },
                   }}
                   onClick={handleClickLeft}
                 />
                 <div className='product-window__gallary-box__images'>
-                  {product.img && product.img.slice(0, 5).map((item, index) => (
+
+
+
+                  {Screen768 ? product.img && product.img.slice(0, 5).map((item, index) => (
                     <div key={index} className='product-window__gallary-picture'>
                       <img className='product-window__gallary-image' src={item} alt='storeWood' />
                     </div>
-                  ))}
+                  ))
+                    :
+                    product.img && product.img.slice(0, 3).map((item, index) => (
+                      <div key={index} className='product-window__gallary-picture'>
+                        <img className='product-window__gallary-image' src={item} alt='storeWood' />
+                      </div>
+                    ))
+                  }
                 </div>
                 <ArrowForwardIosIcon
                   sx={{
@@ -116,6 +129,7 @@ export default function ProductItem() {
 
         </div>
       </div>
+      <AboutUs />
       <Instagram />
     </>
   );

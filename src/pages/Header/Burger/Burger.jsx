@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Burger.css';
+import { Link } from 'react-scroll';
 
 export default function Burger() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,18 +10,17 @@ export default function Burger() {
   const [isOpacityFour, setIsOpacityFour] = useState(false);
   const [isOpacityFive, setIsOpacityFive] = useState(false);
   const [isOpacitySix, setIsOpacitySix] = useState(false);
-  const [isOpacitySeven, setIsOpacitySeven] = useState(false);
   const [isOpacityEight, setIsOpacityEight] = useState(false);
 
   const title = [
     { title: 'Головна', href: '/', active: isOpacityOne },
-    { title: 'Двоспальні ліжка', href: '/full-vials', active: isOpacityTwo },
-    { title: 'Односпальні ліжка', href: '/rospiv', active: isOpacityTwo },
-    { title: 'Двоярусні ліжка', href: '/miniatures', active: isOpacityThree },
-    { title: 'Ліжка будиночком', href: '/makeup', active: isOpacityFour },
-    { title: 'Про нас', href: '/news2023', active: isOpacityFive },
-    { title: 'Галерея', href: '/payment-and-delivery', active: isOpacitySix },
-    { title: 'Контакти', href: '/contacts', active: isOpacityEight }
+    { title: 'Односпальні ліжка', href: '/single-beds', active: isOpacityTwo },
+    { title: 'Двоспальні ліжка', href: '/double-beds', active: isOpacityTwo },
+    { title: 'Двоярусні ліжка', href: '/bunk-beds', active: isOpacityThree },
+    { title: 'Ліжка будиночком', href: '/house-beds', active: isOpacityFour },
+    { title: 'Про нас', to: 'aboutUs', active: isOpacityFive },
+    { title: 'Галерея', to: 'instagram', active: isOpacitySix },
+    { title: 'Контакти', to: 'contacts', active: isOpacityEight }
   ];
 
   const handleClick = () => {
@@ -32,7 +32,6 @@ export default function Burger() {
     setIsOpacityFour(false);
     setIsOpacityFive(false);
     setIsOpacitySix(false);
-    setIsOpacitySeven(false);
     setIsOpacityEight(false);
 
     setTimeout(() => {
@@ -60,12 +59,8 @@ export default function Burger() {
     }, 600);
 
     setTimeout(() => {
-      setIsOpacitySeven(true);
-    }, 700);
-
-    setTimeout(() => {
       setIsOpacityEight(true);
-    }, 800);
+    }, 700);
 
   };
 
@@ -80,7 +75,26 @@ export default function Burger() {
 
         <div className='burger-category'>
           {title.map((item, index) => (
-            <a key={index} className={`burger-category__item ${item.active ? 'burger-category__item__active' : ''}`} href={item.href}>{item.title}</a>
+            item.to ? (
+              <Link
+                key={index}
+                className={`burger-category__item ${item.active ? 'burger-category__item__active' : ''}`}
+                to={item.to}
+                smooth={true}
+                duration={500}
+                onClick={() => {handleClick()}}
+              >
+                {item.title}
+              </Link>
+            ) : (
+              <a
+                key={index}
+                className={`burger-category__item ${item.active ? 'burger-category__item__active' : ''}`}
+                href={item.href}
+              >
+                {item.title}
+              </a>
+            )
           ))}
         </div>
       )}
