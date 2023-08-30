@@ -1,54 +1,69 @@
-export const rulesText = {
-  required: (field) => `Треба ввести ${field}.`,
+export const rulesTextDe = {
+  required: (field) => `Muss eingegeben werden ${field}.`,
 };
 export const rulesTextEn = {
   required: (field) => `Must be entered ${field}.`,
 };
-export const addFormRulesImage = {
-  required: (field) => `Треба додати ${field}.`,
+export const rulesTextPl = {
+  required: (field) => `Należy wpisać ${field}.`,
+};
+export const addFormRulesImageDe = {
+  required: (field) => `Es sollte hinzugefügt werden ${field}.`,
 };
 export const addFormRulesImageEn = {
   required: (field) => `It should be added ${field}.`,
 };
+export const addFormRulesImagePl = {
+  required: (field) => `Należy to dodać ${field}.`,
+};
 
 export const adminRules = {
   login: {
-    required: { value: true, message: rulesText.required('логін') },
+    required: { value: true, message: rulesTextEn.required('login') },
   },
   password: {
-    required: { value: true, message: rulesText.required('пароль') },
+    required: { value: true, message: rulesTextEn.required('password') },
   },
   agreement: {
-    required: { value: true, message: rulesText.required('погодження на обробку персональних даних') },
+    required: { value: true, message: rulesTextEn.required('happy for the processing of personal data') },
   },
 };
 
 export const addFormRules = {
-  name: {
-    required: { value: true, message: rulesText.required('Ім’я') },
-  },
   nameEn: {
     required: { value: true, message: rulesTextEn.required('Name') },
   },
-  mail: {
-    required: { value: true, message: rulesText.required('E-mail') },
+  nameDe: {
+    required: { value: true, message: rulesTextDe.required('Name') },
+  },
+  namePl: {
+    required: { value: true, message: rulesTextPl.required('Nazwa') },
   },
   mailEn: {
     required: { value: true, message: rulesTextEn.required('E-mail') },
   },
-  number: {
-    required: { value: true, message: addFormRulesImage.required('Номер телефону') },
+  mailDe: {
+    required: { value: true, message: rulesTextDe.required('E-mail') },
+  },
+  mailPl: {
+    required: { value: true, message: rulesTextPl.required('E-mail') },
   },
   numberEn: {
     required: { value: true, message: addFormRulesImageEn.required('Phone number') },
   },
-  coment: {
-    required: { value: true, message: addFormRulesImage.required('Ваш коментар') },
+  numberDe: {
+    required: { value: true, message: addFormRulesImageDe.required('Telefonnummer') },
+  },
+  numberPl: {
+    required: { value: true, message: addFormRulesImagePl.required('Numer telefonu') },
   },
   comentEn: {
     required: { value: true, message: addFormRulesImageEn.required('Your comment') },
   },
-  department: {
-    required: { value: true, message: addFormRulesImage.required('Відділення') },
+  comentDe: {
+    required: { value: true, message: addFormRulesImageDe.required('Dein Kommentar') },
+  },
+  comentPl: {
+    required: { value: true, message: addFormRulesImagePl.required('Twój komentarz') },
   },
 };

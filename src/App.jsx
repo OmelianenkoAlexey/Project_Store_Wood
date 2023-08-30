@@ -4,13 +4,13 @@ import MainRoute from './pages/MainRoute';
 import { Context } from './Contex';
 import { firestore } from './firebase';
 import DeleteButton from './pages/Admin/DeleteAdmin';
-import Pulse from './components/Pulse/Pulse';
+// import Pulse from './components/Pulse/Pulse';
 
 export default function App() {
   const [cartItems2, setCartItems2] = useState([]);
 
   // язык
-  const [language, setLanguage] = useState('ua');
+  const [language, setLanguage] = useState('de');
 
   useEffect(() => {
     if (localStorage.getItem('selectedLanguage')) {

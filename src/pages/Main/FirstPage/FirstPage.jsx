@@ -17,6 +17,73 @@ export default function FirstPage() {
   const [click, setClick] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
 
+
+  const translations = {
+    en: {
+      title: 'Are we considering a project?',
+      description: 'We will call you',
+      nameLabel: 'Your name',
+      emailLabel: 'Email',
+      numberLabel: 'Number',
+      commentLabel: 'Comments',
+      agreementLabel: 'I agree to the processing of my personal data',
+      submitButton: 'Send',
+      successMessage: 'We have received a message, we will call you soon.',
+      descriptionText: 'quality children`s beds and furniture',
+      orderDesignButton: 'Order a design',
+    },
+    de: {
+      title: 'Denken wir über ein Projekt nach?',
+      description: 'Wir werden dich anrufen',
+      nameLabel: 'Dein Name',
+      emailLabel: 'E-Mail',
+      numberLabel: 'Nummer',
+      commentLabel: 'Kommentare',
+      agreementLabel: 'Ich stimme der Verarbeitung meiner persönlichen Daten zu',
+      submitButton: 'Senden',
+      successMessage: 'Wir haben eine Nachricht erhalten, wir werden dich bald anrufen.',
+      descriptionText: 'hochwertige Kinderbetten und Möbel',
+      orderDesignButton: 'Design bestellen',
+    },
+    pl: {
+      title: 'Rozważamy projekt?',
+      description: 'Zadzwonimy do ciebie',
+      nameLabel: 'Twoje imię',
+      emailLabel: 'Email',
+      numberLabel: 'Numer',
+      commentLabel: 'Komentarze',
+      agreementLabel: 'Zgadzam się na przetwarzanie moich danych osobowych',
+      submitButton: 'Wyślij',
+      successMessage: 'Otrzymaliśmy wiadomość, wkrótce do ciebie zadzwonimy.',
+      descriptionText: 'jakościowe łóżka i meble dziecięce',
+      orderDesignButton: 'Zamówienie projektu',
+    },
+  };
+
+  const formRules = {
+    en: {
+      name: addFormRules.nameEn,
+      email: addFormRules.mailEn,
+      number: addFormRules.numberEn,
+      comment: addFormRules.comentEn,
+    },
+    de: {
+      name: addFormRules.nameDe,
+      email: addFormRules.mailDe,
+      number: addFormRules.numberDe,
+      comment: addFormRules.comentDe,
+    },
+    pl: {
+      name: addFormRules.namePl,
+      email: addFormRules.mailPl,
+      number: addFormRules.numberPl,
+      comment: addFormRules.comentPl,
+    },
+  };
+
+  const translationData = translations[language];
+
+
   const touchButton = () => {
     setClick(true);
     document.body.classList.add('body-fixed');
@@ -66,17 +133,17 @@ export default function FirstPage() {
       <div className={`firstPage-window__open ${click ? 'firstPage-window__open-true opacity' : ''}`}>
         <img onClick={touchButtonClose} className='firstPage-window__open-close' src="./img/close-window.svg" alt="" />
 
-        <h2 className='firstPage-window__open-title'>{language === 'ua' ? 'Обміркуємо проєкт?' : 'Are we considering a project?'}</h2>
-        <h2 className='firstPage-window__open-description'>{language === 'ua' ? 'Ми вам зателефонуємо' : 'We will call you'}</h2>
+        <h2 className='firstPage-window__open-title'>{translationData.title}</h2>
+        <h2 className='firstPage-window__open-description'>{translationData.description}</h2>
 
         <form className='firstPage-form' onSubmit={handleSubmit}>
 
           <InputText
             control={control}
             name='name'
-            label={language === 'ua' ? 'Ваше ім’я' : 'Your name'}
+            label={translationData.nameLabel}
             type='text'
-            rules={language === 'ua' ? addFormRules.name : addFormRules.nameEn}
+            rules={formRules[language].name}
             color='#5E6366'
           />
 
@@ -85,7 +152,7 @@ export default function FirstPage() {
             name='email'
             label='Email'
             type='text'
-            rules={language === 'ua' ? addFormRules.mail : addFormRules.mailEn}
+            rules={formRules[language].email}
             color='#5E6366'
             rows='1'
           />
@@ -93,9 +160,9 @@ export default function FirstPage() {
           <InputText
             control={control}
             name='number'
-            label={language === 'ua' ? 'Номер' : 'Number'}
+            label={translationData.numberLabel}
             type='number'
-            rules={language === 'ua' ? addFormRules.number : addFormRules.numberEn}
+            rules={formRules[language].number}
             color='#5E6366'
             rows='1'
           />
@@ -103,9 +170,9 @@ export default function FirstPage() {
           <InputText
             control={control}
             name='comment'
-            label={language === 'ua' ? 'Коментарі' : 'Comments'}
+            label={translationData.commentLabel}
             type='number'
-            rules={language === 'ua' ? addFormRules.coment : addFormRules.comentEn}
+            rules={formRules[language].comment}
             color='#5E6366'
             rows='2'
           />
@@ -115,7 +182,7 @@ export default function FirstPage() {
           name='agreement' // Укажите уникальное имя для чекбокса
           label={
             <Typography sx={{ color: '#2B2F32', fontFamily: 'Didact Gothic', fontSize: '14px', fontWeight: '400' }}>
-              {language === 'ua' ? 'Я погоджуюсь на обробку моїх персональних даних' : 'I agree to the processing of my personal data'}
+              {translationData.agreementLabel}
             </Typography>
           }
           defaultValue={true}
@@ -138,14 +205,14 @@ export default function FirstPage() {
           variant="contained"
           size='large'
           onClick={handleSubmit(onSubmit)}
-        >{language === 'ua' ? 'Надіслати' : 'Send'}
+        >{translationData.submitButton}
         </Button>
       </div>
 
       <div className='firstPage-box container'>
         <h2 className='firstPage-box__title'>StoreWood</h2>
-        <div className='firstPage-box__description'>{language === 'ua' ? 'якісні дитячі ліжка та меблі' : 'quality children`s beds and furniture'}</div>
-        <div onClick={touchButton} className='firstPage-box__btn'>{language === 'ua' ? 'Замовити дизайн' : 'Order a design'}</div>
+        <div className='firstPage-box__description'>{translations[language].descriptionText}</div>
+        <div onClick={touchButton} className='firstPage-box__btn'>{translations[language].orderDesignButton}</div>
         <div className='firstPage-box__social'>
           <a className='firstPage-box__social-item' href="https://www.instagram.com/legenda_parfum/" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faInstagram} className='firstPage-box__social-icon' />
@@ -185,7 +252,7 @@ export default function FirstPage() {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
         <MuiAlert elevation={6} variant="filled" onClose={handleSuccessClose} severity="success">
-          {language === 'ua' ? 'Ми отримали повідомлення, скоро Вам зателефонуємо.' : 'We have received a message, we will call you soon.'}
+          {translationData.successMessage}
         </MuiAlert>
       </Snackbar>
 

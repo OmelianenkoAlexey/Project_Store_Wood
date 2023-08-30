@@ -5,6 +5,35 @@ import './Catalog.css';
 export default function Catalog() {
   const { language } = useContext(Context);
 
+  const translations = {
+    en: {
+      title: 'Catalog of products',
+      singleBeds: 'Single beds',
+      details: 'More details',
+      double: 'Double beds',
+      bunk: 'Bunk beds',
+      bedHouse: 'The bed is a house',
+    },
+    de: {
+      title: 'Produktkatalog',
+      singleBeds: 'Einzelbetten',
+      details: 'Mehr Details',
+      double: 'Doppelbett',
+      bunk: 'Etagenbett',
+      bedHouse: 'Das Bett ist ein Haus',
+    },
+    pl: {
+      title: 'Katalog produktów',
+      singleBeds: 'Pojedyńcze łóżka',
+      details: 'Więcej szczegółów',
+      double: 'Podwójne łóżka',
+      bunk: 'Łóżka piętrowe',
+      bedHouse: 'Łóżko jest domem',
+    },
+  };
+
+  const translationData = translations[language];
+
   return (
     <div id='catalog' className='catalog'>
       <div className='catalog-box__item-bg1'>
@@ -18,7 +47,7 @@ export default function Catalog() {
       </div>
 
       <div className='catalog__title-box container'>
-        <h2 className='catalog__title'>{language === 'ua' ? 'Каталог продукції' : 'Catalog of products'}</h2>
+        <h2 className='catalog__title'>{translationData.title}</h2>
         <div className='catalog__title-picture'>
           <img className='catalog__title-image' src="./img/catalogImage1.png" alt="Store Wood" />
         </div>
@@ -28,9 +57,9 @@ export default function Catalog() {
         <a className='catalog-box__item' href="/single-beds">
           <div className='catalog-box__item-text'>
 
-            <h3 className='catalog-box__item-text-title'>{language === 'ua' ? 'Односпальні ліжка' : 'Single beds'}</h3>
+            <h3 className='catalog-box__item-text-title'>{translationData.singleBeds}</h3>
             <div className='catalog-box__item-text-link'>
-              {language === 'ua' ? 'Детальніше' : 'More details'}</div>
+              {translationData.details}</div>
           </div>
           <div className='catalog-box__item-picture'>
             <img className='catalog-box__item-image' src="./img/catalog1.png" alt="Store Wood" />
@@ -39,9 +68,9 @@ export default function Catalog() {
 
         <a className='catalog-box__item' href="/double-beds">
           <div className='catalog-box__item-text  catalog-box__item-text-left'>
-            <h3 className='catalog-box__item-text-title'>{language === 'ua' ? 'Двоспальні ліжка' : 'Double beds'}</h3>
+            <h3 className='catalog-box__item-text-title'>{translationData.double}</h3>
             <div className='catalog-box__item-text-link'>
-              {language === 'ua' ? 'Детальніше' : 'More details'}</div>
+              {translationData.details}</div>
           </div>
           <div className='catalog-box__item-picture-left'>
             <img className='catalog-box__item-image' src="./img/catalog2.png" alt="Store Wood" />
@@ -50,9 +79,9 @@ export default function Catalog() {
 
         <a className='catalog-box__item' href="/bunk-beds">
           <div className='catalog-box__item-text'>
-            <h3 className='catalog-box__item-text-title'>{language === 'ua' ? 'Двоповерхові ліжка' : 'Bunk beds'}</h3>
+            <h3 className='catalog-box__item-text-title'>{translationData.bunk}</h3>
             <div className='catalog-box__item-text-link'>
-              {language === 'ua' ? 'Детальніше' : 'More details'}</div>
+              {translationData.details}</div>
           </div>
           <div className='catalog-box__item-picture'>
             <img className='catalog-box__item-image' src="./img/catalog3.png" alt="Store Wood" />
@@ -61,9 +90,9 @@ export default function Catalog() {
 
         <a className='catalog-box__item' href="/house-beds">
           <div className='catalog-box__item-text  catalog-box__item-text-left'>
-            <h3 className='catalog-box__item-text-title'>{language === 'ua' ? 'Ліжка будиночком' : 'The bed is a house'}</h3>
+            <h3 className='catalog-box__item-text-title'>{translationData.bedHouse}</h3>
             <div className='catalog-box__item-text-link'>
-              {language === 'ua' ? 'Детальніше' : 'More details'}</div>
+              {translationData.details}</div>
           </div>
           <div className='catalog-box__item-picture-left'>
             <img className='catalog-box__item-image' src="./img/catalog4.png" alt="Store Wood" />
