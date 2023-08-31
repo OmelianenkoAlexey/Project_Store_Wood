@@ -160,6 +160,7 @@
 .setting-product__box-item__display {
     display: flex;
     width: 100%;
+    gap: 10px;
 }
 
 .setting-product__box-items__display {

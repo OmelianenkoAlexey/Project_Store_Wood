@@ -661,17 +661,17 @@ export default function Setting() {
                   <img className='setting-product__box-item__img' src={item.img[0]} alt={item.img[0]} />
                 </div>
                 <div className={`${display ? 'setting-product__box-item-info' : 'setting-product__box-item-info__display'}`}>
-                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display color-md-one'}`}>{item.titleEn}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display color-md-two'}`}>{item.titleDe}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display color-md-three'}`}>{item.titlePl}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__title color-md-one' : 'setting-product__box-item-info__title__display color-md-one'}`}>{item.titleEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__title color-md-two' : 'setting-product__box-item-info__title__display color-md-two'}`}>{item.titleDe}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__title color-md-three' : 'setting-product__box-item-info__title__display color-md-three'}`}>{item.titlePl}</div>
                   <div className={`${display ? 'setting-product__box-item-info__price' : 'setting-product__box-item-info__price__display'}`}>{item.price} UAH</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-one'}`}>{item.descriptionEn}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-two'}`}>{item.descriptionDe}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-three'}`}>{item.descriptionPl}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description color-md-one' : 'setting-product__box-item-info__description__display color-md-one'}`}>{item.descriptionEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description color-md-two' : 'setting-product__box-item-info__description__display color-md-two'}`}>{item.descriptionDe}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description color-md-three' : 'setting-product__box-item-info__description__display color-md-three'}`}>{item.descriptionPl}</div>
                   <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.category}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-one'}`}>{item.characteristicEn}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-two'}`}>{item.characteristicDe}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-three'}`}>{item.characteristicPl}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description color-md-one' : 'setting-product__box-item-info__description__display color-md-one'}`}>{item.characteristicEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description color-md-two' : 'setting-product__box-item-info__description__display color-md-two'}`}>{item.characteristicDe}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description color-md-three' : 'setting-product__box-item-info__description__display color-md-three'}`}>{item.characteristicPl}</div>
                   {/* <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.millimeters}</div>
                   <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.gender}</div>
                   <div className={`${display ? 'setting-product__box-item-info__article' : 'setting-product__box-item-info__article__display'}`}>{item.article}</div>
