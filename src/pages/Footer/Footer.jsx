@@ -8,28 +8,71 @@ import { Link } from 'react-scroll';
 
 export default function Footer() {
   const { language } = useContext(Context);
+
+  const translations = {
+    en: {
+      title: 'CATALOG',
+      single: 'Single beds',
+      double: 'Double beds',
+      bunk: 'Bunk beds',
+      house: 'The bed is a house',
+      info: 'INFORMATION',
+      main: 'Main',
+      about: 'About us',
+      portfolio: 'Portfolio',
+      contacts: 'CONTACTS',
+    },
+    de: {
+      title: 'KATALOG',
+      single: 'Einzelbetten',
+      double: 'Doppelbett',
+      bunk: 'Etagenbett',
+      house: 'Das Bett ist ein Haus',
+      info: 'INFORMATION',
+      main: 'Hauptsächlich',
+      about: 'Über uns',
+      portfolio: 'Portfolio',
+      contacts: 'KONTAKTE',
+    },
+    pl: {
+      title: 'KATALOG',
+      single: 'Pojedyńcze łóżka',
+      double: 'Podwójne łóżka',
+      bunk: 'Łóżka piętrowe',
+      house: 'Łóżko jest domem',
+      info: 'INFORMACJA',
+      main: 'Główny',
+      about: 'O nas',
+      portfolio: 'Teczka',
+      contacts: 'ŁĄCZNOŚĆ',
+    },
+  }
+
+  const translationData = translations[language];
+
+
+
   return (
     <footer id="contacts" className='footer'>
       <div className='footer-primary container'>
 
         <div className='footer-catalog'>
-          <div className='footer-info__title'>{language === 'ua' ? 'КАТАЛОГ' : 'CATALOG'}</div>
-          <a className='footer-catalog__item' href="/double-beds">{language === 'ua' ? 'Двоспальні ліжка' : 'Double beds'}</a>
-          <a className='footer-catalog__item' href="/single-beds">{language === 'ua' ? 'Односпальні ліжка' : 'Double beds'}</a>
-          <a className='footer-catalog__item' href="/bunk-beds">{language === 'ua' ? 'Двоповерхові ліжка' : 'Bunk beds'}</a>
-          <a className='footer-catalog__item' href="/house-beds">{language === 'ua' ? 'Ліжка будиночком' : 'The bed is a house'}</a>
+          <div className='footer-info__title'>{translationData.title}</div>
+          <a className='footer-catalog__item' href="/single-beds">{translationData.single}</a>
+          <a className='footer-catalog__item' href="/double-beds">{translationData.double}</a>
+          <a className='footer-catalog__item' href="/bunk-beds">{translationData.bunk}</a>
+          <a className='footer-catalog__item' href="/house-beds">{translationData.house}</a>
         </div>
 
         <div className='footer-info'>
-          <div className='footer-info__title'>{language === 'ua' ? 'ІНФОРМАЦІЯ' : 'INFORMATION'}</div>
-          <Link to="main" className='footer-info__item' smooth={true} duration={1000}>{language === 'ua' ? 'Головна' : 'Main'}</Link>
-          <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000}>{language === 'ua' ? 'Про нас' : 'About us'}</Link>
-          <Link to="instagram" className='footer-info__item' smooth={true} duration={500}>{language === 'ua' ? 'Портфоліо' : 'Portfolio'}</Link>
+          <div className='footer-info__title'>{translationData.info}</div>
+          <Link to="main" className='footer-info__item' smooth={true} duration={1000}>{translationData.main}</Link>
+          <Link to="aboutUs" className='footer-info__item' smooth={true} duration={1000}>{translationData.about}</Link>
+          <Link to="instagram" className='footer-info__item' smooth={true} duration={500}>{translationData.portfolio}</Link>
         </div>
 
         <div id='contacts' className='footer-right'>
-          {/* <a className='footer-right__title' href="/contacts">КОНТАКТИ</a> */}
-          <div className='footer-right__title'>{language === 'ua' ? 'КОНТАКТИ' : 'CONTACTS'}</div>
+          <div className='footer-right__title'>{translationData.contacts}</div>
           <div className='footer-right__item'>
             <a className='footer-right__item-address' href="https://goo.gl/maps/RLhTv4Rwb4UdhpxBA" target="_blank" rel="noreferrer">м. Запоріжжя, бульвар Шевченка, 16</a>
             <a className='footer-right__item-telephone' href="tel:+380676120366">

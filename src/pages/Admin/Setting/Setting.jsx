@@ -29,37 +29,15 @@ export default function Setting() {
     "Ліжка будиночком",
   ];
 
-  const brands = [
-    'Afnan',
-    'Ajmal',
-    'Ariana Grande',
-    'Balenciaga',
-    'Byredo',
-    'Calvin Klein',
-    'Comme des',
-    'Creed',
-  ];
-
-  const millimeters = [
-    '3 ml',
-    '150 ml',
-    '200 ml',
-    '300 ml',
-  ]
-
   const [product, setProduct] = useState({
-    title: '',
     titleEn: '',
+    titleDe: '',
+    titlePl: '',
     price: '',
-    description: '',
     descriptionEn: '',
-    characteristic: '',
-    characteristicsEn: '',
+    descriptionDe: '',
+    descriptionPl: '',
     category: '',
-    // millimeters: '',
-    article: '',
-    // brand: '',
-    // popular: false,
   });
 
   useEffect(() => {
@@ -227,7 +205,7 @@ export default function Setting() {
     }).filter((item) => {
       console.log(item);
       const lowerCaseSearchQuery = searchQuery.toLowerCase();
-      const lowerCaseTitle = item.title.toLowerCase();
+      const lowerCaseTitle = item.titleEn.toLowerCase();
 
       return (
         lowerCaseTitle.includes(lowerCaseSearchQuery)
@@ -351,31 +329,11 @@ export default function Setting() {
             {editProduct ? (
               <input
                 className="setting-product__input"
-                name="title"
-                onChange={(e) => handleEditInputChange(e, editProduct)}
-                value={editProduct.title}
-                type="text"
-                placeholder="Назва товару"
-              />
-            ) : (
-              <input
-                className="setting-product__input"
-                name="title"
-                onChange={handleInputChange}
-                value={product.title}
-                type="text"
-                placeholder="Назва товару"
-              />
-            )}
-
-            {editProduct ? (
-              <input
-                className="setting-product__input"
                 name="titleEn"
                 onChange={(e) => handleEditInputChange(e, editProduct)}
                 value={editProduct.titleEn}
                 type="text"
-                placeholder="Product Name"
+                placeholder="Назва товару на En"
               />
             ) : (
               <input
@@ -384,7 +342,47 @@ export default function Setting() {
                 onChange={handleInputChange}
                 value={product.titleEn}
                 type="text"
-                placeholder="Product Name"
+                placeholder="Назва товару на En"
+              />
+            )}
+
+            {editProduct ? (
+              <input
+                className="setting-product__input"
+                name="titleDe"
+                onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.titleDe}
+                type="text"
+                placeholder="Назва товару на De"
+              />
+            ) : (
+              <input
+                className="setting-product__input"
+                name="titleDe"
+                onChange={handleInputChange}
+                value={product.titleDe}
+                type="text"
+                placeholder="Назва товару на De"
+              />
+            )}
+
+            {editProduct ? (
+              <input
+                className="setting-product__input"
+                name="titlePl"
+                onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.titlePl}
+                type="text"
+                placeholder="Назва товару на Pl"
+              />
+            ) : (
+              <input
+                className="setting-product__input"
+                name="titlePl"
+                onChange={handleInputChange}
+                value={product.titlePl}
+                type="text"
+                placeholder="Назва товару на Pl"
               />
             )}
 
@@ -401,20 +399,6 @@ export default function Setting() {
                 value={product.price} type="number"
                 placeholder='Ціна' />
             )}
-            {editProduct ? (
-              <textarea
-                className="setting-product__textarea"
-                name="description" onChange={(e) => handleEditInputChange(e, editProduct)}
-                value={editProduct.description}
-                type="text"
-                placeholder="Опис товару" />
-            ) : (
-              <textarea className="setting-product__textarea"
-                name="description" onChange={handleInputChange}
-                value={product.description}
-                type="text"
-                placeholder='Опис товару' />
-            )}
 
             {editProduct ? (
               <textarea
@@ -422,31 +406,43 @@ export default function Setting() {
                 name="descriptionEn" onChange={(e) => handleEditInputChange(e, editProduct)}
                 value={editProduct.descriptionEn}
                 type="text"
-                placeholder="Product description" />
+                placeholder="Опис товару на En" />
             ) : (
               <textarea className="setting-product__textarea"
                 name="descriptionEn" onChange={handleInputChange}
                 value={product.descriptionEn}
                 type="text"
-                placeholder='Product description' />
+                placeholder='Опис товару на En' />
             )}
 
             {editProduct ? (
               <textarea
-                className="setting-product__input"
-                name="characteristic"
-                onChange={(e) => handleEditInputChange(e, editProduct)}
-                value={editProduct.characteristic}
+                className="setting-product__textarea"
+                name="descriptionDe" onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.descriptionDe}
                 type="text"
-                placeholder="характеристика товару" />
+                placeholder="Опис товару на De" />
             ) : (
-              <textarea
-                className="setting-product__input"
-                name="characteristic"
-                onChange={handleInputChange}
-                value={product.characteristic}
+              <textarea className="setting-product__textarea"
+                name="descriptionDe" onChange={handleInputChange}
+                value={product.descriptionDe}
                 type="text"
-                placeholder='характеристика товару' />
+                placeholder='Опис товару на De' />
+            )}
+
+            {editProduct ? (
+              <textarea
+                className="setting-product__textarea"
+                name="descriptionPl" onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.descriptionPl}
+                type="text"
+                placeholder="Опис товару на Pl" />
+            ) : (
+              <textarea className="setting-product__textarea"
+                name="descriptionPl" onChange={handleInputChange}
+                value={product.descriptionPl}
+                type="text"
+                placeholder='Опис товару на Pl' />
             )}
 
             {editProduct ? (
@@ -456,7 +452,7 @@ export default function Setting() {
                 onChange={(e) => handleEditInputChange(e, editProduct)}
                 value={editProduct.characteristicEn}
                 type="text"
-                placeholder="product characteristics" />
+                placeholder="характеристика товару на En" />
             ) : (
               <textarea
                 className="setting-product__input"
@@ -464,7 +460,43 @@ export default function Setting() {
                 onChange={handleInputChange}
                 value={product.characteristicEn}
                 type="text"
-                placeholder='product characteristics' />
+                placeholder='характеристика товару на En' />
+            )}
+
+            {editProduct ? (
+              <textarea
+                className="setting-product__input"
+                name="characteristicDe"
+                onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.characteristicDe}
+                type="text"
+                placeholder="характеристика товару на De" />
+            ) : (
+              <textarea
+                className="setting-product__input"
+                name="characteristicDe"
+                onChange={handleInputChange}
+                value={product.characteristicDe}
+                type="text"
+                placeholder='характеристика товару на De' />
+            )}
+
+            {editProduct ? (
+              <textarea
+                className="setting-product__input"
+                name="characteristicPl"
+                onChange={(e) => handleEditInputChange(e, editProduct)}
+                value={editProduct.characteristicPl}
+                type="text"
+                placeholder="характеристика товару на Pl" />
+            ) : (
+              <textarea
+                className="setting-product__input"
+                name="characteristicPl"
+                onChange={handleInputChange}
+                value={product.characteristicPl}
+                type="text"
+                placeholder='характеристика товару на Pl' />
             )}
 
             {editProduct ? (
@@ -629,14 +661,17 @@ export default function Setting() {
                   <img className='setting-product__box-item__img' src={item.img[0]} alt={item.img[0]} />
                 </div>
                 <div className={`${display ? 'setting-product__box-item-info' : 'setting-product__box-item-info__display'}`}>
-                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display'}`}>{item.title}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display'}`}>{item.titleEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display color-md-one'}`}>{item.titleEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display color-md-two'}`}>{item.titleDe}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__title' : 'setting-product__box-item-info__title__display color-md-three'}`}>{item.titlePl}</div>
                   <div className={`${display ? 'setting-product__box-item-info__price' : 'setting-product__box-item-info__price__display'}`}>{item.price} UAH</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.description}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.descriptionEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-one'}`}>{item.descriptionEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-two'}`}>{item.descriptionDe}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-three'}`}>{item.descriptionPl}</div>
                   <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.category}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.characteristic}</div>
-                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.characteristicEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-one'}`}>{item.characteristicEn}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-two'}`}>{item.characteristicDe}</div>
+                  <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display color-md-three'}`}>{item.characteristicPl}</div>
                   {/* <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.millimeters}</div>
                   <div className={`${display ? 'setting-product__box-item-info__description' : 'setting-product__box-item-info__description__display'}`}>{item.gender}</div>
                   <div className={`${display ? 'setting-product__box-item-info__article' : 'setting-product__box-item-info__article__display'}`}>{item.article}</div>

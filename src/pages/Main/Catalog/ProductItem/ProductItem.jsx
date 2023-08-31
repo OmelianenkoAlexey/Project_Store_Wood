@@ -1,18 +1,39 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './ProductItem.css';
-import Instagram from '../../Instagram/Instagram';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Context } from '../../../../Contex';
-import AboutUs from '../../AboutUs/AboutUs';
 
 export default function ProductItem() {
   const [product, setProduct] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { language } = useContext(Context);
+
+  const translations = {
+    en: {
+      title: 'bed color',
+      productTitle: product.titleEn,
+      productDescription: product.descriptionEn,
+      productCharacteristic: product.characteristicEn,
+    },
+    de: {
+      title: 'Bettfarbe',
+      productTitle: product.titleDe,
+      productDescription: product.descriptionDe,
+      productCharacteristic: product.characteristicDe,
+    },
+    pl: {
+      title: 'kolor łóżka',
+      productTitle: product.titlePl,
+      productDescription: product.descriptionPl,
+      productCharacteristic: product.characteristicPl,
+    },
+  }
+
+  const translationData = translations[language];
 
   useEffect(() => {
     const cartItems = localStorage.getItem('Items');
@@ -110,8 +131,8 @@ export default function ProductItem() {
                 <FontAwesomeIcon className='product-window__info-starBox-item' icon={faStar} />
                 <div className='product-window__info-starBox-text'>5.00</div>
               </div>
-              <h2 className='product-window__info-title'>{language === 'ua' ? product.title : product.titleEn}</h2>
-              <div className='product-window__info-color'>Цвет кровати</div>
+              <h2 className='product-window__info-title'>{translationData.productTitle}</h2>
+              <div className='product-window__info-color'>{translationData.title}</div>
               <div className='product-window__info-color-box color-box'>
                 <div className='color-box__item item1'></div>
                 <div className='color-box__item item2'></div>
@@ -124,13 +145,11 @@ export default function ProductItem() {
             </div>
           </div>
 
-          <div className='productItem__description'>{language === 'ua' ? product.description : product.descriptionEn}</div>
-          <div className='productItem__characteristic'>{language === 'ua' ? product.characteristic : product.characteristicEn}</div>
+          <div className='productItem__description'>{translationData.productDescription}</div>
+          <div className='productItem__characteristic'>{translationData.productCharacteristic}</div>
 
         </div>
       </div>
-      <AboutUs />
-      <Instagram />
     </>
   );
 }

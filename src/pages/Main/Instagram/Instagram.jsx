@@ -7,6 +7,23 @@ import './Instagram.css';
 
 export default function Instagram() {
   const { mainData, language } = useContext(Context);
+
+  const translations = {
+    en: {
+      title: 'Our works',
+    },
+    de: {
+      title: 'Unsere Arbeiten',
+    },
+    pl: {
+      title: 'Nasze prace',
+    },
+  }
+
+  const translationData = translations[language];
+
+
+
   const [click, setClick] = useState(false);
   const [image, setImage] = useState(false);
   const [load, setLoad] = useState([]);
@@ -74,7 +91,7 @@ export default function Instagram() {
       </div>
       <div className='instagram-container container'>
 
-        <h2 className='instagram__title'>{language === 'ua' ? 'Наші роботи' : 'Our works'}</h2>
+        <h2 className='instagram__title'>{translationData.title}</h2>
 
         <div className='instagram-box-arrow'>
 

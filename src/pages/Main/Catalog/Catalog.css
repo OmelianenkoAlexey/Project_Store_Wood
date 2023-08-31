@@ -156,7 +156,6 @@ width: 40px;
 
     .catalog-box__item-text {
         width: auto;
-        align-items: flex-end;
     }
 
     .catalog-box__item-picture {
@@ -167,10 +166,6 @@ width: 40px;
         width: 70vw;
         order: 1;
         margin-left: auto;
-    }
-
-    .catalog-box__item-text-left {
-        align-items: flex-start;
     }
 
     .catalog {

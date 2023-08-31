@@ -281,8 +281,8 @@
         bottom: 0;
         padding-left: 30px;
         padding-right: 30px;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         opacity: 0;
         pointer-events: none;
         border-radius: 0px;
@@ -294,7 +294,7 @@
 
     .firstPage-window__open-true {
         width: 100vw;
-        height: 90vh;
+        height: 100vh;
     }
 
     .firstPage-window__open-close {
@@ -302,8 +302,8 @@
         width: 30px;
         padding: 10px;
         position: absolute;
-        right: 10px;
-        top: 10px;
+        right: 30px;
+        top: 53px;
     }
 
     .firstPage__pictureFirst {
@@ -322,11 +322,6 @@
 
     .firstPage__picture-main {
         top: 20px;
-    }
-
-    .firstPage-window {
-        background-color: #ffffff;
-        z-index: 11;
     }
 
     .catalog-box {
