@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Context } from '../../../Contex';
 import './Burger.css';
 import { Link } from 'react-scroll';
 
@@ -12,16 +13,53 @@ export default function Burger() {
   const [isOpacitySix, setIsOpacitySix] = useState(false);
   const [isOpacityEight, setIsOpacityEight] = useState(false);
 
+  const { language } = useContext(Context);
+
+  const translations = {
+    en: {
+      home: 'Home',
+      singleBeds: 'Single Beds',
+      doubleBeds: 'Double Beds',
+      bunkBeds: 'Bunk Beds',
+      houseBeds: 'House Beds',
+      aboutUs: 'About Us',
+      gallery: 'Gallery',
+      contacts: 'Contacts',
+    },
+    de: {
+      home: 'Startseite',
+      singleBeds: 'Einzelbetten',
+      doubleBeds: 'Doppelbetten',
+      bunkBeds: 'Stockbetten',
+      houseBeds: 'Hausbetten',
+      aboutUs: 'Über uns',
+      gallery: 'Galerie',
+      contacts: 'Kontakte',
+    },
+    pl: {
+      home: 'Strona główna',
+      singleBeds: 'Łóżka pojedyncze',
+      doubleBeds: 'Łóżka podwójne',
+      bunkBeds: 'Łóżka piętrowe',
+      houseBeds: 'Łóżka domek',
+      aboutUs: 'O nas',
+      gallery: 'Galeria',
+      contacts: 'Kontakt',
+    },
+  };
+
+
   const title = [
-    { title: 'Головна', href: '/', active: isOpacityOne },
-    { title: 'Односпальні ліжка', href: '/single-beds', active: isOpacityTwo },
-    { title: 'Двоспальні ліжка', href: '/double-beds', active: isOpacityTwo },
-    { title: 'Двоярусні ліжка', href: '/bunk-beds', active: isOpacityThree },
-    { title: 'Ліжка будиночком', href: '/house-beds', active: isOpacityFour },
-    { title: 'Про нас', to: 'aboutUs', active: isOpacityFive },
-    { title: 'Галерея', to: 'instagram', active: isOpacitySix },
-    { title: 'Контакти', to: 'contacts', active: isOpacityEight }
+    { title: translations[language].home, href: '/', active: isOpacityOne },
+    { title: translations[language].singleBeds, href: '/single-beds', active: isOpacityTwo },
+    { title: translations[language].doubleBeds, href: '/double-beds', active: isOpacityTwo },
+    { title: translations[language].bunkBeds, href: '/bunk-beds', active: isOpacityThree },
+    { title: translations[language].houseBeds, href: '/house-beds', active: isOpacityFour },
+    { title: translations[language].aboutUs, to: 'aboutUs', active: isOpacityFive },
+    { title: translations[language].gallery, to: 'instagram', active: isOpacitySix },
+    { title: translations[language].contacts, to: 'contacts', active: isOpacityEight },
   ];
+
 
   const handleClick = () => {
     document.body.classList.toggle('body-fixed');
