@@ -40,7 +40,7 @@ export default function Admin() {
           color='grey'
         />
         <Button
-          sx={{ color: '#F07C00' }}
+          sx={{ color: '#19772E' }}
           size='large'
           onClick={handleSubmit(onSubmit)}
         >Увійти
