@@ -103,7 +103,7 @@ export default function Setting() {
 
           return firestore
             .collection('data')
-            .doc('j7lXb7WxzNPiINXzrg1H')
+            .doc('Uf6iZDDWfbp58hwB8KzI')
             .update(update)
             .then(() => {
               setProgress('Файлы добавлены');
@@ -171,7 +171,7 @@ export default function Setting() {
     // Удаляем товар из базы данных
     firestore
       .collection('data')
-      .doc('j7lXb7WxzNPiINXzrg1H')
+      .doc('Uf6iZDDWfbp58hwB8KzI')
       .update({
         [folderPath]: updatedArray,
       })
@@ -203,7 +203,6 @@ export default function Setting() {
       }
       return false;
     }).filter((item) => {
-      console.log(item);
       const lowerCaseSearchQuery = searchQuery.toLowerCase();
       const lowerCaseTitle = item.titleEn.toLowerCase();
 
@@ -216,7 +215,6 @@ export default function Setting() {
       ? filteredProducts.filter((item) => item.popular === true && item.category === selectedCategory)
       : filteredProducts;
   }
-
 
   const handleEditInputChange = (e, editProduct) => {
     const {
@@ -253,7 +251,7 @@ export default function Setting() {
 
     firestore
       .collection('data')
-      .doc('j7lXb7WxzNPiINXzrg1H')
+      .doc('Uf6iZDDWfbp58hwB8KzI')
       .update({ 'product': updatedArray })
       .then(() => {
         setProgress('Товар оновлено');

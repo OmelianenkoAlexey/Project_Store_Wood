@@ -4,21 +4,13 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  // apiKey: "AIzaSyCx-FgxjdIZ-i5uzEzqX88BHQ_DD4_jk1M",
-  // authDomain: "storewood-1a60d.firebaseapp.com",
-  // databaseURL: "https://spetsvik1-deepdive-default-rtdb.europe-west1.firebasedatabase.app",
-  // projectId: "storewood-1a60d",
-  // storageBucket: "storewood-1a60d.appspot.com",
-  // messagingSenderId: "136229372635",
-  // appId: "1:136229372635:web:14830966d39b5c98d842fe"
-
-  apiKey: "AIzaSyCx-FgxjdIZ-i5uzEzqX88BHQ_DD4_jk1M",
-  authDomain: "storewood-1a60d.firebaseapp.com",
-  projectId: "storewood-1a60d",
-  storageBucket: "storewood-1a60d.appspot.com",
-  messagingSenderId: "136229372635",
-  appId: "1:136229372635:web:14830966d39b5c98d842fe",
-  measurementId: "G-7V7FB8HW2N"
+  apiKey: "AIzaSyDFopDvsZxQ494GAl1j4OWge_rH59Pu6sE",
+  authDomain: "store-wood-d96ce.firebaseapp.com",
+  projectId: "store-wood-d96ce",
+  storageBucket: "store-wood-d96ce.appspot.com",
+  messagingSenderId: "1019409906178",
+  appId: "1:1019409906178:web:b8900860b518a44576451b",
+  measurementId: "G-V446M04RGD"
 };
 
 firebase.initializeApp(firebaseConfig);
