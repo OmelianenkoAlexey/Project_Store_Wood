@@ -100,7 +100,7 @@ export default function Footer() {
       </div>
 
       <div className='footer-secondary'>
-        <div className='footer-secondary__info'>© 2023 Store Wood</div>
+        <a href='https://circle.in.ua' target="_blank" rel="noreferrer" className='footer-secondary__info'>by circle studio 2023</a>
       </div>
     </footer>
   );
