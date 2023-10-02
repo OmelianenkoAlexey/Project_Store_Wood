@@ -9,6 +9,8 @@ import { Link } from 'react-scroll';
 export default function Footer() {
   const { language } = useContext(Context);
 
+
+  
   const translations = {
     en: {
       title: 'CATALOG',
